@@ -4,6 +4,9 @@ var __globalObject = Function("return this;")();
 function fnGlobalObject() {
     return __globalObject;
 }
+function Test262Error(message) {
+  this.message = message || "";
+}
 IntlPolyfill.__applyLocaleSensitivePrototypes();
 Object.getOwnPropertyNames = Object.getOwnPropertyNames || function (obj) {
             var ret = [];
@@ -139,7 +142,6 @@ var currencyDigits = {
     BSD: 2,
     BTN: 2,
     BWP: 2,
-    BYR: 0,
     BZD: 2,
     CAD: 2,
     CDF: 2,

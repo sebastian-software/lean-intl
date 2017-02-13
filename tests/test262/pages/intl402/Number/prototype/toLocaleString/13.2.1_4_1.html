@@ -4,6 +4,9 @@ var __globalObject = Function("return this;")();
 function fnGlobalObject() {
     return __globalObject;
 }
+function Test262Error(message) {
+  this.message = message || "";
+}
 IntlPolyfill.__applyLocaleSensitivePrototypes();
 Array.prototype.forEach = Array.prototype.forEach || function (fn) {
             for (var i=0; i < this.length; i++)
