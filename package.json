@@ -13,15 +13,7 @@
   "devDependencies": {
     "async": "^2.1.4",
     "babel-cli": "^6.22.2",
-    "babel-eslint": "^7.1.1",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.22.0",
-    "babel-plugin-transform-es3-member-expression-literals": "^6.22.0",
-    "babel-plugin-transform-es3-property-literals": "^6.22.0",
-    "babel-plugin-transform-object-rest-spread": "^6.22.0",
-    "babel-polyfill": "^6.22.0",
-    "babel-preset-es2015": "6.22.0",
-    "babel-preset-es2015-rollup": "3.0.0",
-    "babel-register": "^6.22.0",
     "cldr-core": "30.0.3",
     "cldr-dates-full": "30.0.3",
     "cldr-numbers-full": "30.0.3",
@@ -37,17 +29,10 @@
     "grunt-contrib-copy": "^1.0.0",
     "grunt-curl": "^2.2.0",
     "grunt-zip": "^0.17.1",
-    "jshint": "^2.9.4",
     "mkdirp": "^0.5.1",
     "object.assign": "^4.0.4",
+    "prepublish": "^0.12.5",
     "rimraf": "^2.5.4",
-    "rollup": "^0.41.4",
-    "rollup-plugin-babel": "^2.7.1",
-    "rollup-plugin-commonjs": "^7.0.0",
-    "rollup-plugin-memory": "^2.0.0",
-    "rollup-plugin-npm": "^2.0.0",
-    "rollup-plugin-replace": "^1.1.1",
-    "rollup-plugin-uglify": "^1.0.1",
     "serve-static": "^1.11.2",
     "wd": "^1.1.3"
   },
@@ -63,7 +48,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/andyearnshaw/Intl.js"
+    "url": "https://github.com/sebastian-software/lean-intl"
   },
   "keywords": [
     "intl",
@@ -80,8 +65,5 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/sebastian-software/lean-intl/issues"
-  },
-  "dependencies": {
-    "prepublish": "^0.12.5"
   }
 }
