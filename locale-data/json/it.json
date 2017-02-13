@@ -41,6 +41,7 @@
                 "MMMd": "d MMM",
                 "MMMEd": "E d MMM",
                 "MMMMd": "d MMMM",
+                "MMMMW": "'settimana' W 'di' MMM",
                 "ms": "mm:ss",
                 "y": "y",
                 "yM": "M/y",
@@ -51,7 +52,8 @@
                 "yMMMEd": "E d MMM y",
                 "yMMMM": "MMMM y",
                 "yQQQ": "QQQ y",
-                "yQQQQ": "QQQQ y"
+                "yQQQQ": "QQQQ y",
+                "yw": "'settimana' w 'del' y"
             },
             "dateFormats": {
                 "yMMMMEEEEd": "EEEE d MMMM y",
@@ -248,8 +250,8 @@
                         "E.V."
                     ],
                     "long": [
-                        "a.C.",
-                        "d.C.",
+                        "avanti Cristo",
+                        "dopo Cristo",
                         "avanti Era Volgare",
                         "Era Volgare"
                     ]

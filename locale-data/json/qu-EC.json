@@ -11,7 +11,7 @@
             "short": "{1} {0}",
             "medium": "{1} {0}",
             "full": "{1} {0}",
-            "long": "{1} {0}",
+            "long": "{0} {1}",
             "availableFormats": {
                 "d": "d",
                 "E": "ccc",
@@ -41,22 +41,24 @@
                 "MMMd": "MMM d",
                 "MMMEd": "MMM d, E",
                 "MMMMd": "MMMM d",
+                "MMMMW": "W 'semana' MMM 'killapa'",
                 "ms": "mm:ss",
                 "y": "y",
                 "yM": "y-MM",
                 "yMd": "dd-MM-y",
-                "yMEd": "y-MM-dd, E",
+                "yMEd": "E, dd-MM-y",
                 "yMMM": "y MMM",
                 "yMMMd": "y MMM d",
                 "yMMMEd": "E, d MMM, y",
                 "yMMMM": "y MMMM",
                 "yQQQ": "y QQQ",
-                "yQQQQ": "y QQQQ"
+                "yQQQQ": "y QQQQ",
+                "yw": "w 'semana' y 'watapa'"
             },
             "dateFormats": {
                 "yMMMMEEEEd": "EEEE, d MMMM, y",
-                "yMMMMd": "y MMMM d",
-                "yMMMd": "y MMM d",
+                "yMMMMd": "d MMMM y",
+                "yMMMd": "d MMM y",
                 "yMd": "dd/MM/y"
             },
             "timeFormats": {

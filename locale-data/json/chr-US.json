@@ -8,14 +8,14 @@
         "hourNo0": true,
         "hour12": true,
         "formats": {
-            "short": "{1} {0}",
-            "medium": "{1} {0}",
-            "full": "{1} {0}",
-            "long": "{1} {0}",
+            "short": "{1}, {0}",
+            "medium": "{1}, {0}",
+            "full": "{1} ᎤᎾᎢ {0}",
+            "long": "{1} ᎤᎾᎢ {0}",
             "availableFormats": {
                 "d": "d",
                 "E": "ccc",
-                "Ed": "d, E",
+                "Ed": "d E",
                 "Ehm": "E h:mm a",
                 "EHm": "E HH:mm",
                 "Ehms": "E h:mm:ss a",
@@ -27,9 +27,9 @@
                 "h": "h a",
                 "H": "HH",
                 "hm": "h:mm a",
-                "Hm": "H:mm",
+                "Hm": "HH:mm",
                 "hms": "h:mm:ss a",
-                "Hms": "H:mm:ss",
+                "Hms": "HH:mm:ss",
                 "hmsv": "h:mm:ss a v",
                 "Hmsv": "HH:mm:ss v",
                 "hmv": "h:mm a v",
@@ -39,8 +39,9 @@
                 "MEd": "E, M/d",
                 "MMM": "LLL",
                 "MMMd": "MMM d",
-                "MMMEd": "MMM d, E",
+                "MMMEd": "E, MMM d",
                 "MMMMd": "MMMM d",
+                "MMMMW": "'week' W 'of' MMMM",
                 "ms": "mm:ss",
                 "y": "y",
                 "yM": "M/y",
@@ -51,7 +52,8 @@
                 "yMMMEd": "E, MMM d, y",
                 "yMMMM": "MMMM y",
                 "yQQQ": "QQQ y",
-                "yQQQQ": "QQQQ y"
+                "yQQQQ": "QQQQ y",
+                "yw": "'week' w 'of' y"
             },
             "dateFormats": {
                 "yMMMMEEEEd": "EEEE, MMMM d, y",
@@ -236,22 +238,22 @@
                 },
                 "eras": {
                     "narrow": [
-                        "ᎤᏓᎷᎸ",
-                        "ᎤᎶᏐᏅ",
+                        "BC",
+                        "AD",
                         "BCE",
                         "CE"
                     ],
                     "short": [
-                        "ᎤᏓᎷᎸ",
-                        "ᎤᎶᏐᏅ",
+                        "BC",
+                        "AD",
                         "BCE",
                         "CE"
                     ],
                     "long": [
-                        "Ꮟ ᏥᏌ ᎾᏕᎲᏍᎬᎾ",
-                        "ᎠᎩᏃᎮᎵᏓᏍᏗᏱ ᎠᏕᏘᏱᏍᎬ ᏱᎰᏩ ᏧᏓᏂᎸᎢᏍᏗ",
-                        "BCE",
-                        "CE"
+                        "ᏧᏓᎷᎸ ᎤᎷᎯᏍᏗ ᎦᎶᏁᏛ",
+                        "ᎠᏃ ᏙᎻᏂ",
+                        "ᏧᏓᎷᎸ ᏯᏃᏉ ᏱᎬᏍᏛᏭ ᎠᏓᎴᏂᏍᎬ",
+                        "ᏯᏃᏉ ᏱᎬᏍᏛᏭ ᎠᏓᎴᏂᏍᎬ"
                     ]
                 },
                 "dayPeriods": {

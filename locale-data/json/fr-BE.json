@@ -41,6 +41,7 @@
                 "MMMd": "d MMM",
                 "MMMEd": "E d MMM",
                 "MMMMd": "d MMMM",
+                "MMMMW": "'semaine' W 'de' MMM",
                 "ms": "mm:ss",
                 "y": "y",
                 "yM": "MM/y",
@@ -51,7 +52,8 @@
                 "yMMMEd": "E d MMM y",
                 "yMMMM": "MMMM y",
                 "yQQQ": "QQQ y",
-                "yQQQQ": "QQQQ y"
+                "yQQQQ": "QQQQ y",
+                "yw": "'semaine' w 'de' y"
             },
             "dateFormats": {
                 "yMMMMEEEEd": "EEEE d MMMM y",
@@ -282,7 +284,7 @@
         "symbols": {
             "latn": {
                 "decimal": ",",
-                "group": ".",
+                "group": " ",
                 "nan": "NaN",
                 "plusSign": "+",
                 "minusSign": "-",

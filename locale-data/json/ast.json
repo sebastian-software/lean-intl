@@ -41,6 +41,7 @@
                 "MMMd": "d MMM",
                 "MMMEd": "E, d MMM",
                 "MMMMd": "d MMMM",
+                "MMMMW": "'selmana' W 'de' MMM",
                 "ms": "mm:ss",
                 "y": "y",
                 "yM": "M/y",
@@ -51,7 +52,8 @@
                 "yMMMEd": "E, d MMM y",
                 "yMMMM": "LLLL 'de' y",
                 "yQQQ": "QQQ y",
-                "yQQQQ": "QQQQ y"
+                "yQQQQ": "QQQQ 'de' y",
+                "yw": "'selmana' w 'de' y"
             },
             "dateFormats": {
                 "yMMMMEEEEd": "EEEE, d MMMM 'de' y",
@@ -157,7 +159,7 @@
                 },
                 "dayPeriods": {
                     "am": "de la mañana",
-                    "pm": "de la tardi"
+                    "pm": "de la tarde"
                 }
             },
             "gregory": {
@@ -236,27 +238,27 @@
                 },
                 "eras": {
                     "narrow": [
-                        "aC",
-                        "dC",
-                        "anE",
-                        "nE"
+                        "e.C.",
+                        "d.C.",
+                        "EDC",
+                        "DC"
                     ],
                     "short": [
-                        "a.C.",
+                        "e.C.",
                         "d.C.",
-                        "edC",
-                        "n.E."
+                        "EDC",
+                        "DC"
                     ],
                     "long": [
-                        "a.C.",
+                        "enantes de Cristu",
                         "después de Cristu",
-                        "antes de nuestra Era",
-                        "nuestra Era"
+                        "enantes de la dómina común",
+                        "dómina común"
                     ]
                 },
                 "dayPeriods": {
                     "am": "de la mañana",
-                    "pm": "de la tardi"
+                    "pm": "de la tarde"
                 }
             }
         }

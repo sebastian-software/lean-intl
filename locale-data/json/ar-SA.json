@@ -43,6 +43,7 @@
                 "MMMEd": "E، d MMM",
                 "MMMMd": "d MMMM",
                 "MMMMEd": "E، d MMMM",
+                "MMMMW": "الأسبوع W من MMM",
                 "ms": "mm:ss",
                 "y": "y",
                 "yM": "M‏/y",
@@ -54,7 +55,8 @@
                 "yMMMEd": "E، d MMM، y",
                 "yMMMM": "MMMM y",
                 "yQQQ": "QQQ y",
-                "yQQQQ": "QQQQ y"
+                "yQQQQ": "QQQQ y",
+                "yw": "الأسبوع w من سنة y"
             },
             "dateFormats": {
                 "yMMMMEEEEd": "EEEE، d MMMM، y",
@@ -275,12 +277,12 @@
                 "negativePattern": "{minusSign}{number}"
             },
             "currency": {
-                "positivePattern": "{currency} {number}",
-                "negativePattern": "{minusSign}{currency} {number}"
+                "positivePattern": "{number} {currency}",
+                "negativePattern": "{minusSign}{number} {currency}"
             },
             "percent": {
-                "positivePattern": "{number}{percentSign}",
-                "negativePattern": "{minusSign}{number}{percentSign}"
+                "positivePattern": "{number} {percentSign}",
+                "negativePattern": "{minusSign}{number} {percentSign}"
             }
         },
         "symbols": {
@@ -288,9 +290,9 @@
                 "decimal": "٫",
                 "group": "٬",
                 "nan": "ليس رقم",
-                "plusSign": "‏+",
-                "minusSign": "‏-",
-                "percentSign": "٪",
+                "plusSign": "؜+",
+                "minusSign": "؜-",
+                "percentSign": "٪؜",
                 "infinity": "∞"
             },
             "latn": {
@@ -315,7 +317,6 @@
             "EUR": "€",
             "GBP": "£",
             "HKD": "HK$",
-            "IDR": "ر.إن.",
             "ILS": "₪",
             "INR": "₹",
             "IQD": "د.ع.‏",
@@ -332,16 +333,13 @@
             "MXN": "MX$",
             "NZD": "NZ$",
             "OMR": "ر.ع.‏",
-            "PKR": "ر.ب.",
             "QAR": "ر.ق.‏",
             "SAR": "ر.س.‏",
             "SDD": "د.س.‏",
             "SDG": "ج.س.",
-            "SSP": "ج.ج.س.",
             "SYP": "ل.س.‏",
             "THB": "฿",
             "TND": "د.ت.‏",
-            "TRY": "ل.ت.",
             "TWD": "NT$",
             "USD": "US$",
             "VND": "₫",

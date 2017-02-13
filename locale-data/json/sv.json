@@ -44,6 +44,7 @@
                 "MMMEd": "E d MMM",
                 "MMMMd": "d MMMM",
                 "MMMMEd": "E d MMMM",
+                "MMMMW": "'vecka' W 'i' MMM",
                 "ms": "mm:ss",
                 "y": "y",
                 "yM": "y-MM",
@@ -55,7 +56,8 @@
                 "yMMMEd": "E d MMM y",
                 "yMMMM": "MMMM y",
                 "yQQQ": "QQQ y",
-                "yQQQQ": "QQQQ y"
+                "yQQQQ": "QQQQ y",
+                "yw": "'vecka' w, y"
             },
             "dateFormats": {
                 "yMMMMEEEEd": "EEEE d MMMM y",
@@ -306,6 +308,7 @@
             "EEK": "Ekr",
             "EGP": "EG£",
             "EUR": "€",
+            "IEP": "IE£",
             "ILS": "₪",
             "ISK": "Ikr",
             "JMD": "JM$",

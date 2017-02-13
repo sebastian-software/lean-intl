@@ -10,8 +10,8 @@
         "formats": {
             "short": "{1} {0}",
             "medium": "{1} {0}",
-            "full": "{1} {0}",
-            "long": "{1} {0}",
+            "full": "{1} 'om' {0}",
+            "long": "{1} 'om' {0}",
             "availableFormats": {
                 "d": "d",
                 "E": "ccc",
@@ -41,6 +41,7 @@
                 "MMMd": "d MMM",
                 "MMMEd": "E d MMM",
                 "MMMMd": "d MMMM",
+                "MMMMW": "'week' W 'van' MMM",
                 "ms": "mm:ss",
                 "y": "y",
                 "yM": "M-y",
@@ -51,7 +52,8 @@
                 "yMMMEd": "E d MMM y",
                 "yMMMM": "MMMM y",
                 "yQQQ": "QQQ y",
-                "yQQQQ": "QQQQ y"
+                "yQQQQ": "QQQQ y",
+                "yw": "'week' w 'in' y"
             },
             "dateFormats": {
                 "yMMMMEEEEd": "EEEE d MMMM y",

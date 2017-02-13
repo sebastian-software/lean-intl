@@ -41,6 +41,7 @@
                 "MMMd": "d. MMM",
                 "MMMEd": "E d. MMM",
                 "MMMMd": "d. MMMM",
+                "MMMMW": "'week' W 'of' MMMM",
                 "ms": "mm:ss",
                 "y": "y",
                 "yM": "Y-MM",
@@ -51,7 +52,8 @@
                 "yMMMEd": "E d. MMM. y",
                 "yMMMM": "MMMM y",
                 "yQQQ": "QQQy",
-                "yQQQQ": "QQQQ y"
+                "yQQQQ": "QQQQ y",
+                "yw": "'week' w 'of' y"
             },
             "dateFormats": {
                 "yMMMMEEEEd": "EEEE, 'dä' d. MMMM y",
@@ -133,7 +135,7 @@
                     ],
                     "long": [
                         "Sunndaach",
-                        "Moondaach",
+                        "Mohndaach",
                         "Dinnsdaach",
                         "Metwoch",
                         "Dunnersdaach",
@@ -170,7 +172,7 @@
                         "M",
                         "J",
                         "J",
-                        "A",
+                        "O",
                         "S",
                         "O",
                         "N",
@@ -181,7 +183,7 @@
                         "Fäb",
                         "Mäz",
                         "Apr",
-                        "Mäi",
+                        "Mai",
                         "Jun",
                         "Jul",
                         "Ouj",
@@ -195,12 +197,12 @@
                         "Fäbrowa",
                         "Määz",
                         "Aprell",
-                        "Mäi",
+                        "Mai",
                         "Juuni",
                         "Juuli",
                         "Oujoß",
                         "Septämber",
-                        "Oktoober",
+                        "Oktohber",
                         "Novämber",
                         "Dezämber"
                     ]
@@ -226,7 +228,7 @@
                     ],
                     "long": [
                         "Sunndaach",
-                        "Moondaach",
+                        "Mohndaach",
                         "Dinnsdaach",
                         "Metwoch",
                         "Dunnersdaach",
@@ -244,14 +246,14 @@
                     "short": [
                         "v. Chr.",
                         "n. Chr.",
-                        "v. d. Z.",
-                        "d. Z."
+                        "v. Kr.",
+                        "n. K."
                     ],
                     "long": [
-                        "vür Chrestus",
-                        "noh Chrestus",
-                        "vür der gewöhnlichen Zeitrechnung",
-                        "der gewöhnlichen Zeitrechnung"
+                        "vür Krestos",
+                        "noh Krestos",
+                        "vür de jewöhnlejje Ziggrääschnong",
+                        "en de jewöhnlejje Ziggrääschnong"
                     ]
                 },
                 "dayPeriods": {

@@ -15,47 +15,49 @@
             "availableFormats": {
                 "d": "d",
                 "E": "ccc",
-                "Ed": "E d",
+                "Ed": "d E",
                 "Ehm": "E h:mm a",
-                "EHm": "E H:mm",
+                "EHm": "E HH:mm",
                 "Ehms": "E h:mm:ss a",
-                "EHms": "E H:mm:ss",
+                "EHms": "E HH:mm:ss",
                 "Gy": "y G",
                 "GyMMM": "MMM y G",
-                "GyMMMd": "d MMM y G",
-                "GyMMMEd": "E d MMM y G",
+                "GyMMMd": "MMM d, y G",
+                "GyMMMEd": "E, MMM d, y G",
                 "h": "h a",
-                "H": "H",
+                "H": "HH",
                 "HHmmZ": "HH:mm (Z)",
                 "hm": "h:mm a",
-                "Hm": "H:mm",
+                "Hm": "HH:mm",
                 "hms": "h:mm:ss a",
-                "Hms": "H:mm:ss",
+                "Hms": "HH:mm:ss",
                 "hmsv": "h:mm:ss a v",
                 "Hmsv": "HH:mm:ss v",
                 "hmv": "h:mm a v",
                 "Hmv": "HH:mm v",
                 "M": "L",
                 "Md": "M/d",
-                "MEd": "E M/d",
+                "MEd": "E, M/d",
                 "MMM": "LLL",
-                "MMMd": "d LLL",
-                "MMMEd": "E d LLL",
-                "MMMMd": "d LLLL",
+                "MMMd": "MMM d",
+                "MMMEd": "E, MMM d",
+                "MMMMd": "MMMM d",
                 "MMMMEd": "E d LLLL",
+                "MMMMW": "هفته W از MMM",
                 "mmss": "mm:ss",
                 "ms": "mm:ss",
                 "y": "y",
-                "yM": "y/M",
-                "yMd": "y/M/d",
-                "yMEd": "E y/M/d",
+                "yM": "M/y",
+                "yMd": "M/d/y",
+                "yMEd": "E, M/d/y",
                 "yMMM": "MMM y",
-                "yMMMd": "d MMM y",
-                "yMMMEd": "E d MMM y",
+                "yMMMd": "MMM d, y",
+                "yMMMEd": "E, MMM d, y",
                 "yMMMM": "MMMM y",
                 "yMMMMEEEEd": "EEEE d MMMM y",
-                "yQQQ": "QQQQ y",
-                "yQQQQ": "QQQQ y"
+                "yQQQ": "QQQ y",
+                "yQQQQ": "QQQQ y",
+                "yw": "هفته w از y"
             },
             "dateFormats": {
                 "yMMMMEEEEd": "EEEE d MMMM y",
@@ -167,13 +169,13 @@
             "gregory": {
                 "months": {
                     "narrow": [
-                        "ژ",
+                        "ج",
                         "ف",
                         "م",
-                        "آ",
+                        "ا",
                         "م",
-                        "ژ",
-                        "ژ",
+                        "ج",
+                        "ج",
                         "ا",
                         "س",
                         "ا",
@@ -276,22 +278,23 @@
                 "negativePattern": "{minusSign}{number}"
             },
             "currency": {
-                "positivePattern": "‎{currency}{number}",
-                "negativePattern": "{minusSign}‎{currency}{number}"
+                "positivePattern": "{currency} {number}",
+                "negativePattern": "{minusSign}{currency} {number}"
             },
             "percent": {
-                "positivePattern": "{number}{percentSign}",
-                "negativePattern": "{minusSign}{number}{percentSign}"
-            }
+                "positivePattern": "{percentSign} {number}",
+                "negativePattern": "{percentSign} {minusSign}{number}"
+            },
+            "secondaryGroupSize": 8
         },
         "symbols": {
             "arabext": {
                 "decimal": "٫",
                 "group": "٬",
                 "nan": "ناعدد",
-                "plusSign": "‎+‎",
+                "plusSign": "‎+",
                 "minusSign": "‎−",
-                "percentSign": "٪",
+                "percentSign": "‎٪",
                 "infinity": "∞"
             },
             "latn": {

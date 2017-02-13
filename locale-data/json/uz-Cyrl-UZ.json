@@ -16,52 +16,54 @@
                 "d": "d",
                 "E": "ccc",
                 "Ed": "d, E",
-                "Ehm": "E h:mm a",
-                "EHm": "E HH:mm",
-                "Ehms": "E h:mm:ss a",
-                "EHms": "E HH:mm:ss",
+                "Ehm": "E, h:mm a",
+                "EHm": "E, HH:mm",
+                "Ehms": "E, h:mm:ss a",
+                "EHms": "E, HH:mm:ss",
                 "Gy": "G y",
-                "GyMMM": "G y MMM",
-                "GyMMMd": "G y MMM d",
-                "GyMMMEd": "G y MMM d, E",
+                "GyMMM": "MMM, G y",
+                "GyMMMd": "d MMM, G y",
+                "GyMMMEd": "E, d-MMM, G y",
                 "h": "h a",
                 "H": "HH",
                 "hm": "h:mm a",
                 "Hm": "HH:mm",
                 "hms": "h:mm:ss a",
                 "Hms": "HH:mm:ss",
-                "hmsv": "h:mm:ss a v",
-                "Hmsv": "HH:mm:ss v",
-                "hmv": "h:mm a v",
-                "Hmv": "HH:mm v",
-                "M": "L",
-                "Md": "MM-dd",
-                "MEd": "MM-dd, E",
+                "hmsv": "h:mm:ss a (v)",
+                "Hmsv": "HH:mm:ss (v)",
+                "hmv": "h:mm a (v)",
+                "Hmv": "HH:mm (v)",
+                "M": "LL",
+                "Md": "dd/MM",
+                "MEd": "E, dd/MM",
                 "MMM": "LLL",
-                "MMMd": "MMM d",
-                "MMMEd": "MMM d, E",
-                "MMMMd": "MMMM d",
+                "MMMd": "d MMM",
+                "MMMEd": "E, d MMM",
+                "MMMMd": "d MMMM",
+                "MMMMW": "MMM, W-'ҳафта'",
                 "ms": "mm:ss",
                 "y": "y",
-                "yM": "y-MM",
-                "yMd": "y-MM-dd",
-                "yMEd": "y-MM-dd, E",
-                "yMMM": "y MMM",
-                "yMMMd": "y MMM d",
-                "yMMMEd": "y MMM d, E",
-                "yMMMM": "y MMMM",
-                "yQQQ": "y QQQ",
-                "yQQQQ": "y QQQQ"
+                "yM": "MM/y",
+                "yMd": "dd/MM/y",
+                "yMEd": "E, dd/MM/y",
+                "yMMM": "MMM, y",
+                "yMMMd": "d MMM, y",
+                "yMMMEd": "E, d-MMM, y",
+                "yMMMM": "MMMM, y",
+                "yQQQ": "y, QQQ",
+                "yQQQQ": "y, QQQQ",
+                "yw": "y, w-'ҳафта'"
             },
             "dateFormats": {
-                "yMMMMEEEEd": "EEEE, y MMMM dd",
-                "yMMMMd": "y MMMM d",
-                "yMMMd": "y MMM d",
+                "yMMMMEEEEd": "EEEE, dd MMMM, y",
+                "yMMMMd": "d MMMM, y",
+                "yMMMd": "d MMM, y",
                 "yMd": "dd/MM/yy"
             },
             "timeFormats": {
-                "hmmsszzzz": "HH:mm:ss zzzz",
-                "hmsz": "HH:mm:ss z",
+                "hmmsszzzz": "HH:mm:ss (zzzz)",
+                "hmsz": "HH:mm:ss (z)",
                 "hms": "HH:mm:ss",
                 "hm": "HH:mm"
             }
@@ -123,13 +125,13 @@
                         "Ш"
                     ],
                     "short": [
-                        "Якш",
-                        "Душ",
-                        "Сеш",
-                        "Чор",
-                        "Пай",
-                        "Жум",
-                        "Шан"
+                        "якш",
+                        "душ",
+                        "сеш",
+                        "чор",
+                        "пай",
+                        "жум",
+                        "шан"
                     ],
                     "long": [
                         "якшанба",
@@ -156,8 +158,8 @@
                     ]
                 },
                 "dayPeriods": {
-                    "am": "AM",
-                    "pm": "PM"
+                    "am": "ТО",
+                    "pm": "ТК"
                 }
             },
             "gregory": {
@@ -177,32 +179,32 @@
                         "Д"
                     ],
                     "short": [
-                        "Янв",
-                        "Фев",
-                        "Мар",
-                        "Апр",
-                        "Май",
-                        "Июн",
-                        "Июл",
-                        "Авг",
-                        "Сен",
-                        "Окт",
-                        "Ноя",
-                        "Дек"
+                        "янв",
+                        "фев",
+                        "мар",
+                        "апр",
+                        "май",
+                        "июн",
+                        "июл",
+                        "авг",
+                        "сен",
+                        "окт",
+                        "ноя",
+                        "дек"
                     ],
                     "long": [
-                        "Январ",
-                        "Феврал",
-                        "Март",
-                        "Апрел",
-                        "Май",
-                        "Июн",
-                        "Июл",
-                        "Август",
-                        "Сентябр",
-                        "Октябр",
-                        "Ноябр",
-                        "Декабр"
+                        "январ",
+                        "феврал",
+                        "март",
+                        "апрел",
+                        "май",
+                        "июн",
+                        "июл",
+                        "август",
+                        "сентябр",
+                        "октябр",
+                        "ноябр",
+                        "декабр"
                     ]
                 },
                 "days": {
@@ -216,13 +218,13 @@
                         "Ш"
                     ],
                     "short": [
-                        "Якш",
-                        "Душ",
-                        "Сеш",
-                        "Чор",
-                        "Пай",
-                        "Жум",
-                        "Шан"
+                        "якш",
+                        "душ",
+                        "сеш",
+                        "чор",
+                        "пай",
+                        "жум",
+                        "шан"
                     ],
                     "long": [
                         "якшанба",
@@ -236,27 +238,27 @@
                 },
                 "eras": {
                     "narrow": [
-                        "М.А.",
-                        "Э",
-                        "BCE",
+                        "м.а.",
+                        "милодий",
+                        "э.а.",
                         "CE"
                     ],
                     "short": [
-                        "М.А.",
-                        "Э",
-                        "BCE",
+                        "м.а.",
+                        "милодий",
+                        "э.а.",
                         "CE"
                     ],
                     "long": [
-                        "М.А.",
-                        "Э",
-                        "BCE",
+                        "милоддан аввалги",
+                        "милодий",
+                        "эрамиздан аввалги",
                         "CE"
                     ]
                 },
                 "dayPeriods": {
-                    "am": "AM",
-                    "pm": "PM"
+                    "am": "ТО",
+                    "pm": "ТК"
                 }
             }
         }
@@ -271,8 +273,8 @@
                 "negativePattern": "{minusSign}{number}"
             },
             "currency": {
-                "positivePattern": "{currency} {number}",
-                "negativePattern": "{minusSign}{currency} {number}"
+                "positivePattern": "{number} {currency}",
+                "negativePattern": "{minusSign}{number} {currency}"
             },
             "percent": {
                 "positivePattern": "{number}{percentSign}",
@@ -283,7 +285,7 @@
             "latn": {
                 "decimal": ",",
                 "group": " ",
-                "nan": "NaN",
+                "nan": "ҳақиқий сон эмас",
                 "plusSign": "+",
                 "minusSign": "-",
                 "percentSign": "%",

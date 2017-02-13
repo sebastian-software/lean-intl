@@ -23,7 +23,7 @@
                 "Gy": "y G",
                 "GyMMM": "MMM y G",
                 "GyMMMd": "dd MMM, y G",
-                "GyMMMEd": "E, d MMM, y G",
+                "GyMMMEd": "E, dd/MM/y G",
                 "h": "h a",
                 "H": "HH",
                 "hm": "h:mm a",
@@ -43,6 +43,7 @@
                 "MMMEd": "E, d MMM",
                 "MMMMd": "d MMMM",
                 "MMMMEd": "E, d MMMM",
+                "MMMMW": "'tuần' W 'của' 'tháng' M",
                 "mmss": "mm:ss",
                 "ms": "mm:ss",
                 "y": "y",
@@ -55,11 +56,12 @@
                 "yMMMEd": "E, d MMM, y",
                 "yMMMM": "MMMM 'năm' y",
                 "yQQQ": "QQQ y",
-                "yQQQQ": "QQQQ 'năm' y"
+                "yQQQQ": "QQQQ 'năm' y",
+                "yw": "'tuần' w 'của' 'năm' y"
             },
             "dateFormats": {
-                "yMMMMEEEEd": "EEEE, 'ngày' dd MMMM 'năm' y",
-                "yMMMMd": "'Ngày' dd 'tháng' MM 'năm' y",
+                "yMMMMEEEEd": "EEEE, d MMMM, y",
+                "yMMMMd": "d MMMM, y",
                 "yMMMd": "d MMM, y",
                 "yMd": "dd/MM/y"
             },
@@ -243,19 +245,19 @@
                         "tr. CN",
                         "sau CN",
                         "BCE",
-                        "CE"
+                        "CN"
                     ],
                     "short": [
-                        "tr. CN",
+                        "Trước CN",
                         "sau CN",
                         "BCE",
-                        "CE"
+                        "CN"
                     ],
                     "long": [
-                        "tr. CN",
+                        "Trước CN",
                         "sau CN",
                         "BCE",
-                        "CE"
+                        "CN"
                     ]
                 },
                 "dayPeriods": {

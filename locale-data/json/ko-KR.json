@@ -46,6 +46,7 @@
                 "MMMEd": "MMM d일 (E)",
                 "MMMEEEEd": "MMM d일 EEEE",
                 "MMMMd": "MMMM d일",
+                "MMMMW": "MMM W번째 주",
                 "mmss": "mm:ss",
                 "ms": "mm:ss",
                 "y": "y년",
@@ -60,7 +61,8 @@
                 "yMMMEEEEd": "y년 MMM d일 EEEE",
                 "yMMMM": "y년 MMMM",
                 "yQQQ": "y년 QQQ",
-                "yQQQQ": "y년 QQQQ"
+                "yQQQQ": "y년 QQQQ",
+                "yw": "y년 w번째 주"
             },
             "dateFormats": {
                 "yMMMMEEEEd": "y년 M월 d일 EEEE",
@@ -313,7 +315,6 @@
             "KRW": "₩",
             "MXN": "MX$",
             "NZD": "NZ$",
-            "THB": "฿",
             "TWD": "NT$",
             "USD": "US$",
             "VND": "₫",

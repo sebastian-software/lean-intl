@@ -26,15 +26,15 @@
                 "GyMMMEd": "E d. MMM y G",
                 "h": "h a",
                 "H": "HH",
-                "hm": "h.mm a",
-                "Hm": "HH.mm",
-                "hms": "h.mm.ss a",
-                "Hms": "HH.mm.ss",
+                "hm": "h:mm a",
+                "Hm": "HH:mm",
+                "hms": "h:mm:ss a",
+                "Hms": "HH:mm:ss",
                 "hmsv": "h:mm:ss a v",
                 "Hmsv": "HH:mm:ss v",
                 "hmv": "h:mm a v",
                 "Hmv": "HH:mm v",
-                "M": "L",
+                "M": "L.",
                 "Md": "d.M.",
                 "MEd": "E d.M",
                 "MMdd": "d.M.",
@@ -42,9 +42,10 @@
                 "MMMd": "d. MMM",
                 "MMMEd": "E d. MMM",
                 "MMMMd": "d. MMMM",
-                "ms": "mm.ss",
+                "MMMMW": "'veke' W 'i' MMM",
+                "ms": "mm:ss",
                 "y": "y",
-                "yM": "M y",
+                "yM": "M.y",
                 "yMd": "d.M.y",
                 "yMEd": "E d.M.y",
                 "yMM": "MM.y",
@@ -53,7 +54,8 @@
                 "yMMMEd": "E d. MMM y",
                 "yMMMM": "MMMM y",
                 "yQQQ": "QQQ y",
-                "yQQQQ": "QQQQ y"
+                "yQQQQ": "QQQQ y",
+                "yw": "'veke' w 'i' y"
             },
             "dateFormats": {
                 "yMMMMEEEEd": "EEEE d. MMMM y",
@@ -62,10 +64,10 @@
                 "yMd": "dd.MM.y"
             },
             "timeFormats": {
-                "hmmsszzzz": "'kl'. HH.mm.ss zzzz",
-                "hmsz": "HH.mm.ss z",
-                "hms": "HH.mm.ss",
-                "hm": "HH.mm"
+                "hmmsszzzz": "'kl'. HH:mm:ss zzzz",
+                "hmsz": "HH:mm:ss z",
+                "hms": "HH:mm:ss",
+                "hm": "HH:mm"
             }
         },
         "calendars": {
@@ -240,20 +242,20 @@
                     "narrow": [
                         "f.Kr.",
                         "e.Kr.",
-                        "BCE",
-                        "CE"
+                        "f.v.t.",
+                        "v.t."
                     ],
                     "short": [
                         "f.Kr.",
                         "e.Kr.",
-                        "BCE",
-                        "CE"
+                        "f.v.t.",
+                        "v.t."
                     ],
                     "long": [
                         "f.Kr.",
                         "e.Kr.",
-                        "BCE",
-                        "CE"
+                        "f.v.t.",
+                        "v.t."
                     ]
                 },
                 "dayPeriods": {

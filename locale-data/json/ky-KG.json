@@ -40,24 +40,26 @@
                 "MMM": "LLL",
                 "MMMd": "d-MMM",
                 "MMMEd": "d-MMM, E",
-                "MMMMd": "MMMM d",
+                "MMMMd": "d-MMMM",
+                "MMMMW": "MMM 'айынын' W-'аптасы'",
                 "ms": "mm:ss",
                 "y": "y",
                 "yM": "y-MM",
-                "yMd": "y-MM-dd",
-                "yMEd": "y-MM-dd, E",
+                "yMd": "y-dd-MM",
+                "yMEd": "y-dd-MM, E",
                 "yMMM": "y-'ж'. MMM",
                 "yMMMd": "y-'ж'. d-MMM",
                 "yMMMEd": "y-'ж'. d-MMM, E",
-                "yMMMM": "y MMMM",
+                "yMMMM": "y-'ж'., MMMM",
                 "yQQQ": "y-'ж'., QQQ",
-                "yQQQQ": "y-'ж'., QQQQ"
+                "yQQQQ": "y-'ж'., QQQQ",
+                "yw": "y-'жылдын' w-'аптасы'"
             },
             "dateFormats": {
-                "yMMMMEEEEd": "EEEE, d-MMMM, y-'ж'.",
-                "yMMMMd": "y MMMM d",
-                "yMMMd": "y MMM d",
-                "yMd": "dd.MM.yy"
+                "yMMMMEEEEd": "y-'ж'., d-MMMM, EEEE",
+                "yMMMMd": "y-'ж'., d-MMMM",
+                "yMMMd": "y-'ж'., d-MMM",
+                "yMd": "d/M/yy"
             },
             "timeFormats": {
                 "hmmsszzzz": "HH:mm:ss zzzz",
@@ -250,7 +252,7 @@
                     "long": [
                         "биздин заманга чейин",
                         "биздин заман",
-                        "BCE",
+                        "б.з.ч.",
                         "CE"
                     ]
                 },

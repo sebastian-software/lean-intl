@@ -16,35 +16,36 @@
                 "d": "d",
                 "E": "E",
                 "Ed": "E d.",
-                "Ehm": "E, h.mm a",
-                "EHm": "E, HH.mm",
-                "Ehms": "E, h.mm.ss a",
-                "EHms": "E, HH.mm.ss",
+                "Ehm": "E h:mm a",
+                "EHm": "E HH:mm",
+                "Ehms": "E h:mm:ss a",
+                "EHms": "E HH:mm:ss",
                 "Gy": "y. G",
                 "GyMMM": "MMM y. G",
                 "GyMMMd": "d. MMM y. G",
                 "GyMMMEd": "E, d. MMM y. G",
                 "h": "h a",
                 "H": "HH",
-                "hm": "hh.mm a",
-                "Hm": "HH.mm",
-                "hms": "hh.mm.ss a",
-                "Hms": "HH.mm.ss",
-                "hmsv": "h.mm.ss a v",
-                "Hmsv": "HH.mm.ss v",
-                "hmv": "h.mm a v",
-                "Hmv": "HH.mm v",
+                "hm": "h:mm a",
+                "Hm": "HH:mm",
+                "hms": "h:mm:ss a",
+                "Hms": "HH:mm:ss",
+                "hmsv": "h:mm:ss a v",
+                "Hmsv": "HH:mm:ss v",
+                "hmv": "h:mm a v",
+                "Hmv": "HH:mm v",
                 "M": "L",
-                "Md": "d/M",
+                "Md": "d.M.",
                 "MEd": "E, d.M.",
-                "MMdd": "MM-dd",
+                "MMdd": "dd.MM.",
                 "MMM": "LLL",
                 "MMMd": "d. MMM",
                 "MMMdd": "dd.MMM",
                 "MMMEd": "E d. MMM",
                 "MMMMd": "d. MMMM",
                 "MMMMEd": "E, d. MMMM",
-                "ms": "mm.ss",
+                "MMMMW": "W. 'сједмица' 'у' MMM",
+                "ms": "mm:ss",
                 "y": "y.",
                 "yM": "M.y.",
                 "yMd": "d.M.y.",
@@ -55,8 +56,9 @@
                 "yMMMd": "d. MMM y.",
                 "yMMMEd": "E, d. MMM y.",
                 "yMMMM": "MMMM y.",
-                "yQQQ": "QQQ. y",
-                "yQQQQ": "QQQQ. y"
+                "yQQQ": "QQQ y.",
+                "yQQQQ": "QQQQ y.",
+                "yw": "w. 'сједмица' 'у' y."
             },
             "dateFormats": {
                 "yMMMMEEEEd": "EEEE, dd. MMMM y.",
@@ -65,10 +67,10 @@
                 "yMd": "d.M.yy."
             },
             "timeFormats": {
-                "hmmsszzzz": "HH.mm.ss zzzz",
-                "hmsz": "HH.mm.ss z",
-                "hms": "HH.mm.ss",
-                "hm": "HH.mm"
+                "hmmsszzzz": "HH:mm:ss zzzz",
+                "hmsz": "HH:mm:ss z",
+                "hms": "HH:mm:ss",
+                "hm": "HH:mm"
             }
         },
         "calendars": {
@@ -128,19 +130,19 @@
                         "с"
                     ],
                     "short": [
-                        "нед",
-                        "пон",
-                        "уто",
-                        "сре",
-                        "чет",
-                        "пет",
-                        "суб"
+                        "нед.",
+                        "пон.",
+                        "ут.",
+                        "ср.",
+                        "чет.",
+                        "пет.",
+                        "суб."
                     ],
                     "long": [
-                        "недеља",
+                        "недјеља",
                         "понедељак",
                         "уторак",
-                        "среда",
+                        "сриједа",
                         "четвртак",
                         "петак",
                         "субота"
@@ -161,7 +163,7 @@
                     ]
                 },
                 "dayPeriods": {
-                    "am": "пре подне",
+                    "am": "прије подне",
                     "pm": "по подне"
                 }
             },
@@ -182,18 +184,18 @@
                         "д"
                     ],
                     "short": [
-                        "јан",
-                        "феб",
-                        "мар",
-                        "апр",
+                        "јан.",
+                        "феб.",
+                        "март",
+                        "апр.",
                         "мај",
                         "јун",
                         "јул",
-                        "авг",
-                        "сеп",
-                        "окт",
-                        "нов",
-                        "дец"
+                        "авг.",
+                        "септ.",
+                        "окт.",
+                        "нов.",
+                        "дец."
                     ],
                     "long": [
                         "јануар",
@@ -221,19 +223,19 @@
                         "с"
                     ],
                     "short": [
-                        "нед",
-                        "пон",
-                        "уто",
-                        "сре",
-                        "чет",
-                        "пет",
-                        "суб"
+                        "нед.",
+                        "пон.",
+                        "ут.",
+                        "ср.",
+                        "чет.",
+                        "пет.",
+                        "суб."
                     ],
                     "long": [
-                        "недеља",
+                        "недјеља",
                         "понедељак",
                         "уторак",
-                        "среда",
+                        "сриједа",
                         "четвртак",
                         "петак",
                         "субота"
@@ -253,14 +255,14 @@
                         "CE"
                     ],
                     "long": [
-                        "пре нове ере",
+                        "прије нове ере",
                         "нове ере",
-                        "п. н. е.",
-                        "н. е."
+                        "BCE",
+                        "CE"
                     ]
                 },
                 "dayPeriods": {
-                    "am": "пре подне",
+                    "am": "прије подне",
                     "pm": "по подне"
                 }
             }
@@ -297,9 +299,7 @@
         },
         "currencies": {
             "BAM": "КМ",
-            "BGN": "[BGN]",
             "BRL": "R$",
-            "BYR": "[BYR]",
             "CAD": "CA$",
             "CNY": "CN¥",
             "EUR": "€",

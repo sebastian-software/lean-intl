@@ -30,9 +30,9 @@
                 "Hm": "HH:mm",
                 "hms": "h:mm:ss a",
                 "Hms": "HH:mm:ss",
-                "hmsv": "h:mm:ss (v)",
+                "hmsv": "h:mm:ss a (v)",
                 "Hmsv": "HH:mm:ss (v)",
-                "hmv": "h:mm (v)",
+                "hmv": "h:mm a (v)",
                 "Hmv": "HH:mm (v)",
                 "M": "LL",
                 "Md": "dd/MM",
@@ -41,6 +41,7 @@
                 "MMMd": "d-MMM",
                 "MMMEd": "E, d-MMM",
                 "MMMMd": "d-MMMM",
+                "MMMMW": "MMM, W-'hafta'",
                 "ms": "mm:ss",
                 "y": "y",
                 "yM": "MM/y",
@@ -51,10 +52,11 @@
                 "yMMMEd": "E, d-MMM, y",
                 "yMMMM": "MMMM, y",
                 "yQQQ": "y, QQQ",
-                "yQQQQ": "y, QQQQ"
+                "yQQQQ": "y, QQQQ",
+                "yw": "y, w-'hafta'"
             },
             "dateFormats": {
-                "yMMMMEEEEd": "EEEE, y MMMM dd",
+                "yMMMMEEEEd": "EEEE, d-MMMM, y",
                 "yMMMMd": "d-MMMM, y",
                 "yMMMd": "d-MMM, y",
                 "yMd": "dd/MM/yy"
@@ -123,13 +125,13 @@
                         "S"
                     ],
                     "short": [
-                        "Ya",
-                        "Du",
-                        "Se",
-                        "Ch",
-                        "Pa",
-                        "Ju",
-                        "Sh"
+                        "Yak",
+                        "Dush",
+                        "Sesh",
+                        "Chor",
+                        "Pay",
+                        "Jum",
+                        "Shan"
                     ],
                     "long": [
                         "yakshanba",
@@ -199,8 +201,8 @@
                         "iyun",
                         "iyul",
                         "avgust",
-                        "Sentabr",
-                        "Oktabr",
+                        "sentabr",
+                        "oktabr",
                         "noyabr",
                         "dekabr"
                     ]
@@ -216,13 +218,13 @@
                         "S"
                     ],
                     "short": [
-                        "Ya",
-                        "Du",
-                        "Se",
-                        "Ch",
-                        "Pa",
-                        "Ju",
-                        "Sh"
+                        "Yak",
+                        "Dush",
+                        "Sesh",
+                        "Chor",
+                        "Pay",
+                        "Jum",
+                        "Shan"
                     ],
                     "long": [
                         "yakshanba",

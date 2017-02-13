@@ -45,6 +45,7 @@
                 "MMMEd": "M月d日(E)",
                 "MMMEEEEd": "M月d日EEEE",
                 "MMMMd": "M月d日",
+                "MMMMW": "M月第W週",
                 "ms": "mm:ss",
                 "y": "y年",
                 "yM": "y/M",
@@ -58,7 +59,8 @@
                 "yMMMEEEEd": "y年M月d日EEEE",
                 "yMMMM": "y年M月",
                 "yQQQ": "y/QQQ",
-                "yQQQQ": "yQQQQ"
+                "yQQQQ": "y年QQQQ",
+                "yw": "y年第w週"
             },
             "dateFormats": {
                 "yMMMMEEEEd": "y年M月d日EEEE",
@@ -298,7 +300,7 @@
             }
         },
         "currencies": {
-            "AUD": "AU$",
+            "AUD": "A$",
             "BRL": "R$",
             "CAD": "CA$",
             "CNY": "元",
@@ -311,7 +313,6 @@
             "KRW": "₩",
             "MXN": "MX$",
             "NZD": "NZ$",
-            "THB": "฿",
             "TWD": "NT$",
             "USD": "$",
             "VND": "₫",

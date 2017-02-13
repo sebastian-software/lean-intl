@@ -41,6 +41,7 @@
                 "MMMd": "MMM d",
                 "MMMEd": "MMM d, E",
                 "MMMMd": "MMMM d",
+                "MMMMW": "'week' W 'of' MMM",
                 "ms": "mm:ss",
                 "y": "y",
                 "yM": "y-MM",
@@ -51,7 +52,8 @@
                 "yMMMEd": "y MMM d, E",
                 "yMMMM": "y MMMM",
                 "yQQQ": "y QQQ",
-                "yQQQQ": "y QQQQ"
+                "yQQQQ": "y QQQQ",
+                "yw": "'week' w 'of' y"
             },
             "dateFormats": {
                 "yMMMMEEEEd": "y MMMM d, EEEE",
@@ -115,8 +117,8 @@
                 "days": {
                     "narrow": [
                         "S",
-                        "V",
                         "M",
+                        "D",
                         "G",
                         "D",
                         "B",
@@ -133,12 +135,12 @@
                     ],
                     "long": [
                         "sotnabeaivi",
-                        "vuossárga",
-                        "maŋŋebárga",
-                        "gaskavahkku",
-                        "duorasdat",
-                        "bearjadat",
-                        "lávvardat"
+                        "vuossárgga",
+                        "maŋŋebárgga",
+                        "gaskavahku",
+                        "duorastaga",
+                        "bearjadaga",
+                        "lávvardaga"
                     ]
                 },
                 "eras": {
@@ -208,8 +210,8 @@
                 "days": {
                     "narrow": [
                         "S",
-                        "V",
                         "M",
+                        "D",
                         "G",
                         "D",
                         "B",
@@ -226,12 +228,12 @@
                     ],
                     "long": [
                         "sotnabeaivi",
-                        "vuossárga",
-                        "maŋŋebárga",
-                        "gaskavahkku",
-                        "duorasdat",
-                        "bearjadat",
-                        "lávvardat"
+                        "vuossárgga",
+                        "maŋŋebárgga",
+                        "gaskavahku",
+                        "duorastaga",
+                        "bearjadaga",
+                        "lávvardaga"
                     ]
                 },
                 "eras": {

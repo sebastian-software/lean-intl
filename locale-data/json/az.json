@@ -41,6 +41,7 @@
                 "MMMd": "d MMM",
                 "MMMEd": "d MMM, E",
                 "MMMMd": "MMMM d",
+                "MMMMW": "MMM, W 'həftə'",
                 "ms": "mm:ss",
                 "y": "y",
                 "yM": "MM.y",
@@ -51,7 +52,8 @@
                 "yMMMEd": "d MMM y, E",
                 "yMMMM": "y MMMM",
                 "yQQQ": "y QQQ",
-                "yQQQQ": "y QQQQ"
+                "yQQQQ": "y QQQQ",
+                "yw": "y, w 'həftə'"
             },
             "dateFormats": {
                 "yMMMMEEEEd": "d MMMM y, EEEE",
@@ -237,21 +239,21 @@
                 "eras": {
                     "narrow": [
                         "e.ə.",
-                        "b.e.",
-                        "ü.e.ö.",
-                        "ü.e."
+                        "y.e.",
+                        "b.e.ə.",
+                        "b.e."
                     ],
                     "short": [
                         "e.ə.",
-                        "b.e.",
-                        "ü.e.ö.",
-                        "ü.e."
+                        "y.e.",
+                        "b.e.ə.",
+                        "b.e."
                     ],
                     "long": [
                         "eramızdan əvvəl",
-                        "eramız",
-                        "ümumi eradan öncə",
-                        "ümumi era"
+                        "yeni era",
+                        "bizim eradan əvvəl",
+                        "bizim era"
                     ]
                 },
                 "dayPeriods": {

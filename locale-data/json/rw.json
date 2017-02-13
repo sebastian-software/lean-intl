@@ -41,6 +41,7 @@
                 "MMMd": "MMM d",
                 "MMMEd": "MMM d, E",
                 "MMMMd": "MMMM d",
+                "MMMMW": "'week' W 'of' MMM",
                 "ms": "mm:ss",
                 "y": "y",
                 "yM": "y-MM",
@@ -51,13 +52,14 @@
                 "yMMMEd": "y MMM d, E",
                 "yMMMM": "y MMMM",
                 "yQQQ": "y QQQ",
-                "yQQQQ": "y QQQQ"
+                "yQQQQ": "y QQQQ",
+                "yw": "'week' w 'of' y"
             },
             "dateFormats": {
-                "yMMMMEEEEd": "EEEE, y MMMM dd",
+                "yMMMMEEEEd": "y MMMM d, EEEE",
                 "yMMMMd": "y MMMM d",
                 "yMMMd": "y MMM d",
-                "yMd": "yy/MM/dd"
+                "yMd": "y-MM-dd"
             },
             "timeFormats": {
                 "hmmsszzzz": "HH:mm:ss zzzz",

@@ -47,6 +47,7 @@
                 "MMMM": "LLLL",
                 "MMMMd": "MMMM d 'd'.",
                 "MMMMEd": "MMMM d 'd'., E",
+                "MMMMW": "MMM W 'sav'.",
                 "ms": "mm:ss",
                 "y": "y",
                 "yM": "y-MM",
@@ -59,7 +60,8 @@
                 "yMMMMd": "y 'm'. MMMM d 'd'.",
                 "yMMMMEd": "y 'm'. MMMM d 'd'., E",
                 "yQQQ": "y QQQ",
-                "yQQQQ": "y QQQQ"
+                "yQQQQ": "y QQQQ",
+                "yw": "y w 'sav'."
             },
             "dateFormats": {
                 "yMMMMEEEEd": "y 'm'. MMMM d 'd'., EEEE",

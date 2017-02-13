@@ -10,17 +10,17 @@
         "formats": {
             "short": "{1} {0}",
             "medium": "{1} {0}",
-            "full": "{1} {0}",
-            "long": "{1} {0}",
+            "full": "{1} 'om' {0}",
+            "long": "{1} 'om' {0}",
             "availableFormats": {
                 "d": "d",
                 "E": "ccc",
-                "Ed": "E d",
+                "Ed": "d, E",
                 "Ehm": "E h:mm a",
                 "EHm": "E HH:mm",
                 "Ehms": "E h:mm:ss a",
                 "EHms": "E HH:mm:ss",
-                "Gy": "y G",
+                "Gy": "G y",
                 "GyMMM": "MMM y G",
                 "GyMMMd": "d MMM y G",
                 "GyMMMEd": "E d MMM y G",
@@ -41,6 +41,7 @@
                 "MMMd": "d MMM",
                 "MMMEd": "E d MMM",
                 "MMMMd": "d MMMM",
+                "MMMMW": "'wike' W 'fan' MMM",
                 "ms": "mm:ss",
                 "y": "y",
                 "yM": "M-y",
@@ -51,7 +52,8 @@
                 "yMMMEd": "E d MMM y",
                 "yMMMM": "MMMM y",
                 "yQQQ": "QQQ y",
-                "yQQQQ": "QQQQ y"
+                "yQQQQ": "QQQQ y",
+                "yw": "'wike' w 'fan' y"
             },
             "dateFormats": {
                 "yMMMMEEEEd": "EEEE d MMMM y",
@@ -114,13 +116,13 @@
                 },
                 "days": {
                     "narrow": [
-                        "Z",
+                        "S",
                         "M",
-                        "D",
+                        "T",
                         "W",
-                        "D",
-                        "V",
-                        "Z"
+                        "T",
+                        "F",
+                        "S"
                     ],
                     "short": [
                         "si",
@@ -177,43 +179,43 @@
                         "D"
                     ],
                     "short": [
-                        "jan.",
-                        "feb.",
-                        "mrt.",
-                        "apr.",
-                        "mai.",
-                        "jun.",
-                        "jul.",
-                        "aug.",
-                        "sep.",
-                        "okt.",
-                        "nov.",
-                        "des."
+                        "Jan",
+                        "Feb",
+                        "Mrt",
+                        "Apr",
+                        "Mai",
+                        "Jun",
+                        "Jul",
+                        "Aug",
+                        "Sep",
+                        "Okt",
+                        "Nov",
+                        "Des"
                     ],
                     "long": [
-                        "jannewaris",
-                        "febrewaris",
-                        "maart",
-                        "april",
-                        "maaie",
-                        "juny",
-                        "july",
-                        "augustus",
-                        "septimber",
-                        "oktober",
-                        "novimber",
-                        "desimber"
+                        "Jannewaris",
+                        "Febrewaris",
+                        "Maart",
+                        "April",
+                        "Maaie",
+                        "Juny",
+                        "July",
+                        "Augustus",
+                        "Septimber",
+                        "Oktober",
+                        "Novimber",
+                        "Desimber"
                     ]
                 },
                 "days": {
                     "narrow": [
-                        "Z",
+                        "S",
                         "M",
-                        "D",
+                        "T",
                         "W",
-                        "D",
-                        "V",
-                        "Z"
+                        "T",
+                        "F",
+                        "S"
                     ],
                     "short": [
                         "si",

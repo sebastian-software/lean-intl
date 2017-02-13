@@ -43,6 +43,7 @@
                 "MMMEd": "MMM d, E",
                 "MMMMd": "MMMM d",
                 "MMMMdd": "dd MMMM",
+                "MMMMW": "'week' W 'of' MMM",
                 "ms": "mm:ss",
                 "y": "y",
                 "yM": "y-MM",
@@ -54,7 +55,8 @@
                 "yMMMEd": "y MMM d, E",
                 "yMMMM": "MMMM y",
                 "yQQQ": "QQQ y",
-                "yQQQQ": "y QQQQ"
+                "yQQQQ": "y QQQQ",
+                "yw": "'week' w 'of' y"
             },
             "dateFormats": {
                 "yMMMMEEEEd": "EEEE, MMMM d, y",
@@ -239,20 +241,20 @@
                 },
                 "eras": {
                     "narrow": [
-                        "KD",
-                        "KB",
+                        "BCE",
+                        "CE",
                         "BCE",
                         "CE"
                     ],
                     "short": [
-                        "KD",
-                        "KB",
+                        "BCE",
+                        "CE",
                         "BCE",
                         "CE"
                     ],
                     "long": [
-                        "KD",
-                        "KB",
+                        "Dheengadda Jeesu",
+                        "CE",
                         "BCE",
                         "CE"
                     ]

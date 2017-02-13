@@ -47,9 +47,10 @@
                 "MMMMd": "d MMMM",
                 "MMMMdd": "d MMMM",
                 "MMMMEd": "E, d MMMM",
+                "MMMMW": "'седмица' W 'от' MMM",
                 "ms": "m:ss",
                 "y": "y 'г'.",
-                "yM": "M.y 'г'.",
+                "yM": "MM.y 'г'.",
                 "yMd": "d.MM.y 'г'.",
                 "yMEd": "E, d.MM.y 'г'.",
                 "yMMM": "MM.y 'г'.",
@@ -59,7 +60,8 @@
                 "yMMMMd": "d MMMM y 'г'.",
                 "yMMMMEd": "E, d MMMM y 'г'.",
                 "yQQQ": "QQQ y 'г'.",
-                "yQQQQ": "QQQQ y 'г'."
+                "yQQQQ": "QQQQ y 'г'.",
+                "yw": "'седмица' w 'от' y 'г'."
             },
             "dateFormats": {
                 "yMMMMEEEEd": "EEEE, d MMMM y 'г'.",

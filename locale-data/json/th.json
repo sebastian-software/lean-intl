@@ -45,6 +45,7 @@
                 "MMMMd": "d MMMM",
                 "MMMMEd": "E d MMMM",
                 "MMMMEEEEd": "EEEEที่ d MMMM",
+                "MMMMW": "สัปดาห์ที่ W ของ MMM",
                 "mmss": "mm:ss",
                 "ms": "mm:ss",
                 "y": "y",
@@ -60,7 +61,8 @@
                 "yMMMMEd": "E d MMMM G y",
                 "yMMMMEEEEd": "EEEEที่ d MMMM G y",
                 "yQQQ": "QQQ y",
-                "yQQQQ": "QQQQ G y"
+                "yQQQQ": "QQQQ G y",
+                "yw": "สัปดาห์ที่ w ของ y"
             },
             "dateFormats": {
                 "yMMMMEEEEd": "EEEEที่ d MMMM G y",

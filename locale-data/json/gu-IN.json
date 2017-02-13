@@ -42,6 +42,7 @@
                 "MMMd": "d MMM",
                 "MMMEd": "E, d MMM",
                 "MMMMd": "d MMMM",
+                "MMMMW": "MMM ના W અઠવાડિયા",
                 "ms": "mm:ss",
                 "y": "y",
                 "yM": "M/y",
@@ -53,7 +54,8 @@
                 "yMMMEd": "E, d MMM, y",
                 "yMMMM": "MMMM y",
                 "yQQQ": "y QQQ",
-                "yQQQQ": "y QQQQ"
+                "yQQQQ": "y QQQQ",
+                "yw": "y ના w અઠવાડિયા"
             },
             "dateFormats": {
                 "yMMMMEEEEd": "EEEE, d MMMM, y",

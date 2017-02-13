@@ -43,6 +43,7 @@
                 "MMMEd": "E d MMM",
                 "MMMMd": "d MMMM",
                 "MMMMEd": "E d MMMM",
+                "MMMMW": "MMM এর Wয় সপ্তাহ",
                 "ms": "mm:ss",
                 "y": "y",
                 "yM": "M/y",
@@ -54,7 +55,8 @@
                 "yMMMEd": "E, d MMM, y",
                 "yMMMM": "MMMM y",
                 "yQQQ": "QQQ y",
-                "yQQQQ": "QQQQ y"
+                "yQQQQ": "QQQQ y",
+                "yw": "y এর wতম সপ্তাহ"
             },
             "dateFormats": {
                 "yMMMMEEEEd": "EEEE, d MMMM, y",
@@ -159,8 +161,8 @@
                     ]
                 },
                 "dayPeriods": {
-                    "am": "পূর্বাহ্ণ",
-                    "pm": "অপরাহ্ণ"
+                    "am": "AM",
+                    "pm": "PM"
                 }
             },
             "gregory": {
@@ -180,8 +182,8 @@
                         "ডি"
                     ],
                     "short": [
-                        "জানুয়ারী",
-                        "ফেব্রুয়ারী",
+                        "জানু",
+                        "ফেব",
                         "মার্চ",
                         "এপ্রিল",
                         "মে",
@@ -258,8 +260,8 @@
                     ]
                 },
                 "dayPeriods": {
-                    "am": "পূর্বাহ্ণ",
-                    "pm": "অপরাহ্ণ"
+                    "am": "AM",
+                    "pm": "PM"
                 }
             }
         }
@@ -281,14 +283,13 @@
             "percent": {
                 "positivePattern": "{number}{percentSign}",
                 "negativePattern": "{minusSign}{number}{percentSign}"
-            },
-            "secondaryGroupSize": 2
+            }
         },
         "symbols": {
             "beng": {
                 "decimal": ".",
                 "group": ",",
-                "nan": "সংখ্যা না",
+                "nan": "NaN",
                 "plusSign": "+",
                 "minusSign": "-",
                 "percentSign": "%",

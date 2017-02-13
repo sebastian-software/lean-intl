@@ -43,6 +43,7 @@
                 "MMMEd": "E d LLL",
                 "MMMMd": "d LLLL",
                 "MMMMEd": "E d LLLL",
+                "MMMMW": "هفته W از MMM",
                 "mmss": "mm:ss",
                 "ms": "mm:ss",
                 "y": "y",
@@ -55,7 +56,8 @@
                 "yMMMM": "MMMM y",
                 "yMMMMEEEEd": "EEEE d MMMM y",
                 "yQQQ": "QQQQ y",
-                "yQQQQ": "QQQQ y"
+                "yQQQQ": "QQQQ y",
+                "yw": "هفته w از y"
             },
             "dateFormats": {
                 "yMMMMEEEEd": "EEEE d MMMM y",
@@ -276,22 +278,23 @@
                 "negativePattern": "{minusSign}{number}"
             },
             "currency": {
-                "positivePattern": "‎{currency}{number}",
-                "negativePattern": "{minusSign}‎{currency}{number}"
+                "positivePattern": "{number} ؜{currency}",
+                "negativePattern": "؜{minusSign}{number} ؜{currency}"
             },
             "percent": {
-                "positivePattern": "{number}{percentSign}",
-                "negativePattern": "{minusSign}{number}{percentSign}"
-            }
+                "positivePattern": "{percentSign} {number}",
+                "negativePattern": "{percentSign} {minusSign}{number}"
+            },
+            "secondaryGroupSize": 8
         },
         "symbols": {
             "arabext": {
                 "decimal": "٫",
                 "group": "٬",
                 "nan": "ناعدد",
-                "plusSign": "‎+‎",
+                "plusSign": "‎+",
                 "minusSign": "‎−",
-                "percentSign": "٪",
+                "percentSign": "‎٪",
                 "infinity": "∞"
             },
             "latn": {

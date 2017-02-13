@@ -41,6 +41,7 @@
                 "MMMd": "MMMཚེས་d",
                 "MMMEd": "MMMཚེས་d, E",
                 "MMMMd": "MMMMའི་ཚེས་d",
+                "MMMMW": "'week' W 'of' MMMM",
                 "ms": "mm:ss",
                 "y": "y",
                 "yM": "y-MM",
@@ -52,7 +53,8 @@
                 "yMMMM": "y MMMM",
                 "yMMMMd": "སྤྱི་ལོ་y MMMMའི་ཚེས་d",
                 "yQQQ": "y QQQ",
-                "yQQQQ": "y QQQQ"
+                "yQQQQ": "y QQQQ",
+                "yw": "'week' w 'of' y"
             },
             "dateFormats": {
                 "yMMMMEEEEd": "y MMMMའི་ཚེས་d, EEEE",

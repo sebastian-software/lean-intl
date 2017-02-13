@@ -40,9 +40,10 @@
                 "MEd": "E, d.M",
                 "MMM": "LLL",
                 "MMMd": "d MMM",
-                "MMMEd": "E d MMM",
+                "MMMEd": "E, d MMM",
                 "MMMMd": "d MMMM",
-                "MMMMEd": "E d MMMM",
+                "MMMMEd": "E, d MMMM",
+                "MMMMW": "W 'седмица' 'од' MMM",
                 "ms": "mm:ss",
                 "y": "y",
                 "yM": "M.y",
@@ -53,7 +54,8 @@
                 "yMMMEd": "E, d MMM y 'г'.",
                 "yMMMM": "MMMM y 'г'.",
                 "yQQQ": "QQQ y 'г'.",
-                "yQQQQ": "QQQQ y 'г'."
+                "yQQQQ": "QQQQ y 'г'.",
+                "yw": "w 'седмица' 'од' y"
             },
             "dateFormats": {
                 "yMMMMEEEEd": "EEEE, dd MMMM y",
@@ -273,8 +275,8 @@
                 "negativePattern": "{minusSign}{number}"
             },
             "currency": {
-                "positivePattern": "{currency} {number}",
-                "negativePattern": "{minusSign}{currency} {number}"
+                "positivePattern": "{number} {currency}",
+                "negativePattern": "{minusSign}{number} {currency}"
             },
             "percent": {
                 "positivePattern": "{number}{percentSign}",

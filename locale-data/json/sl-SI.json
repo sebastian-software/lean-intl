@@ -16,9 +16,9 @@
                 "d": "d.",
                 "E": "ccc",
                 "Ed": "E, d.",
-                "Ehm": "E h:mm a",
+                "Ehm": "E, h:mm a",
                 "EHm": "E HH:mm",
-                "Ehms": "E h:mm:ss a",
+                "Ehms": "E, h:mm:ss a",
                 "EHms": "E HH:mm:ss",
                 "Gy": "y G",
                 "GyM": "MMM y G",
@@ -26,7 +26,7 @@
                 "GyMMMd": "d. MMM y G",
                 "GyMMMEd": "E, d. MMM y G",
                 "h": "h a",
-                "H": "HH",
+                "H": "HH'h'",
                 "hm": "h:mm a",
                 "Hm": "HH:mm",
                 "hms": "h:mm:ss a",
@@ -41,7 +41,8 @@
                 "MMM": "LLL",
                 "MMMd": "d. MMM",
                 "MMMEd": "E, d. MMM",
-                "MMMMd": "d MMMM",
+                "MMMMd": "d. MMMM",
+                "MMMMW": "W. 'teden' 'v' MMM",
                 "ms": "mm:ss",
                 "y": "y",
                 "yM": "M/y",
@@ -52,7 +53,8 @@
                 "yMMMEd": "E, d. MMM y",
                 "yMMMM": "MMMM y",
                 "yQQQ": "QQQ y",
-                "yQQQQ": "QQQQ y"
+                "yQQQQ": "QQQQ y",
+                "yw": "w. 'teden' 'v' y"
             },
             "dateFormats": {
                 "yMMMMEEEEd": "EEEE, dd. MMMM y",
@@ -238,21 +240,21 @@
                 "eras": {
                     "narrow": [
                         "pr. Kr.",
-                        "po n. št.",
+                        "po Kr.",
                         "pr. n. št.",
-                        "n. št."
+                        "po n. št."
                     ],
                     "short": [
                         "pr. Kr.",
-                        "po n. št.",
+                        "po Kr.",
                         "pr. n. št.",
-                        "n. št."
+                        "po n. št."
                     ],
                     "long": [
                         "pred Kristusom",
-                        "naše štetje",
+                        "po Kristusu",
                         "pred našim štetjem",
-                        "po n. št."
+                        "po našem štetju"
                     ]
                 },
                 "dayPeriods": {
@@ -276,8 +278,8 @@
                 "negativePattern": "{minusSign}{number} {currency}"
             },
             "percent": {
-                "positivePattern": "{number}{percentSign}",
-                "negativePattern": "{minusSign}{number}{percentSign}"
+                "positivePattern": "{number} {percentSign}",
+                "negativePattern": "{minusSign}{number} {percentSign}"
             }
         },
         "symbols": {
@@ -286,7 +288,7 @@
                 "group": ".",
                 "nan": "NaN",
                 "plusSign": "+",
-                "minusSign": "-",
+                "minusSign": "–",
                 "percentSign": "%",
                 "infinity": "∞"
             }

@@ -17,7 +17,7 @@
                 "E": "E",
                 "Ed": "E d",
                 "Ehm": "E h:mm a",
-                "EHm": "E HH:mm",
+                "EHm": "E HH 'h' mm",
                 "Ehms": "E h:mm:ss a",
                 "EHms": "E HH:mm:ss",
                 "Gy": "y G",
@@ -27,13 +27,13 @@
                 "h": "h a",
                 "H": "HH 'h'",
                 "hm": "h:mm a",
-                "Hm": "HH:mm",
+                "Hm": "HH 'h' mm",
                 "hms": "h:mm:ss a",
                 "Hms": "HH:mm:ss",
                 "hmsv": "h:mm:ss a v",
                 "Hmsv": "HH:mm:ss v",
                 "hmv": "h:mm a v",
-                "Hmv": "HH:mm v",
+                "Hmv": "HH 'h' mm v",
                 "M": "L",
                 "Md": "M-d",
                 "MEd": "E M-d",
@@ -43,6 +43,7 @@
                 "MMMd": "d MMM",
                 "MMMEd": "E d MMM",
                 "MMMMd": "d MMMM",
+                "MMMMW": "'semaine' W 'de' MMM",
                 "ms": "mm:ss",
                 "y": "y",
                 "yM": "y-MM",
@@ -54,7 +55,8 @@
                 "yMMMEd": "E d MMM y",
                 "yMMMM": "MMMM y",
                 "yQQQ": "QQQ y",
-                "yQQQQ": "QQQQ y"
+                "yQQQQ": "QQQQ y",
+                "yw": "'semaine' w 'de' y"
             },
             "dateFormats": {
                 "yMMMMEEEEd": "EEEE d MMMM y",
@@ -66,7 +68,7 @@
                 "hmmsszzzz": "HH:mm:ss zzzz",
                 "hmsz": "HH:mm:ss z",
                 "hms": "HH:mm:ss",
-                "hm": "HH:mm"
+                "hm": "HH 'h' mm"
             }
         },
         "calendars": {
@@ -159,8 +161,8 @@
                     ]
                 },
                 "dayPeriods": {
-                    "am": "AM",
-                    "pm": "PM"
+                    "am": "a.m.",
+                    "pm": "p.m."
                 }
             },
             "gregory": {
@@ -186,7 +188,7 @@
                         "avr.",
                         "mai",
                         "juin",
-                        "juil.",
+                        "juill.",
                         "août",
                         "sept.",
                         "oct.",
@@ -253,13 +255,13 @@
                     "long": [
                         "avant Jésus-Christ",
                         "après Jésus-Christ",
-                        "avant l’ère commune",
-                        "de l’ère commune"
+                        "avant l’ère chrétienne",
+                        "de l’ère chrétienne"
                     ]
                 },
                 "dayPeriods": {
-                    "am": "AM",
-                    "pm": "PM"
+                    "am": "a.m.",
+                    "pm": "p.m."
                 }
             }
         }
@@ -306,7 +308,6 @@
             "HKD": "$ HK",
             "IEP": "£IE",
             "ILP": "£IL",
-            "INR": "₹",
             "ITL": "₤IT",
             "JPY": "¥",
             "MTP": "£MT",

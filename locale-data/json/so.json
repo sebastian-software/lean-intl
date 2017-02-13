@@ -42,6 +42,7 @@
                 "MMMEd": "E, MMM d",
                 "MMMMd": "MMMM d",
                 "MMMMEd": "E, MMMM d",
+                "MMMMW": "'usbuuc' W 'ee' MMMM",
                 "ms": "mm:ss",
                 "y": "y",
                 "yM": "M/y",
@@ -52,7 +53,8 @@
                 "yMMMEd": "E, MMM d, y",
                 "yMMMM": "MMMM y",
                 "yQQQ": "QQQ y",
-                "yQQQQ": "QQQQ y"
+                "yQQQQ": "QQQQ y",
+                "yw": "'week' w 'of' y"
             },
             "dateFormats": {
                 "yMMMMEEEEd": "EEEE, MMMM dd, y",
@@ -119,7 +121,7 @@
                         "I",
                         "T",
                         "A",
-                        "K",
+                        "Kh",
                         "J",
                         "S"
                     ],
@@ -164,18 +166,18 @@
             "gregory": {
                 "months": {
                     "narrow": [
-                        "1",
-                        "2",
-                        "3",
-                        "4",
-                        "5",
-                        "6",
-                        "7",
-                        "8",
-                        "9",
-                        "10",
-                        "11",
-                        "12"
+                        "K",
+                        "L",
+                        "S",
+                        "A",
+                        "S",
+                        "L",
+                        "T",
+                        "S",
+                        "S",
+                        "T",
+                        "K",
+                        "L"
                     ],
                     "short": [
                         "Kob",
@@ -212,7 +214,7 @@
                         "I",
                         "T",
                         "A",
-                        "K",
+                        "Kh",
                         "J",
                         "S"
                     ],
@@ -249,8 +251,8 @@
                         "CE"
                     ],
                     "long": [
-                        "Ciise ka hor (CS)",
-                        "Ciise ka dib (CS)",
+                        "CK",
+                        "CD",
                         "BCE",
                         "CE"
                     ]

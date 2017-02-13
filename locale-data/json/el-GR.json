@@ -37,11 +37,12 @@
                 "M": "L",
                 "Md": "d/M",
                 "MEd": "E, d/M",
-                "MMM": "LLL",
+                "MMM": "MMM",
                 "MMMd": "d MMM",
                 "MMMEd": "E, d MMM",
                 "MMMMd": "d MMMM",
                 "MMMMEd": "E, d MMMM",
+                "MMMMW": "εβδομάδα W του MMM",
                 "ms": "mm:ss",
                 "y": "y",
                 "yM": "M/y",
@@ -50,9 +51,10 @@
                 "yMMM": "MMM y",
                 "yMMMd": "d MMM y",
                 "yMMMEd": "E, d MMM y",
-                "yMMMM": "MMMM y",
+                "yMMMM": "LLLL y",
                 "yQQQ": "y QQQ",
-                "yQQQQ": "y QQQQ"
+                "yQQQQ": "y QQQQ",
+                "yw": "εβδομάδα w του y"
             },
             "dateFormats": {
                 "yMMMMEEEEd": "EEEE, d MMMM y",

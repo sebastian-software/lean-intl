@@ -42,6 +42,7 @@
                 "MMMd": "d MMM",
                 "MMMEd": "E, d MMM",
                 "MMMMd": "d MMMM",
+                "MMMMW": "MMM Wవ వారం",
                 "ms": "mm:ss",
                 "y": "y",
                 "yM": "M/y",
@@ -53,7 +54,8 @@
                 "yMMMEd": "E, d, MMM y",
                 "yMMMM": "MMMM y",
                 "yQQQ": "QQQ y",
-                "yQQQQ": "QQQQ y"
+                "yQQQQ": "QQQQ y",
+                "yw": "y wవ వారం"
             },
             "dateFormats": {
                 "yMMMMEEEEd": "d, MMMM y, EEEE",
@@ -158,8 +160,8 @@
                     ]
                 },
                 "dayPeriods": {
-                    "am": "[AM]",
-                    "pm": "[PM]"
+                    "am": "AM",
+                    "pm": "PM"
                 }
             },
             "gregory": {
@@ -240,14 +242,14 @@
                     "narrow": [
                         "క్రీపూ",
                         "క్రీశ",
-                        "[BCE]",
-                        "[CE]"
+                        "BCE",
+                        "CE"
                     ],
                     "short": [
                         "క్రీపూ",
                         "క్రీశ",
-                        "[BCE]",
-                        "[CE]"
+                        "BCE",
+                        "CE"
                     ],
                     "long": [
                         "క్రీస్తు పూర్వం",
@@ -257,8 +259,8 @@
                     ]
                 },
                 "dayPeriods": {
-                    "am": "[AM]",
-                    "pm": "[PM]"
+                    "am": "AM",
+                    "pm": "PM"
                 }
             }
         }

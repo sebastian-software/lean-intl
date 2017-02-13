@@ -21,19 +21,19 @@
                 "Ehms": "E h:mm:ss a",
                 "EHms": "E HH:mm:ss",
                 "Gy": "y 'г'. G",
-                "GyMMM": "LLL y G",
+                "GyMMM": "LLL y 'г'. G",
                 "GyMMMd": "d MMM y 'г'. G",
                 "GyMMMEd": "E, d MMM y 'г'. G",
                 "h": "h a",
-                "H": "H",
+                "H": "HH",
                 "hm": "h:mm a",
-                "Hm": "H:mm",
+                "Hm": "HH:mm",
                 "hms": "h:mm:ss a",
-                "Hms": "H:mm:ss",
+                "Hms": "HH:mm:ss",
                 "hmsv": "h:mm:ss a v",
-                "Hmsv": "H:mm:ss v",
+                "Hmsv": "HH:mm:ss v",
                 "hmv": "h:mm a v",
-                "Hmv": "H:mm v",
+                "Hmv": "HH:mm v",
                 "M": "L",
                 "Md": "dd.MM",
                 "MEd": "E, dd.MM",
@@ -42,24 +42,26 @@
                 "MMMd": "d MMM",
                 "MMMEd": "ccc, d MMM",
                 "MMMMd": "d MMMM",
+                "MMMMW": "W-'я' 'неделя' MMM",
                 "ms": "mm:ss",
                 "y": "y",
                 "yM": "MM.y",
                 "yMd": "dd.MM.y",
-                "yMEd": "ccc, d.MM.y 'г'.",
+                "yMEd": "ccc, d.MM.y",
                 "yMM": "MM.y",
                 "yMMM": "LLL y 'г'.",
                 "yMMMd": "d MMM y 'г'.",
                 "yMMMEd": "E, d MMM y 'г'.",
                 "yMMMM": "LLLL y 'г'.",
                 "yQQQ": "QQQ y 'г'.",
-                "yQQQQ": "QQQQ y 'г'."
+                "yQQQQ": "QQQQ y 'г'.",
+                "yw": "w-'я' 'неделя' y 'г'."
             },
             "dateFormats": {
                 "yMMMMEEEEd": "EEEE, d MMMM y 'г'.",
                 "yMMMMd": "d MMMM y 'г'.",
                 "yMMMd": "d MMM y 'г'.",
-                "yMd": "dd.MM.yy"
+                "yMd": "dd.MM.y"
             },
             "timeFormats": {
                 "hmmsszzzz": "HH:mm:ss zzzz",
@@ -158,8 +160,8 @@
                     ]
                 },
                 "dayPeriods": {
-                    "am": "ДП",
-                    "pm": "ПП"
+                    "am": "AM",
+                    "pm": "PM"
                 }
             },
             "gregory": {
@@ -257,8 +259,8 @@
                     ]
                 },
                 "dayPeriods": {
-                    "am": "ДП",
-                    "pm": "ПП"
+                    "am": "AM",
+                    "pm": "PM"
                 }
             }
         }

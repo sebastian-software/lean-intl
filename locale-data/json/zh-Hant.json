@@ -42,6 +42,7 @@
                 "MMMd": "M月d日",
                 "MMMEd": "M月d日 E",
                 "MMMMd": "M月d日",
+                "MMMMW": "MMM的第W週",
                 "ms": "mm:ss",
                 "y": "y年",
                 "yM": "y/M",
@@ -53,7 +54,8 @@
                 "yMMMEd": "y年M月d日 E",
                 "yMMMM": "y年M月",
                 "yQQQ": "y年QQQ",
-                "yQQQQ": "y年QQQQ"
+                "yQQQQ": "y年QQQQ",
+                "yw": "y年的第w週"
             },
             "dateFormats": {
                 "yMMMMEEEEd": "y年M月d日 EEEE",

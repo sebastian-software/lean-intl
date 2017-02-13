@@ -18,8 +18,8 @@
                 "Ed": "E, d",
                 "Ehm": "E h:mm a",
                 "EHm": "E HH:mm",
-                "Ehms": "E h:mm.ss a",
-                "EHms": "E HH:mm.ss",
+                "Ehms": "E h:mm:ss a",
+                "EHms": "E HH:mm:ss",
                 "Gy": "y G",
                 "GyMMM": "MMM y G",
                 "GyMMMd": "d. MMM y G",
@@ -28,10 +28,10 @@
                 "H": "HH",
                 "hm": "h:mm a",
                 "Hm": "HH:mm",
-                "hms": "h:mm.ss a",
-                "Hms": "H:mm.ss",
-                "hmsv": "h:mm.ss a v",
-                "Hmsv": "HH:mm.ss v",
+                "hms": "h:mm:ss a",
+                "Hms": "HH:mm:ss",
+                "hmsv": "h:mm:ss a v",
+                "Hmsv": "HH:mm:ss v",
                 "hmv": "h:mm a v",
                 "Hmv": "HH:mm v",
                 "M": "M",
@@ -42,8 +42,9 @@
                 "MMMEd": "E, d. MMM",
                 "MMMMd": "d. MMMM",
                 "MMMMEd": "E, d. MMMM",
-                "mmss": "mm.ss",
-                "ms": "mm.ss",
+                "MMMMW": "MMM (W. 'nädal')",
+                "mmss": "mm:ss",
+                "ms": "mm:ss",
                 "y": "y",
                 "yM": "M.y",
                 "yMd": "d.M.y",
@@ -53,7 +54,8 @@
                 "yMMMEd": "E, d. MMMM y",
                 "yMMMM": "MMMM y",
                 "yQQQ": "QQQ y",
-                "yQQQQ": "QQQQ y"
+                "yQQQQ": "QQQQ y",
+                "yw": "y (w. 'nädal')"
             },
             "dateFormats": {
                 "yMMMMEEEEd": "EEEE, d. MMMM y",
@@ -62,10 +64,10 @@
                 "yMd": "dd.MM.yy"
             },
             "timeFormats": {
-                "hmmsszzzz": "H:mm.ss zzzz",
-                "hmsz": "H:mm.ss z",
-                "hms": "H:mm.ss",
-                "hm": "H:mm"
+                "hmmsszzzz": "HH:mm:ss zzzz",
+                "hmsz": "HH:mm:ss z",
+                "hms": "HH:mm:ss",
+                "hm": "HH:mm"
             }
         },
         "calendars": {

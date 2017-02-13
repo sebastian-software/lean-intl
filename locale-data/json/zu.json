@@ -6,7 +6,7 @@
             "generic"
         ],
         "hourNo0": true,
-        "hour12": true,
+        "hour12": false,
         "formats": {
             "short": "{1} {0}",
             "medium": "{1} {0}",
@@ -35,23 +35,25 @@
                 "hmv": "h:mm a v",
                 "Hmv": "HH:mm v",
                 "M": "L",
-                "Md": "M/d",
-                "MEd": "E, M/d",
+                "Md": "MM-dd",
+                "MEd": "MM-dd, E",
                 "MMM": "LLL",
                 "MMMd": "MMM d",
                 "MMMEd": "E, MMM d",
                 "MMMMd": "MMMM d",
+                "MMMMW": "'week' W 'of' MMM",
                 "ms": "mm:ss",
                 "y": "y",
-                "yM": "M/y",
-                "yMd": "M/d/y",
-                "yMEd": "E, M/d/y",
+                "yM": "y-MM",
+                "yMd": "y-MM-dd",
+                "yMEd": "y-MM-dd, E",
                 "yMMM": "MMM y",
                 "yMMMd": "MMM d, y",
                 "yMMMEd": "E, MMM d, y",
                 "yMMMM": "MMMM y",
                 "yQQQ": "QQQ y",
-                "yQQQQ": "QQQQ y"
+                "yQQQQ": "QQQQ y",
+                "yw": "'week' w 'of' y"
             },
             "dateFormats": {
                 "yMMMMEEEEd": "EEEE, MMMM d, y",
@@ -60,10 +62,10 @@
                 "yMd": "M/d/yy"
             },
             "timeFormats": {
-                "hmmsszzzz": "h:mm:ss a zzzz",
-                "hmsz": "h:mm:ss a z",
-                "hms": "h:mm:ss a",
-                "hm": "h:mm a"
+                "hmmsszzzz": "HH:mm:ss zzzz",
+                "hmsz": "HH:mm:ss z",
+                "hms": "HH:mm:ss",
+                "hm": "HH:mm"
             }
         },
         "calendars": {
@@ -191,7 +193,7 @@
                         "Dis"
                     ],
                     "long": [
-                        "Januwari",
+                        "UMasingana",
                         "Februwari",
                         "Mashi",
                         "Ephreli",

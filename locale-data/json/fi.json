@@ -41,6 +41,7 @@
                 "MMMd": "d. MMM",
                 "MMMEd": "ccc d. MMM",
                 "MMMMd": "d. MMMM",
+                "MMMMW": "LLLL'n' W. 'viikko'",
                 "ms": "m.ss",
                 "y": "y",
                 "yM": "L.y",
@@ -53,7 +54,8 @@
                 "yMMMM": "LLLL y",
                 "yMMMMccccd": "cccc d. MMMM y",
                 "yQQQ": "QQQ y",
-                "yQQQQ": "QQQQ y"
+                "yQQQQ": "QQQQ y",
+                "yw": "'vuoden' y 'viikko' w"
             },
             "dateFormats": {
                 "yMMMMEEEEd": "cccc d. MMMM y",
@@ -179,18 +181,18 @@
                         "J"
                     ],
                     "short": [
-                        "tammikuuta",
-                        "helmikuuta",
-                        "maaliskuuta",
-                        "huhtikuuta",
-                        "toukokuuta",
-                        "kesäkuuta",
-                        "heinäkuuta",
-                        "elokuuta",
-                        "syyskuuta",
-                        "lokakuuta",
-                        "marraskuuta",
-                        "joulukuuta"
+                        "tammik.",
+                        "helmik.",
+                        "maalisk.",
+                        "huhtik.",
+                        "toukok.",
+                        "kesäk.",
+                        "heinäk.",
+                        "elok.",
+                        "syysk.",
+                        "lokak.",
+                        "marrask.",
+                        "jouluk."
                     ],
                     "long": [
                         "tammikuuta",
@@ -238,8 +240,8 @@
                 },
                 "eras": {
                     "narrow": [
-                        "eK",
-                        "jK",
+                        "eKr",
+                        "jKr",
                         "eaa",
                         "jaa"
                     ],

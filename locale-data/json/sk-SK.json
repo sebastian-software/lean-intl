@@ -43,6 +43,7 @@
                 "MMMEd": "E d. M.",
                 "MMMMd": "d. MMMM",
                 "MMMMEd": "E d. MMMM",
+                "MMMMW": "W. 'týždeň' 'v' MMM",
                 "mmss": "mm:ss",
                 "ms": "mm:ss",
                 "y": "y",
@@ -55,13 +56,14 @@
                 "yMMMM": "LLLL y",
                 "yMMMMd": "d. MMMM y",
                 "yQQQ": "QQQ y",
-                "yQQQQ": "QQQQ y"
+                "yQQQQ": "QQQQ y",
+                "yw": "w. 'týždeň' 'v' 'roku' y"
             },
             "dateFormats": {
                 "yMMMMEEEEd": "EEEE, d. MMMM y",
                 "yMMMMd": "d. MMMM y",
                 "yMMMd": "d. M. y",
-                "yMd": "d.M.yy"
+                "yMd": "d. M. y"
             },
             "timeFormats": {
                 "hmmsszzzz": "H:mm:ss zzzz",

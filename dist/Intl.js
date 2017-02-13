@@ -1,7 +1,7 @@
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
-  typeof define === 'function' && define.amd ? define(factory) :
-  (global.IntlPolyfill = factory());
+	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
+	typeof define === 'function' && define.amd ? define(factory) :
+	(global.IntlPolyfill = factory());
 }(this, (function () { 'use strict';
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) {
@@ -10,307 +10,23 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
   return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
 };
 
-var jsx = function () {
-  var REACT_ELEMENT_TYPE = typeof Symbol === "function" && Symbol.for && Symbol.for("react.element") || 0xeac7;
-  return function createRawReactElement(type, props, key, children) {
-    var defaultProps = type && type.defaultProps;
-    var childrenLength = arguments.length - 3;
 
-    if (!props && childrenLength !== 0) {
-      props = {};
-    }
 
-    if (props && defaultProps) {
-      for (var propName in defaultProps) {
-        if (props[propName] === void 0) {
-          props[propName] = defaultProps[propName];
-        }
-      }
-    } else if (!props) {
-      props = defaultProps || {};
-    }
 
-    if (childrenLength === 1) {
-      props.children = children;
-    } else if (childrenLength > 1) {
-      var childArray = Array(childrenLength);
 
-      for (var i = 0; i < childrenLength; i++) {
-        childArray[i] = arguments[i + 3];
-      }
 
-      props.children = childArray;
-    }
 
-    return {
-      $$typeof: REACT_ELEMENT_TYPE,
-      type: type,
-      key: key === undefined ? null : '' + key,
-      ref: null,
-      props: props,
-      _owner: null
-    };
-  };
-}();
 
-var asyncIterator = function (iterable) {
-  if (typeof Symbol === "function") {
-    if (Symbol.asyncIterator) {
-      var method = iterable[Symbol.asyncIterator];
-      if (method != null) return method.call(iterable);
-    }
 
-    if (Symbol.iterator) {
-      return iterable[Symbol.iterator]();
-    }
-  }
 
-  throw new TypeError("Object is not async iterable");
-};
 
-var asyncGenerator = function () {
-  function AwaitValue(value) {
-    this.value = value;
-  }
 
-  function AsyncGenerator(gen) {
-    var front, back;
 
-    function send(key, arg) {
-      return new Promise(function (resolve, reject) {
-        var request = {
-          key: key,
-          arg: arg,
-          resolve: resolve,
-          reject: reject,
-          next: null
-        };
 
-        if (back) {
-          back = back.next = request;
-        } else {
-          front = back = request;
-          resume(key, arg);
-        }
-      });
-    }
 
-    function resume(key, arg) {
-      try {
-        var result = gen[key](arg);
-        var value = result.value;
 
-        if (value instanceof AwaitValue) {
-          Promise.resolve(value.value).then(function (arg) {
-            resume("next", arg);
-          }, function (arg) {
-            resume("throw", arg);
-          });
-        } else {
-          settle(result.done ? "return" : "normal", result.value);
-        }
-      } catch (err) {
-        settle("throw", err);
-      }
-    }
 
-    function settle(type, value) {
-      switch (type) {
-        case "return":
-          front.resolve({
-            value: value,
-            done: true
-          });
-          break;
 
-        case "throw":
-          front.reject(value);
-          break;
-
-        default:
-          front.resolve({
-            value: value,
-            done: false
-          });
-          break;
-      }
-
-      front = front.next;
-
-      if (front) {
-        resume(front.key, front.arg);
-      } else {
-        back = null;
-      }
-    }
-
-    this._invoke = send;
-
-    if (typeof gen.return !== "function") {
-      this.return = undefined;
-    }
-  }
-
-  if (typeof Symbol === "function" && Symbol.asyncIterator) {
-    AsyncGenerator.prototype[Symbol.asyncIterator] = function () {
-      return this;
-    };
-  }
-
-  AsyncGenerator.prototype.next = function (arg) {
-    return this._invoke("next", arg);
-  };
-
-  AsyncGenerator.prototype.throw = function (arg) {
-    return this._invoke("throw", arg);
-  };
-
-  AsyncGenerator.prototype.return = function (arg) {
-    return this._invoke("return", arg);
-  };
-
-  return {
-    wrap: function (fn) {
-      return function () {
-        return new AsyncGenerator(fn.apply(this, arguments));
-      };
-    },
-    await: function (value) {
-      return new AwaitValue(value);
-    }
-  };
-}();
-
-var asyncGeneratorDelegate = function (inner, awaitWrap) {
-  var iter = {},
-      waiting = false;
-
-  function pump(key, value) {
-    waiting = true;
-    value = new Promise(function (resolve) {
-      resolve(inner[key](value));
-    });
-    return {
-      done: false,
-      value: awaitWrap(value)
-    };
-  }
-
-  ;
-
-  if (typeof Symbol === "function" && Symbol.iterator) {
-    iter[Symbol.iterator] = function () {
-      return this;
-    };
-  }
-
-  iter.next = function (value) {
-    if (waiting) {
-      waiting = false;
-      return value;
-    }
-
-    return pump("next", value);
-  };
-
-  if (typeof inner.throw === "function") {
-    iter.throw = function (value) {
-      if (waiting) {
-        waiting = false;
-        throw value;
-      }
-
-      return pump("throw", value);
-    };
-  }
-
-  if (typeof inner.return === "function") {
-    iter.return = function (value) {
-      return pump("return", value);
-    };
-  }
-
-  return iter;
-};
-
-var asyncToGenerator = function (fn) {
-  return function () {
-    var gen = fn.apply(this, arguments);
-    return new Promise(function (resolve, reject) {
-      function step(key, arg) {
-        try {
-          var info = gen[key](arg);
-          var value = info.value;
-        } catch (error) {
-          reject(error);
-          return;
-        }
-
-        if (info.done) {
-          resolve(value);
-        } else {
-          return Promise.resolve(value).then(function (value) {
-            step("next", value);
-          }, function (err) {
-            step("throw", err);
-          });
-        }
-      }
-
-      return step("next");
-    });
-  };
-};
-
-var classCallCheck = function (instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError("Cannot call a class as a function");
-  }
-};
-
-var createClass = function () {
-  function defineProperties(target, props) {
-    for (var i = 0; i < props.length; i++) {
-      var descriptor = props[i];
-      descriptor.enumerable = descriptor.enumerable || false;
-      descriptor.configurable = true;
-      if ("value" in descriptor) descriptor.writable = true;
-      Object.defineProperty(target, descriptor.key, descriptor);
-    }
-  }
-
-  return function (Constructor, protoProps, staticProps) {
-    if (protoProps) defineProperties(Constructor.prototype, protoProps);
-    if (staticProps) defineProperties(Constructor, staticProps);
-    return Constructor;
-  };
-}();
-
-var defineEnumerableProperties = function (obj, descs) {
-  for (var key in descs) {
-    var desc = descs[key];
-    desc.configurable = desc.enumerable = true;
-    if ("value" in desc) desc.writable = true;
-    Object.defineProperty(obj, key, desc);
-  }
-
-  return obj;
-};
-
-var defaults = function (obj, defaults) {
-  var keys = Object.getOwnPropertyNames(defaults);
-
-  for (var i = 0; i < keys.length; i++) {
-    var key = keys[i];
-    var value = Object.getOwnPropertyDescriptor(defaults, key);
-
-    if (value && value.configurable && obj[key] === undefined) {
-      Object.defineProperty(obj, key, value);
-    }
-  }
-
-  return obj;
-};
 
 var defineProperty$1 = function (obj, key, value) {
   if (key in obj) {
@@ -327,280 +43,11 @@ var defineProperty$1 = function (obj, key, value) {
   return obj;
 };
 
-var _extends = Object.assign || function (target) {
-  for (var i = 1; i < arguments.length; i++) {
-    var source = arguments[i];
-
-    for (var key in source) {
-      if (Object.prototype.hasOwnProperty.call(source, key)) {
-        target[key] = source[key];
-      }
-    }
-  }
-
-  return target;
-};
-
-var get = function get(object, property, receiver) {
-  if (object === null) object = Function.prototype;
-  var desc = Object.getOwnPropertyDescriptor(object, property);
-
-  if (desc === undefined) {
-    var parent = Object.getPrototypeOf(object);
-
-    if (parent === null) {
-      return undefined;
-    } else {
-      return get(parent, property, receiver);
-    }
-  } else if ("value" in desc) {
-    return desc.value;
-  } else {
-    var getter = desc.get;
-
-    if (getter === undefined) {
-      return undefined;
-    }
-
-    return getter.call(receiver);
-  }
-};
-
-var inherits = function (subClass, superClass) {
-  if (typeof superClass !== "function" && superClass !== null) {
-    throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-  }
-
-  subClass.prototype = Object.create(superClass && superClass.prototype, {
-    constructor: {
-      value: subClass,
-      enumerable: false,
-      writable: true,
-      configurable: true
-    }
-  });
-  if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-};
-
-var _instanceof = function (left, right) {
-  if (right != null && typeof Symbol !== "undefined" && right[Symbol.hasInstance]) {
-    return right[Symbol.hasInstance](left);
-  } else {
-    return left instanceof right;
-  }
-};
-
-var interopRequireDefault = function (obj) {
-  return obj && obj.__esModule ? obj : {
-    default: obj
-  };
-};
-
-var interopRequireWildcard = function (obj) {
-  if (obj && obj.__esModule) {
-    return obj;
-  } else {
-    var newObj = {};
-
-    if (obj != null) {
-      for (var key in obj) {
-        if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key];
-      }
-    }
-
-    newObj.default = obj;
-    return newObj;
-  }
-};
-
-var newArrowCheck = function (innerThis, boundThis) {
-  if (innerThis !== boundThis) {
-    throw new TypeError("Cannot instantiate an arrow function");
-  }
-};
-
-var objectDestructuringEmpty = function (obj) {
-  if (obj == null) throw new TypeError("Cannot destructure undefined");
-};
-
-var objectWithoutProperties = function (obj, keys) {
-  var target = {};
-
-  for (var i in obj) {
-    if (keys.indexOf(i) >= 0) continue;
-    if (!Object.prototype.hasOwnProperty.call(obj, i)) continue;
-    target[i] = obj[i];
-  }
-
-  return target;
-};
-
-var possibleConstructorReturn = function (self, call) {
-  if (!self) {
-    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-  }
-
-  return call && (typeof call === "object" || typeof call === "function") ? call : self;
-};
-
-var selfGlobal = typeof global === "undefined" ? self : global;
-
-var set = function set(object, property, value, receiver) {
-  var desc = Object.getOwnPropertyDescriptor(object, property);
-
-  if (desc === undefined) {
-    var parent = Object.getPrototypeOf(object);
-
-    if (parent !== null) {
-      set(parent, property, value, receiver);
-    }
-  } else if ("value" in desc && desc.writable) {
-    desc.value = value;
-  } else {
-    var setter = desc.set;
-
-    if (setter !== undefined) {
-      setter.call(receiver, value);
-    }
-  }
-
-  return value;
-};
-
-var slicedToArray = function () {
-  function sliceIterator(arr, i) {
-    var _arr = [];
-    var _n = true;
-    var _d = false;
-    var _e = undefined;
-
-    try {
-      for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
-        _arr.push(_s.value);
-
-        if (i && _arr.length === i) break;
-      }
-    } catch (err) {
-      _d = true;
-      _e = err;
-    } finally {
-      try {
-        if (!_n && _i["return"]) _i["return"]();
-      } finally {
-        if (_d) throw _e;
-      }
-    }
-
-    return _arr;
-  }
-
-  return function (arr, i) {
-    if (Array.isArray(arr)) {
-      return arr;
-    } else if (Symbol.iterator in Object(arr)) {
-      return sliceIterator(arr, i);
-    } else {
-      throw new TypeError("Invalid attempt to destructure non-iterable instance");
-    }
-  };
-}();
-
-var slicedToArrayLoose = function (arr, i) {
-  if (Array.isArray(arr)) {
-    return arr;
-  } else if (Symbol.iterator in Object(arr)) {
-    var _arr = [];
-
-    for (var _iterator = arr[Symbol.iterator](), _step; !(_step = _iterator.next()).done;) {
-      _arr.push(_step.value);
-
-      if (i && _arr.length === i) break;
-    }
-
-    return _arr;
-  } else {
-    throw new TypeError("Invalid attempt to destructure non-iterable instance");
-  }
-};
-
-var taggedTemplateLiteral = function (strings, raw) {
-  return Object.freeze(Object.defineProperties(strings, {
-    raw: {
-      value: Object.freeze(raw)
-    }
-  }));
-};
-
-var taggedTemplateLiteralLoose = function (strings, raw) {
-  strings.raw = raw;
-  return strings;
-};
-
-var temporalRef = function (val, name, undef) {
-  if (val === undef) {
-    throw new ReferenceError(name + " is not defined - temporal dead zone");
-  } else {
-    return val;
-  }
-};
-
-var temporalUndefined = {};
-
-var toArray = function (arr) {
-  return Array.isArray(arr) ? arr : Array.from(arr);
-};
-
-var toConsumableArray = function (arr) {
-  if (Array.isArray(arr)) {
-    for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) arr2[i] = arr[i];
-
-    return arr2;
-  } else {
-    return Array.from(arr);
-  }
-};
-
-
-
-var babelHelpers$1 = Object.freeze({
-  jsx: jsx,
-  asyncIterator: asyncIterator,
-  asyncGenerator: asyncGenerator,
-  asyncGeneratorDelegate: asyncGeneratorDelegate,
-  asyncToGenerator: asyncToGenerator,
-  classCallCheck: classCallCheck,
-  createClass: createClass,
-  defineEnumerableProperties: defineEnumerableProperties,
-  defaults: defaults,
-  defineProperty: defineProperty$1,
-  get: get,
-  inherits: inherits,
-  interopRequireDefault: interopRequireDefault,
-  interopRequireWildcard: interopRequireWildcard,
-  newArrowCheck: newArrowCheck,
-  objectDestructuringEmpty: objectDestructuringEmpty,
-  objectWithoutProperties: objectWithoutProperties,
-  possibleConstructorReturn: possibleConstructorReturn,
-  selfGlobal: selfGlobal,
-  set: set,
-  slicedToArray: slicedToArray,
-  slicedToArrayLoose: slicedToArrayLoose,
-  taggedTemplateLiteral: taggedTemplateLiteral,
-  taggedTemplateLiteralLoose: taggedTemplateLiteralLoose,
-  temporalRef: temporalRef,
-  temporalUndefined: temporalUndefined,
-  toArray: toArray,
-  toConsumableArray: toConsumableArray,
-  typeof: _typeof,
-  extends: _extends,
-  instanceof: _instanceof
-});
-
 var realDefineProp = function () {
     var sentinel = function sentinel() {};
     try {
         Object.defineProperty(sentinel, 'a', {
-            get: function get() {
+            get: function get$$1() {
                 return 1;
             }
         });
@@ -618,7 +65,7 @@ var es3 = !realDefineProp && !Object.prototype.__defineGetter__;
 var hop = Object.prototype.hasOwnProperty;
 
 // Naive defineProperty for compatibility
-var defineProperty = realDefineProp ? Object.defineProperty : function (obj, name, desc) {
+var defineProperty$$1 = realDefineProp ? Object.defineProperty : function (obj, name, desc) {
     if ('get' in desc && obj.__defineGetter__) obj.__defineGetter__(name, desc.get);else if (!hop.call(obj, name) || 'value' in desc) obj[name] = desc.value;
 };
 
@@ -644,7 +91,7 @@ var objCreate = Object.create || function (proto, props) {
     obj = new F();
 
     for (var k in props) {
-        if (hop.call(props, k)) defineProperty(obj, k, props[k]);
+        if (hop.call(props, k)) defineProperty$$1(obj, k, props[k]);
     }
 
     return obj;
@@ -702,7 +149,7 @@ function log10Floor(n) {
 function Record(obj) {
     // Copy only own properties over unless this object is already a Record instance
     for (var k in obj) {
-        if (obj instanceof Record || hop.call(obj, k)) defineProperty(this, k, { value: obj[k], enumerable: true, writable: true, configurable: true });
+        if (obj instanceof Record || hop.call(obj, k)) defineProperty$$1(this, k, { value: obj[k], enumerable: true, writable: true, configurable: true });
     }
 }
 Record.prototype = objCreate(null);
@@ -711,7 +158,7 @@ Record.prototype = objCreate(null);
  * An ordered list
  */
 function List() {
-    defineProperty(this, 'length', { writable: true, value: 0 });
+    defineProperty$$1(this, 'length', { writable: true, value: 0 });
 
     if (arguments.length) arrPush.apply(this, arrSlice.call(arguments));
 }
@@ -801,7 +248,7 @@ function createRegExpRestore() {
 function toObject(arg) {
     if (arg === null) throw new TypeError('Cannot convert null or undefined to object');
 
-    if ((typeof arg === 'undefined' ? 'undefined' : babelHelpers$1['typeof'](arg)) === 'object') return arg;
+    if ((typeof arg === 'undefined' ? 'undefined' : _typeof(arg)) === 'object') return arg;
     return Object(arg);
 }
 
@@ -1463,7 +910,7 @@ function /* 9.2.1 */CanonicalizeLocaleList(locales) {
 
             // ii. If the type of kValue is not String or Object, then throw a
             //     TypeError exception.
-            if (kValue === null || typeof kValue !== 'string' && (typeof kValue === "undefined" ? "undefined" : babelHelpers$1["typeof"](kValue)) !== 'object') throw new TypeError('String or Object type expected');
+            if (kValue === null || typeof kValue !== 'string' && (typeof kValue === "undefined" ? "undefined" : _typeof(kValue)) !== 'object') throw new TypeError('String or Object type expected');
 
             // iii. Let tag be ToString(kValue).
             var tag = String(kValue);
@@ -1994,12 +1441,12 @@ function /*9.2.8 */SupportedLocales(availableLocales, requestedLocales, options)
         // c. Set desc.[[Configurable]] to false.
         // d. Call the [[DefineOwnProperty]] internal method of subset with P, desc,
         //    and true as arguments.
-        defineProperty(subset, P, {
+        defineProperty$$1(subset, P, {
             writable: false, configurable: false, value: subset[P]
         });
     }
     // "Freeze" the array so no new elements can be added
-    defineProperty(subset, 'length', { writable: false });
+    defineProperty$$1(subset, 'length', { writable: false });
 
     // 5. Return subset
     return subset;
@@ -2118,14 +1565,14 @@ function NumberFormatConstructor() {
     return InitializeNumberFormat(toObject(this), locales, options);
 }
 
-defineProperty(Intl$1, 'NumberFormat', {
+defineProperty$$1(Intl$1, 'NumberFormat', {
     configurable: true,
     writable: true,
     value: NumberFormatConstructor
 });
 
 // Must explicitly set prototypes as unwritable
-defineProperty(Intl$1.NumberFormat, 'prototype', {
+defineProperty$$1(Intl$1.NumberFormat, 'prototype', {
     writable: false
 });
 
@@ -2146,7 +1593,7 @@ function /*11.1.1.1 */InitializeNumberFormat(numberFormat, locales, options) {
     if (internal['[[initializedIntlObject]]'] === true) throw new TypeError('`this` object has already been initialized as an Intl object');
 
     // Need this to access the `internal` object
-    defineProperty(numberFormat, '__getInternalProperties', {
+    defineProperty$$1(numberFormat, '__getInternalProperties', {
         value: function value() {
             // NOTE: Non-standard, for internal use only
             if (arguments[0] === secret) return internal;
@@ -2381,7 +1828,7 @@ function CurrencyDigits(currency) {
  * following steps are taken:
  */
 /* 11.2.2 */
-defineProperty(Intl$1.NumberFormat, 'supportedLocalesOf', {
+defineProperty$$1(Intl$1.NumberFormat, 'supportedLocalesOf', {
     configurable: true,
     writable: true,
     value: fnBind.call(function (locales) {
@@ -2423,13 +1870,13 @@ defineProperty(Intl$1.NumberFormat, 'supportedLocalesOf', {
  * according to the effective locale and the formatting options of this
  * NumberFormat object.
  */
-/* 11.3.2 */defineProperty(Intl$1.NumberFormat.prototype, 'format', {
+/* 11.3.2 */defineProperty$$1(Intl$1.NumberFormat.prototype, 'format', {
     configurable: true,
     get: GetFormatNumber
 });
 
 function GetFormatNumber() {
-    var internal = this !== null && babelHelpers$1["typeof"](this) === 'object' && getInternalProperties(this);
+    var internal = this !== null && _typeof(this) === 'object' && getInternalProperties(this);
 
     // Satisfy test 11.3_b
     if (!internal || !internal['[[initializedNumberFormat]]']) throw new TypeError('`this` value for format() is not an initialized Intl.NumberFormat object.');
@@ -2471,7 +1918,7 @@ function GetFormatNumber() {
 function formatToParts() {
     var value = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : undefined;
 
-    var internal = this !== null && babelHelpers$1["typeof"](this) === 'object' && getInternalProperties(this);
+    var internal = this !== null && _typeof(this) === 'object' && getInternalProperties(this);
     if (!internal || !internal['[[initializedNumberFormat]]']) throw new TypeError('`this` value for formatToParts() is not an initialized Intl.NumberFormat object.');
 
     var x = Number(value);
@@ -2988,14 +2435,14 @@ var numSys = {
  * useGrouping. Properties whose corresponding internal properties are not present
  * are not assigned.
  */
-/* 11.3.3 */defineProperty(Intl$1.NumberFormat.prototype, 'resolvedOptions', {
+/* 11.3.3 */defineProperty$$1(Intl$1.NumberFormat.prototype, 'resolvedOptions', {
     configurable: true,
     writable: true,
     value: function value() {
         var prop = void 0,
             descs = new Record(),
             props = ['locale', 'numberingSystem', 'style', 'currency', 'currencyDisplay', 'minimumIntegerDigits', 'minimumFractionDigits', 'maximumFractionDigits', 'minimumSignificantDigits', 'maximumSignificantDigits', 'useGrouping'],
-            internal = this !== null && babelHelpers$1["typeof"](this) === 'object' && getInternalProperties(this);
+            internal = this !== null && _typeof(this) === 'object' && getInternalProperties(this);
 
         // Satisfy test 11.3_b
         if (!internal || !internal['[[initializedNumberFormat]]']) throw new TypeError('`this` value for resolvedOptions() is not an initialized Intl.NumberFormat object.');
@@ -3408,14 +2855,14 @@ function DateTimeFormatConstructor() {
     return InitializeDateTimeFormat(toObject(this), locales, options);
 }
 
-defineProperty(Intl$1, 'DateTimeFormat', {
+defineProperty$$1(Intl$1, 'DateTimeFormat', {
     configurable: true,
     writable: true,
     value: DateTimeFormatConstructor
 });
 
 // Must explicitly set prototypes as unwritable
-defineProperty(DateTimeFormatConstructor, 'prototype', {
+defineProperty$$1(DateTimeFormatConstructor, 'prototype', {
     writable: false
 });
 
@@ -3436,7 +2883,7 @@ function /* 12.1.1.1 */InitializeDateTimeFormat(dateTimeFormat, locales, options
     if (internal['[[initializedIntlObject]]'] === true) throw new TypeError('`this` object has already been initialized as an Intl object');
 
     // Need this to access the `internal` object
-    defineProperty(dateTimeFormat, '__getInternalProperties', {
+    defineProperty$$1(dateTimeFormat, '__getInternalProperties', {
         value: function value() {
             // NOTE: Non-standard, for internal use only
             if (arguments[0] === secret) return internal;
@@ -3690,7 +3137,7 @@ function ToDateTimeFormats(formats) {
  * When the ToDateTimeOptions abstract operation is called with arguments options,
  * required, and defaults, the following steps are taken:
  */
-function ToDateTimeOptions(options, required, defaults) {
+function ToDateTimeOptions(options, required, defaults$$1) {
     // 1. If options is undefined, then let options be null, else let options be
     //    ToObject(options).
     if (options === undefined) options = null;else {
@@ -3731,7 +3178,7 @@ function ToDateTimeOptions(options, required, defaults) {
     }
 
     // 7. If needDefaults is true and defaults is either "date" or "all", then
-    if (needDefaults && (defaults === 'date' || defaults === 'all'))
+    if (needDefaults && (defaults$$1 === 'date' || defaults$$1 === 'all'))
         // a. For each of the property names "year", "month", "day":
         // i. Call the [[DefineOwnProperty]] internal method of options with the
         //    property name, Property Descriptor {[[Value]]: "numeric", [[Writable]]:
@@ -3739,7 +3186,7 @@ function ToDateTimeOptions(options, required, defaults) {
         options.year = options.month = options.day = 'numeric';
 
     // 8. If needDefaults is true and defaults is either "time" or "all", then
-    if (needDefaults && (defaults === 'time' || defaults === 'all'))
+    if (needDefaults && (defaults$$1 === 'time' || defaults$$1 === 'all'))
         // a. For each of the property names "hour", "minute", "second":
         // i. Call the [[DefineOwnProperty]] internal method of options with the
         //    property name, Property Descriptor {[[Value]]: "numeric", [[Writable]]:
@@ -4071,7 +3518,7 @@ function BestFitFormatMatcher(options, formats) {
  * following steps are taken:
  */
 /* 12.2.2 */
-defineProperty(Intl$1.DateTimeFormat, 'supportedLocalesOf', {
+defineProperty$$1(Intl$1.DateTimeFormat, 'supportedLocalesOf', {
     configurable: true,
     writable: true,
     value: fnBind.call(function (locales) {
@@ -4113,13 +3560,13 @@ defineProperty(Intl$1.DateTimeFormat, 'supportedLocalesOf', {
  * according to the effective locale and the formatting options of this
  * DateTimeFormat object.
  */
-/* 12.3.2 */defineProperty(Intl$1.DateTimeFormat.prototype, 'format', {
+/* 12.3.2 */defineProperty$$1(Intl$1.DateTimeFormat.prototype, 'format', {
     configurable: true,
     get: GetFormatDateTime
 });
 
 function GetFormatDateTime() {
-    var internal = this !== null && babelHelpers$1["typeof"](this) === 'object' && getInternalProperties(this);
+    var internal = this !== null && _typeof(this) === 'object' && getInternalProperties(this);
 
     // Satisfy test 12.3_b
     if (!internal || !internal['[[initializedDateTimeFormat]]']) throw new TypeError('`this` value for format() is not an initialized Intl.DateTimeFormat object.');
@@ -4164,7 +3611,7 @@ function GetFormatDateTime() {
 function formatToParts$1() {
     var date = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : undefined;
 
-    var internal = this !== null && babelHelpers$1["typeof"](this) === 'object' && getInternalProperties(this);
+    var internal = this !== null && _typeof(this) === 'object' && getInternalProperties(this);
 
     if (!internal || !internal['[[initializedDateTimeFormat]]']) throw new TypeError('`this` value for formatToParts() is not an initialized Intl.DateTimeFormat object.');
 
@@ -4439,14 +3886,14 @@ function ToLocalTime(date, calendar, timeZone) {
  * hour, minute, second, and timeZoneName. Properties whose corresponding internal
  * properties are not present are not assigned.
  */
-/* 12.3.3 */defineProperty(Intl$1.DateTimeFormat.prototype, 'resolvedOptions', {
+/* 12.3.3 */defineProperty$$1(Intl$1.DateTimeFormat.prototype, 'resolvedOptions', {
     writable: true,
     configurable: true,
     value: function value() {
         var prop = void 0,
             descs = new Record(),
             props = ['locale', 'calendar', 'numberingSystem', 'timeZone', 'hour12', 'weekday', 'era', 'year', 'month', 'day', 'hour', 'minute', 'second', 'timeZoneName'],
-            internal = this !== null && babelHelpers$1["typeof"](this) === 'object' && getInternalProperties(this);
+            internal = this !== null && _typeof(this) === 'object' && getInternalProperties(this);
 
         // Satisfy test 12.3_b
         if (!internal || !internal['[[initializedDateTimeFormat]]']) throw new TypeError('`this` value for resolvedOptions() is not an initialized Intl.DateTimeFormat object.');
@@ -4600,16 +4047,16 @@ var ls = Intl$1.__localeSensitiveProtos = {
  * CLDR format locale data should be provided using IntlPolyfill.__addLocaleData().
  */
 
-defineProperty(Intl$1, '__applyLocaleSensitivePrototypes', {
+defineProperty$$1(Intl$1, '__applyLocaleSensitivePrototypes', {
     writable: true,
     configurable: true,
     value: function value() {
-        defineProperty(Number.prototype, 'toLocaleString', { writable: true, configurable: true, value: ls.Number.toLocaleString });
+        defineProperty$$1(Number.prototype, 'toLocaleString', { writable: true, configurable: true, value: ls.Number.toLocaleString });
         // Need this here for IE 8, to avoid the _DontEnum_ bug
-        defineProperty(Date.prototype, 'toLocaleString', { writable: true, configurable: true, value: ls.Date.toLocaleString });
+        defineProperty$$1(Date.prototype, 'toLocaleString', { writable: true, configurable: true, value: ls.Date.toLocaleString });
 
         for (var k in ls.Date) {
-            if (hop.call(ls.Date, k)) defineProperty(Date.prototype, k, { writable: true, configurable: true, value: ls.Date[k] });
+            if (hop.call(ls.Date, k)) defineProperty$$1(Date.prototype, k, { writable: true, configurable: true, value: ls.Date[k] });
         }
     }
 });
@@ -4619,7 +4066,7 @@ defineProperty(Intl$1, '__applyLocaleSensitivePrototypes', {
  * this __addLocaleData method as a means for the developer to add the data on an
  * as-needed basis
  */
-defineProperty(Intl$1, '__addLocaleData', {
+defineProperty$$1(Intl$1, '__addLocaleData', {
     value: function value(data) {
         if (!IsStructurallyValidLanguageTag(data.locale)) throw new Error("Invalid language tag \"" + data.locale + "\" when calling __addLocaleData(\"" + data.locale + "\", ...) to register new locale data.");
 
@@ -4655,7 +4102,7 @@ function addLocaleData(data, tag) {
     if (defaultLocale === undefined) setDefaultLocale(tag);
 }
 
-defineProperty(Intl$1, '__disableRegExpRestore', {
+defineProperty$$1(Intl$1, '__disableRegExpRestore', {
     value: function value() {
         internals.disableRegExpRestore = true;
     }

@@ -41,6 +41,7 @@
                 "MMMd": "d בMMM",
                 "MMMEd": "E, d בMMM",
                 "MMMMd": "d בMMMM",
+                "MMMMW": "שבוע W בMMM",
                 "ms": "mm:ss",
                 "y": "y",
                 "yM": "M.y",
@@ -52,7 +53,8 @@
                 "yMMMEd": "E, d בMMM y",
                 "yMMMM": "MMMM y",
                 "yQQQ": "QQQ y",
-                "yQQQQ": "QQQQ y"
+                "yQQQQ": "QQQQ y",
+                "yw": "שבוע w בשנת y"
             },
             "dateFormats": {
                 "yMMMMEEEEd": "EEEE, d בMMMM y",
@@ -272,8 +274,8 @@
                 "negativePattern": "{minusSign}{number}"
             },
             "currency": {
-                "positivePattern": "{number} {currency}",
-                "negativePattern": "{minusSign}{number} {currency}"
+                "positivePattern": "‏{number} {currency}",
+                "negativePattern": "‏{minusSign}{number} {currency}"
             },
             "percent": {
                 "positivePattern": "{number}{percentSign}",
@@ -295,14 +297,14 @@
             "AUD": "A$",
             "BRL": "R$",
             "CAD": "CA$",
-            "CNY": "CN¥",
+            "CNY": "‎CN¥‎",
             "EUR": "€",
             "GBP": "£",
             "HKD": "HK$",
             "ILP": "ל״י",
             "ILS": "₪",
             "INR": "₹",
-            "JPY": "JP¥",
+            "JPY": "¥",
             "KRW": "₩",
             "MXN": "MX$",
             "NZD": "NZ$",

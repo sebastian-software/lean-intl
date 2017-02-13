@@ -41,6 +41,7 @@
                 "MMMd": "d MMM",
                 "MMMEd": "E, d MMM",
                 "MMMMd": "d MMMM",
+                "MMMMW": "MMM-ის კვირა W",
                 "ms": "mm:ss",
                 "y": "y",
                 "yM": "M.y",
@@ -51,7 +52,8 @@
                 "yMMMEd": "E, d MMM. y",
                 "yMMMM": "MMMM, y",
                 "yQQQ": "QQQ, y",
-                "yQQQQ": "QQQQ, y"
+                "yQQQQ": "QQQQ, y",
+                "yw": "კვირა w, y"
             },
             "dateFormats": {
                 "yMMMMEEEEd": "EEEE, dd MMMM, y",

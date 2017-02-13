@@ -16,35 +16,36 @@
                 "d": "d",
                 "E": "E",
                 "Ed": "E d.",
-                "Ehm": "E, h.mm a",
-                "EHm": "E, HH.mm",
-                "Ehms": "E, h.mm.ss a",
-                "EHms": "E, HH.mm.ss",
+                "Ehm": "E h:mm a",
+                "EHm": "E HH:mm",
+                "Ehms": "E h:mm:ss a",
+                "EHms": "E HH:mm:ss",
                 "Gy": "y. G",
                 "GyMMM": "MMM y. G",
                 "GyMMMd": "d. MMM y. G",
                 "GyMMMEd": "E, d. MMM y. G",
                 "h": "h a",
                 "H": "HH",
-                "hm": "hh.mm a",
-                "Hm": "HH.mm",
-                "hms": "hh.mm.ss a",
-                "Hms": "HH.mm.ss",
-                "hmsv": "h.mm.ss a v",
-                "Hmsv": "HH.mm.ss v",
-                "hmv": "h.mm a v",
-                "Hmv": "HH.mm v",
+                "hm": "h:mm a",
+                "Hm": "HH:mm",
+                "hms": "h:mm:ss a",
+                "Hms": "HH:mm:ss",
+                "hmsv": "h:mm:ss a v",
+                "Hmsv": "HH:mm:ss v",
+                "hmv": "h:mm a v",
+                "Hmv": "HH:mm v",
                 "M": "L",
-                "Md": "d/M",
+                "Md": "d.M.",
                 "MEd": "E, d.M.",
-                "MMdd": "MM-dd",
+                "MMdd": "dd.MM.",
                 "MMM": "LLL",
                 "MMMd": "d. MMM",
                 "MMMdd": "dd.MMM",
                 "MMMEd": "E d. MMM",
                 "MMMMd": "d. MMMM",
                 "MMMMEd": "E, d. MMMM",
-                "ms": "mm.ss",
+                "MMMMW": "W. 'sjedmica' 'u' MMM",
+                "ms": "mm:ss",
                 "y": "y.",
                 "yM": "M.y.",
                 "yMd": "d.M.y.",
@@ -55,8 +56,9 @@
                 "yMMMd": "d. MMM y.",
                 "yMMMEd": "E, d. MMM y.",
                 "yMMMM": "MMMM y.",
-                "yQQQ": "QQQ. y",
-                "yQQQQ": "QQQQ. y"
+                "yQQQ": "QQQ y.",
+                "yQQQQ": "QQQQ y.",
+                "yw": "w. 'sjedmica' 'u' y."
             },
             "dateFormats": {
                 "yMMMMEEEEd": "EEEE, dd. MMMM y.",
@@ -128,19 +130,19 @@
                         "s"
                     ],
                     "short": [
-                        "ned",
-                        "pon",
-                        "uto",
-                        "sre",
-                        "čet",
-                        "pet",
-                        "sub"
+                        "ned.",
+                        "pon.",
+                        "ut.",
+                        "sr.",
+                        "čet.",
+                        "pet.",
+                        "sub."
                     ],
                     "long": [
-                        "nedelja",
+                        "nedjelja",
                         "ponedeljak",
                         "utorak",
-                        "sreda",
+                        "srijeda",
                         "četvrtak",
                         "petak",
                         "subota"
@@ -161,7 +163,7 @@
                     ]
                 },
                 "dayPeriods": {
-                    "am": "pre podne",
+                    "am": "prije podne",
                     "pm": "po podne"
                 }
             },
@@ -182,18 +184,18 @@
                         "d"
                     ],
                     "short": [
-                        "jan",
-                        "feb",
-                        "mar",
-                        "apr",
+                        "jan.",
+                        "feb.",
+                        "mart",
+                        "apr.",
                         "maj",
                         "jun",
                         "jul",
-                        "avg",
-                        "sep",
-                        "okt",
-                        "nov",
-                        "dec"
+                        "avg.",
+                        "sept.",
+                        "okt.",
+                        "nov.",
+                        "dec."
                     ],
                     "long": [
                         "januar",
@@ -221,19 +223,19 @@
                         "s"
                     ],
                     "short": [
-                        "ned",
-                        "pon",
-                        "uto",
-                        "sre",
-                        "čet",
-                        "pet",
-                        "sub"
+                        "ned.",
+                        "pon.",
+                        "ut.",
+                        "sr.",
+                        "čet.",
+                        "pet.",
+                        "sub."
                     ],
                     "long": [
-                        "nedelja",
+                        "nedjelja",
                         "ponedeljak",
                         "utorak",
-                        "sreda",
+                        "srijeda",
                         "četvrtak",
                         "petak",
                         "subota"
@@ -253,14 +255,14 @@
                         "CE"
                     ],
                     "long": [
-                        "pre nove ere",
+                        "prije nove ere",
                         "nove ere",
-                        "p. n. e.",
-                        "n. e."
+                        "BCE",
+                        "nove ere"
                     ]
                 },
                 "dayPeriods": {
-                    "am": "pre podne",
+                    "am": "prije podne",
                     "pm": "po podne"
                 }
             }
@@ -297,9 +299,7 @@
         },
         "currencies": {
             "BAM": "KM",
-            "BGN": "[BGN]",
             "BRL": "R$",
-            "BYR": "[BYR]",
             "CAD": "CA$",
             "CNY": "CN¥",
             "EUR": "€",

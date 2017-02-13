@@ -22,7 +22,7 @@
                 "EHms": "E, HH:mm:ss",
                 "Gy": "y G",
                 "GyMMM": "MMM y G",
-                "GyMMMd": "d 'de' MMM 'de' y G",
+                "GyMMMd": "d MMM y G",
                 "GyMMMEd": "E, d 'de' MMM 'de' y G",
                 "GyMMMM": "MMMM 'de' y G",
                 "GyMMMMd": "d 'de' MMMM 'de' y G",
@@ -36,7 +36,7 @@
                 "hmsv": "h:mm:ss a v",
                 "Hmsv": "HH:mm:ss v",
                 "hmsvvvv": "h:mm:ss a (vvvv)",
-                "Hmsvvvv": "H:mm:ss (vvvv)",
+                "Hmsvvvv": "HH:mm:ss (vvvv)",
                 "hmv": "h:mm a v",
                 "Hmv": "HH:mm v",
                 "M": "L",
@@ -50,20 +50,22 @@
                 "MMMEd": "E, d MMM",
                 "MMMMd": "d 'de' MMMM",
                 "MMMMEd": "E, d 'de' MMMM",
+                "MMMMW": "'semana' W 'de' MMM",
                 "ms": "mm:ss",
                 "y": "y",
                 "yM": "M-y",
                 "yMd": "d/M/y",
                 "yMEd": "E, d/M/y",
                 "yMM": "M/y",
-                "yMMM": "MMMM 'de' y",
+                "yMMM": "MMM y",
                 "yMMMd": "d 'de' MMM 'de' y",
-                "yMMMEd": "E, d 'de' MMM 'de' y",
+                "yMMMEd": "E, d MMM y",
                 "yMMMM": "MMMM 'de' y",
                 "yMMMMd": "d 'de' MMMM 'de' y",
                 "yMMMMEd": "EEE, d 'de' MMMM 'de' y",
                 "yQQQ": "QQQ 'de' y",
-                "yQQQQ": "QQQQ 'de' y"
+                "yQQQQ": "QQQQ 'de' y",
+                "yw": "'semana' w 'de' y"
             },
             "dateFormats": {
                 "yMMMMEEEEd": "EEEE, d 'de' MMMM 'de' y",
@@ -126,13 +128,13 @@
                 },
                 "days": {
                     "narrow": [
-                        "d",
-                        "l",
-                        "m",
-                        "m",
-                        "j",
-                        "v",
-                        "s"
+                        "D",
+                        "L",
+                        "M",
+                        "M",
+                        "J",
+                        "V",
+                        "S"
                     ],
                     "short": [
                         "dom.",
@@ -168,8 +170,8 @@
                     ]
                 },
                 "dayPeriods": {
-                    "am": "a.m.",
-                    "pm": "p.m."
+                    "am": "a. m.",
+                    "pm": "p. m."
                 }
             },
             "gregory": {
@@ -219,13 +221,13 @@
                 },
                 "days": {
                     "narrow": [
-                        "d",
-                        "l",
-                        "m",
-                        "m",
-                        "j",
-                        "v",
-                        "s"
+                        "D",
+                        "L",
+                        "M",
+                        "M",
+                        "J",
+                        "V",
+                        "S"
                     ],
                     "short": [
                         "dom.",
@@ -267,8 +269,8 @@
                     ]
                 },
                 "dayPeriods": {
-                    "am": "a.m.",
-                    "pm": "p.m."
+                    "am": "a. m.",
+                    "pm": "p. m."
                 }
             }
         }

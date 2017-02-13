@@ -41,6 +41,7 @@
                 "MMMd": "d MMM",
                 "MMMEd": "E, d MMM",
                 "MMMMd": "MMMM d",
+                "MMMMW": "MMM ਦਾ W ਹਫ਼ਤਾ",
                 "mmss": "mm:ss",
                 "ms": "mm:ss",
                 "y": "y",
@@ -52,7 +53,8 @@
                 "yMMMEd": "E, d MMM y",
                 "yMMMM": "y MMMM",
                 "yQQQ": "QQQ y",
-                "yQQQQ": "QQQQ y"
+                "yQQQQ": "QQQQ y",
+                "yw": "y ਦਾ w ਹਫ਼ਤਾ"
             },
             "dateFormats": {
                 "yMMMMEEEEd": "EEEE, d MMMM y",
@@ -237,10 +239,10 @@
                 },
                 "eras": {
                     "narrow": [
-                        "ਈ. ਪੂ.",
+                        "ਈ.ਪੂ.",
                         "ਸੰਨ",
-                        "ਈ. ਪੂ. ਸੰ.",
-                        "ਈ. ਸੰ."
+                        "ਈ.ਪੂ.ਸੰ.",
+                        "ਈ.ਸੰ."
                     ],
                     "short": [
                         "ਈ. ਪੂ.",

@@ -13,54 +13,56 @@
             "full": "{1} 'u' {0}",
             "long": "{1} 'u' {0}",
             "availableFormats": {
-                "d": "d",
+                "d": "d.",
                 "E": "ccc",
-                "Ed": "E, dd.",
+                "Ed": "E, d.",
                 "Ehm": "E h:mm a",
                 "EHm": "E HH:mm",
                 "Ehms": "E h:mm:ss a",
                 "EHms": "E HH:mm:ss",
                 "Gy": "y. G",
                 "GyMMM": "MMM y. G",
-                "GyMMMd": "dd. MMM y. G",
-                "GyMMMEd": "E, dd. MMM y. G",
+                "GyMMMd": "d. MMM y. G",
+                "GyMMMEd": "E, d. MMM y. G",
                 "h": "h a",
                 "H": "HH",
                 "hm": "hh:mm a",
                 "Hm": "HH:mm",
                 "hms": "hh:mm:ss a",
                 "Hms": "HH:mm:ss",
-                "hmsv": "h:mm:ss a v",
-                "Hmsv": "HH:mm:ss v",
-                "hmv": "h:mm a v",
-                "Hmv": "HH:mm v",
+                "hmsv": "h:mm:ss a (v)",
+                "Hmsv": "HH:mm:ss (v)",
+                "hmv": "h:mm a (v)",
+                "Hmv": "HH:mm (v)",
                 "M": "L",
-                "Md": "dd.MM.",
-                "MEd": "E, dd.MM.",
-                "MMdd": "dd. MM.",
+                "Md": "d.M.",
+                "MEd": "E, d.M.",
+                "MMdd": "d. M.",
                 "MMM": "LLL",
-                "MMMd": "dd. MMM",
-                "MMMEd": "E, dd. MMM",
+                "MMMd": "d. MMM",
+                "MMMEd": "E, d. MMM",
                 "MMMMd": "d. MMMM",
                 "MMMMEd": "E, d. MMMM",
+                "MMMMW": "W. 'sedmica' 'u' MMM",
                 "ms": "mm:ss",
                 "y": "y.",
-                "yM": "MM.y.",
-                "yMd": "dd.MM.y.",
-                "yMEd": "E, dd.MM.y.",
-                "yMM": "MM. y.",
+                "yM": "MM/y",
+                "yMd": "d.M.y.",
+                "yMEd": "E, d.M.y.",
+                "yMM": "M/y",
                 "yMMM": "MMM y.",
-                "yMMMd": "dd. MMM y.",
-                "yMMMEd": "E, dd. MMM y.",
+                "yMMMd": "d. MMM y.",
+                "yMMMEd": "E, d. MMM y.",
                 "yMMMM": "LLLL y.",
-                "yQQQ": "y QQQ",
-                "yQQQQ": "y QQQQ"
+                "yQQQ": "QQQ y",
+                "yQQQQ": "QQQQ y",
+                "yw": "w. 'sedmica' 'u' y."
             },
             "dateFormats": {
-                "yMMMMEEEEd": "EEEE, dd. MMMM y.",
-                "yMMMMd": "dd. MMMM y.",
-                "yMMMd": "dd. MMM. y.",
-                "yMd": "dd.MM.yy."
+                "yMMMMEEEEd": "EEEE, d. MMMM y.",
+                "yMMMMd": "d. MMMM y.",
+                "yMMMd": "d. MMM. y.",
+                "yMd": "d.M.yy."
             },
             "timeFormats": {
                 "hmmsszzzz": "HH:mm:ss zzzz",
@@ -159,7 +161,7 @@
                     ]
                 },
                 "dayPeriods": {
-                    "am": "prije podne",
+                    "am": "prijepodne",
                     "pm": "popodne"
                 }
             },
@@ -187,7 +189,7 @@
                         "maj",
                         "jun",
                         "jul",
-                        "aug",
+                        "avg",
                         "sep",
                         "okt",
                         "nov",
@@ -201,7 +203,7 @@
                         "maj",
                         "juni",
                         "juli",
-                        "august",
+                        "avgust",
                         "septembar",
                         "oktobar",
                         "novembar",
@@ -241,24 +243,24 @@
                     "narrow": [
                         "p. n. e.",
                         "n. e.",
-                        "pr.n.e.",
-                        "n.e."
+                        "BCE",
+                        "CE"
                     ],
                     "short": [
                         "p. n. e.",
                         "n. e.",
-                        "pr.n.e.",
-                        "n.e."
+                        "BCE",
+                        "CE"
                     ],
                     "long": [
-                        "Prije nove ere",
-                        "Nove ere",
-                        "pr. n. e.",
-                        "n.e."
+                        "prije nove ere",
+                        "nove ere",
+                        "BCE",
+                        "CE"
                     ]
                 },
                 "dayPeriods": {
-                    "am": "prije podne",
+                    "am": "prijepodne",
                     "pm": "popodne"
                 }
             }
@@ -278,8 +280,8 @@
                 "negativePattern": "{minusSign}{number} {currency}"
             },
             "percent": {
-                "positivePattern": "{number}{percentSign}",
-                "negativePattern": "{minusSign}{number}{percentSign}"
+                "positivePattern": "{number} {percentSign}",
+                "negativePattern": "{minusSign}{number} {percentSign}"
             }
         },
         "symbols": {

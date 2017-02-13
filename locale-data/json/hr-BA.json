@@ -35,35 +35,37 @@
                 "hmv": "h:mm a v",
                 "Hmv": "HH:mm v",
                 "M": "L.",
-                "Md": "dd.MM.",
-                "MEd": "E, dd.MM.",
+                "Md": "dd. MM.",
+                "MEd": "E, dd. MM.",
                 "MMdd": "dd. MM.",
                 "MMM": "LLL",
                 "MMMd": "d. MMM",
                 "MMMEd": "E, d. MMM",
                 "MMMMd": "d. MMMM",
                 "MMMMEd": "E, d. MMMM",
+                "MMMMW": "W. 'tjedan' 'u' MMM",
                 "ms": "mm:ss",
                 "y": "y.",
-                "yM": "MM.y.",
-                "yMd": "dd.MM.y.",
-                "yMEd": "E, dd.MM.y.",
+                "yM": "MM. y.",
+                "yMd": "dd. MM. y.",
+                "yMEd": "E, dd. MM. y.",
                 "yMM": "MM. y.",
                 "yMMM": "LLL y.",
                 "yMMMd": "d. MMM y.",
                 "yMMMEd": "E, d. MMM y.",
                 "yMMMM": "LLLL y.",
                 "yQQQ": "QQQ y.",
-                "yQQQQ": "QQQQ y."
+                "yQQQQ": "QQQQ y.",
+                "yw": "w. 'tjedan' 'u' y."
             },
             "dateFormats": {
                 "yMMMMEEEEd": "EEEE, d. MMMM y.",
                 "yMMMMd": "d. MMMM y.",
                 "yMMMd": "d. MMM y.",
-                "yMd": "dd.MM.y."
+                "yMd": "d. M. yy."
             },
             "timeFormats": {
-                "hmmsszzzz": "HH:mm:ss zzzz",
+                "hmmsszzzz": "HH:mm:ss (zzzz)",
                 "hmsz": "HH:mm:ss z",
                 "hms": "HH:mm:ss",
                 "hm": "HH:mm"
@@ -242,19 +244,19 @@
                         "pr.n.e.",
                         "AD",
                         "pr. n. e.",
-                        "n.e."
+                        "n. e."
                     ],
                     "short": [
                         "pr. Kr.",
-                        "p. Kr.",
+                        "po. Kr.",
                         "pr. n. e.",
-                        "n.e."
+                        "n. e."
                     ],
                     "long": [
                         "prije Krista",
                         "poslije Krista",
-                        "pr. n. e.",
-                        "n.e."
+                        "prije nove ere",
+                        "nove ere"
                     ]
                 },
                 "dayPeriods": {

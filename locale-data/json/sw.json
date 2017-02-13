@@ -42,6 +42,7 @@
                 "MMMEd": "E, d MMM",
                 "MMMMd": "d MMMM",
                 "MMMMEd": "E, d MMMM",
+                "MMMMW": "'wiki' W 'ya' MMM",
                 "ms": "mm:ss",
                 "y": "y",
                 "yM": "M/y",
@@ -52,7 +53,8 @@
                 "yMMMEd": "E, MMM d, y",
                 "yMMMM": "MMMM y",
                 "yQQQ": "y QQQ",
-                "yQQQQ": "QQQQ y"
+                "yQQQQ": "QQQQ y",
+                "yw": "'wiki' w 'ya' y"
             },
             "dateFormats": {
                 "yMMMMEEEEd": "EEEE, d MMMM y",
@@ -157,8 +159,8 @@
                     ]
                 },
                 "dayPeriods": {
-                    "am": "AM",
-                    "pm": "PM"
+                    "am": "Asubuhi",
+                    "pm": "Mchana"
                 }
             },
             "gregory": {
@@ -237,14 +239,14 @@
                 },
                 "eras": {
                     "narrow": [
-                        "BC",
-                        "AD",
+                        "KK",
+                        "BK",
                         "BCE",
                         "CE"
                     ],
                     "short": [
-                        "BC",
-                        "AD",
+                        "KK",
+                        "BK",
                         "BCE",
                         "CE"
                     ],
@@ -256,8 +258,8 @@
                     ]
                 },
                 "dayPeriods": {
-                    "am": "AM",
-                    "pm": "PM"
+                    "am": "Asubuhi",
+                    "pm": "Mchana"
                 }
             }
         }

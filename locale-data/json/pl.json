@@ -22,7 +22,7 @@
                 "EHms": "E, HH:mm:ss",
                 "Gy": "y G",
                 "GyMMM": "MMM y G",
-                "GyMMMd": "d.MM.y G",
+                "GyMMMd": "d MMM y G",
                 "GyMMMEd": "E, d MMM y G",
                 "GyMMMM": "LLLL y G",
                 "GyMMMMd": "d MMMM y G",
@@ -41,28 +41,30 @@
                 "Md": "d.MM",
                 "MEd": "E, d.MM",
                 "MMM": "LLL",
-                "MMMd": "d.MM",
-                "MMMEd": "E, d.MM",
+                "MMMd": "d MMM",
+                "MMMEd": "E, d MMM",
                 "MMMMd": "d MMMM",
                 "MMMMEd": "E, d MMMM",
+                "MMMMW": "MMM, 'tydz'. W",
                 "ms": "mm:ss",
                 "y": "y",
                 "yM": "MM.y",
                 "yMd": "d.MM.y",
                 "yMEd": "E, d.MM.y",
-                "yMMM": "MM.y",
-                "yMMMd": "d.MM.y",
-                "yMMMEd": "E, d.MM.y",
+                "yMMM": "LLL y",
+                "yMMMd": "d MMM y",
+                "yMMMEd": "E, d MMM y",
                 "yMMMM": "LLLL y",
                 "yMMMMd": "d MMMM y",
                 "yMMMMEd": "E, d MMMM y",
                 "yQQQ": "QQQ y",
-                "yQQQQ": "QQQQ y"
+                "yQQQQ": "QQQQ y",
+                "yw": "y, 'tydz'. w"
             },
             "dateFormats": {
                 "yMMMMEEEEd": "EEEE, d MMMM y",
                 "yMMMMd": "d MMMM y",
-                "yMMMd": "dd.MM.y",
+                "yMMMd": "d MMM y",
                 "yMd": "dd.MM.y"
             },
             "timeFormats": {
@@ -120,13 +122,13 @@
                 },
                 "days": {
                     "narrow": [
-                        "N",
-                        "P",
-                        "W",
-                        "Ś",
-                        "C",
-                        "P",
-                        "S"
+                        "n",
+                        "p",
+                        "w",
+                        "ś",
+                        "c",
+                        "p",
+                        "s"
                     ],
                     "short": [
                         "niedz.",
@@ -213,13 +215,13 @@
                 },
                 "days": {
                     "narrow": [
-                        "N",
-                        "P",
-                        "W",
-                        "Ś",
-                        "C",
-                        "P",
-                        "S"
+                        "n",
+                        "p",
+                        "w",
+                        "ś",
+                        "c",
+                        "p",
+                        "s"
                     ],
                     "short": [
                         "niedz.",
@@ -254,10 +256,10 @@
                         "CE"
                     ],
                     "long": [
+                        "przed naszą erą",
+                        "naszej ery",
                         "p.n.e.",
-                        "n.e.",
-                        "BCE",
-                        "CE"
+                        "n.e."
                     ]
                 },
                 "dayPeriods": {

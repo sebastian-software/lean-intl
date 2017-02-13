@@ -8,31 +8,31 @@
         "hourNo0": true,
         "hour12": false,
         "formats": {
-            "short": "{1} {0}",
-            "medium": "{1} {0}",
-            "full": "{1} {0}",
-            "long": "{1} {0}",
+            "short": "{1}, {0}",
+            "medium": "{1}, {0}",
+            "full": "{1}, {0}",
+            "long": "{1}, {0}",
             "availableFormats": {
                 "d": "d",
                 "E": "ccc",
                 "Ed": "d, E",
-                "Ehm": "E, a h:mm",
+                "Ehm": "E h:mm a",
                 "EHm": "E HH:mm",
-                "Ehms": "E, a h:mm:ss",
+                "Ehms": "E h:mm:ss a",
                 "EHms": "E HH:mm:ss",
                 "Gy": "G y 'ж'.",
                 "GyMMM": "G y 'ж'. MMM",
                 "GyMMMd": "G y 'ж'. d MMM",
                 "GyMMMEd": "G y 'ж'. d MMM, E",
-                "h": "a h",
+                "h": "h a",
                 "H": "HH",
-                "hm": "a h:mm",
+                "hm": "h:mm a",
                 "Hm": "HH:mm",
-                "hms": "a h:mm:ss",
+                "hms": "h:mm:ss a",
                 "Hms": "HH:mm:ss",
-                "hmsv": "a h:mm:ss v",
+                "hmsv": "h:mm:ss a v",
                 "Hmsv": "HH:mm:ss v",
-                "hmv": "a h:mm v",
+                "hmv": "h:mm a v",
                 "Hmv": "HH:mm v",
                 "M": "L",
                 "Md": "dd.MM",
@@ -41,6 +41,7 @@
                 "MMMd": "d MMM",
                 "MMMEd": "d MMM, E",
                 "MMMMd": "d MMMM",
+                "MMMMW": "MMM 'айының' W-'аптасы'",
                 "ms": "mm:ss",
                 "y": "y",
                 "yM": "MM.y",
@@ -51,7 +52,8 @@
                 "yMMMEd": "y 'ж'. d MMM, E",
                 "yMMMM": "y 'ж'. MMMM",
                 "yQQQ": "y 'ж'. QQQ",
-                "yQQQQ": "y 'ж'. QQQQ"
+                "yQQQQ": "y 'ж'. QQQQ",
+                "yw": "y 'жылдың' w-'аптасы'"
             },
             "dateFormats": {
                 "yMMMMEEEEd": "y 'ж'. d MMMM, EEEE",
@@ -156,8 +158,8 @@
                     ]
                 },
                 "dayPeriods": {
-                    "am": "таңғы",
-                    "pm": "түскі/кешкі"
+                    "am": "AM",
+                    "pm": "PM"
                 }
             },
             "gregory": {
@@ -255,8 +257,8 @@
                     ]
                 },
                 "dayPeriods": {
-                    "am": "таңғы",
-                    "pm": "түскі/кешкі"
+                    "am": "AM",
+                    "pm": "PM"
                 }
             }
         }
@@ -283,7 +285,7 @@
             "latn": {
                 "decimal": ",",
                 "group": " ",
-                "nan": "NaN",
+                "nan": "сан емес",
                 "plusSign": "+",
                 "minusSign": "-",
                 "percentSign": "%",
@@ -292,9 +294,8 @@
         },
         "currencies": {
             "AUD": "A$",
-            "BMD": "БД",
             "BRL": "R$",
-            "CAD": "КД$",
+            "CAD": "CA$",
             "CNY": "CN¥",
             "EUR": "€",
             "GBP": "£",

@@ -6,7 +6,7 @@
             "generic"
         ],
         "hourNo0": true,
-        "hour12": true,
+        "hour12": false,
         "formats": {
             "short": "{1} {0}",
             "medium": "{1} {0}",
@@ -42,6 +42,7 @@
                 "MMMEd": "E d MMM",
                 "MMMMd": "d MMM",
                 "MMMMEd": "E d MMMM",
+                "MMMMW": "'week' W 'van' MMM",
                 "ms": "mm:ss",
                 "y": "y",
                 "yM": "MM-y",
@@ -52,7 +53,8 @@
                 "yMMMEd": "E, d MMM y",
                 "yMMMM": "MMMM y",
                 "yQQQ": "QQQ y",
-                "yQQQQ": "QQQQ y"
+                "yQQQQ": "QQQQ y",
+                "yw": "'week' w 'van' y"
             },
             "dateFormats": {
                 "yMMMMEEEEd": "EEEE, dd MMMM y",
@@ -61,10 +63,10 @@
                 "yMd": "y-MM-dd"
             },
             "timeFormats": {
-                "hmmsszzzz": "h:mm:ss a zzzz",
-                "hmsz": "h:mm:ss a z",
-                "hms": "h:mm:ss a",
-                "hm": "h:mm a"
+                "hmmsszzzz": "HH:mm:ss zzzz",
+                "hmsz": "HH:mm:ss z",
+                "hms": "HH:mm:ss",
+                "hm": "HH:mm"
             }
         },
         "calendars": {
@@ -252,7 +254,7 @@
                         "voor Christus",
                         "na Christus",
                         "voor die gewone jaartelling",
-                        "g.j."
+                        "gewone jaartelling"
                     ]
                 },
                 "dayPeriods": {

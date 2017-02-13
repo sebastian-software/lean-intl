@@ -41,6 +41,7 @@
                 "MMMd": "MMM d.",
                 "MMMEd": "MMM d., E",
                 "MMMMd": "MMMM d.",
+                "MMMMW": "MMM W. 'hete'",
                 "mmss": "mm:ss",
                 "ms": "mm:ss",
                 "y": "y.",
@@ -52,7 +53,8 @@
                 "yMMMEd": "y. MMM d., E",
                 "yMMMM": "y. MMMM",
                 "yQQQ": "y. QQQ",
-                "yQQQQ": "y. QQQQ"
+                "yQQQQ": "y. QQQQ",
+                "yw": "y w. 'hete'"
             },
             "dateFormats": {
                 "yMMMMEEEEd": "y. MMMM d., EEEE",

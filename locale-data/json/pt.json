@@ -43,6 +43,7 @@
                 "MMMEd": "E, d 'de' MMM",
                 "MMMMd": "d 'de' MMMM",
                 "MMMMEd": "E, d 'de' MMMM",
+                "MMMMW": "W'ª' 'semana' 'de' MMMM",
                 "ms": "mm:ss",
                 "y": "y",
                 "yM": "MM/y",
@@ -55,14 +56,15 @@
                 "yMMMM": "MMMM 'de' y",
                 "yMMMMd": "d 'de' MMMM 'de' y",
                 "yMMMMEd": "E, d 'de' MMMM 'de' y",
-                "yQQQ": "y QQQ",
-                "yQQQQ": "y QQQQ"
+                "yQQQ": "QQQ 'de' y",
+                "yQQQQ": "QQQQ 'de' y",
+                "yw": "w'ª' 'semana' 'de' y"
             },
             "dateFormats": {
                 "yMMMMEEEEd": "EEEE, d 'de' MMMM 'de' y",
                 "yMMMMd": "d 'de' MMMM 'de' y",
                 "yMMMd": "d 'de' MMM 'de' y",
-                "yMd": "dd/MM/yy"
+                "yMd": "dd/MM/y"
             },
             "timeFormats": {
                 "hmmsszzzz": "HH:mm:ss zzzz",

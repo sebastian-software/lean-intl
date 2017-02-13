@@ -44,6 +44,7 @@
                 "MMMEd": "E d MMM",
                 "MMMMd": "d MMMM",
                 "MMMMEd": "E d MMMM",
+                "MMMMW": "'week' W 'of' MMM",
                 "ms": "m:ss",
                 "y": "y",
                 "yM": "M/y",
@@ -55,13 +56,14 @@
                 "yMMMEd": "E d MMM y",
                 "yMMMM": "MMMM y",
                 "yQQQ": "QQQ y",
-                "yQQQQ": "QQQQ y"
+                "yQQQQ": "QQQQ y",
+                "yw": "'week' w 'of' y"
             },
             "dateFormats": {
                 "yMMMMEEEEd": "EEEE d MMMM y",
                 "yMMMMd": "d MMMM y",
-                "yMMMd": "d MMM, y",
-                "yMd": "d/M/y"
+                "yMMMd": "y MMM d",
+                "yMd": "y-MM-dd"
             },
             "timeFormats": {
                 "hmmsszzzz": "HH:mm:ss zzzz",
@@ -275,8 +277,8 @@
                 "negativePattern": "{minusSign}{number}"
             },
             "currency": {
-                "positivePattern": "{currency}{number}",
-                "negativePattern": "{minusSign}{currency}{number}"
+                "positivePattern": "{currency} {number}",
+                "negativePattern": "{minusSign}{currency} {number}"
             },
             "percent": {
                 "positivePattern": "{number}{percentSign}",

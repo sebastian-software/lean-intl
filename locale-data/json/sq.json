@@ -43,6 +43,7 @@
                 "MMMEd": "E, d MMM",
                 "MMMMd": "d MMMM",
                 "MMMMEd": "E, d MMMM",
+                "MMMMW": "'java' W 'e' MMM",
                 "ms": "mm:ss",
                 "y": "y",
                 "yM": "M.y",
@@ -53,7 +54,8 @@
                 "yMMMEd": "E, d MMM y",
                 "yMMMM": "MMMM y",
                 "yQQQ": "QQQ, y",
-                "yQQQQ": "QQQQ, y"
+                "yQQQQ": "QQQQ, y",
+                "yw": "'java' w 'e' y"
             },
             "dateFormats": {
                 "yMMMMEEEEd": "EEEE, d MMMM y",
@@ -165,32 +167,32 @@
             "gregory": {
                 "months": {
                     "narrow": [
-                        "J",
-                        "S",
-                        "M",
-                        "P",
-                        "M",
-                        "Q",
-                        "K",
-                        "G",
-                        "S",
-                        "T",
-                        "N",
-                        "D"
+                        "j",
+                        "s",
+                        "m",
+                        "p",
+                        "m",
+                        "q",
+                        "k",
+                        "g",
+                        "s",
+                        "t",
+                        "n",
+                        "d"
                     ],
                     "short": [
-                        "Jan",
-                        "Shk",
-                        "Mar",
-                        "Pri",
-                        "Maj",
-                        "Qer",
-                        "Kor",
-                        "Gsh",
-                        "Sht",
-                        "Tet",
-                        "Nën",
-                        "Dhj"
+                        "jan",
+                        "shk",
+                        "mar",
+                        "pri",
+                        "maj",
+                        "qer",
+                        "kor",
+                        "gsh",
+                        "sht",
+                        "tet",
+                        "nën",
+                        "dhj"
                     ],
                     "long": [
                         "janar",
@@ -238,20 +240,20 @@
                 },
                 "eras": {
                     "narrow": [
-                        "p.e.r.",
-                        "e.r.",
+                        "p.K.",
+                        "mb.K.",
                         "p.e.s.",
                         "e.s."
                     ],
                     "short": [
-                        "p.e.r.",
-                        "e.r.",
+                        "p.K.",
+                        "mb.K.",
                         "p.e.s.",
                         "e.s."
                     ],
                     "long": [
-                        "para erës së re",
-                        "erës së re",
+                        "para Krishtit",
+                        "mbas Krishtit",
                         "para erës sonë",
                         "erës sonë"
                     ]

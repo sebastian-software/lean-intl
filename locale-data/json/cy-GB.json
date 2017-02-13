@@ -15,7 +15,7 @@
             "availableFormats": {
                 "d": "d",
                 "E": "ccc",
-                "Ed": "E, d",
+                "Ed": "d, E",
                 "Ehm": "E, h:mm a",
                 "EHm": "E, HH:mm",
                 "Ehms": "E, h:mm:ss a",
@@ -41,6 +41,7 @@
                 "MMMd": "d MMM",
                 "MMMEd": "E, d MMM",
                 "MMMMd": "MMMM d",
+                "MMMMW": "'wythnos' W 'o' MMM",
                 "ms": "mm:ss",
                 "y": "y",
                 "yM": "M/y",
@@ -52,7 +53,8 @@
                 "yMMMM": "MMMM y",
                 "yQ": "Q y",
                 "yQQQ": "QQQ y",
-                "yQQQQ": "QQQQ y"
+                "yQQQQ": "QQQQ y",
+                "yw": "'wythnos' w 'of' y"
             },
             "dateFormats": {
                 "yMMMMEEEEd": "EEEE, d MMMM y",
@@ -157,8 +159,8 @@
                     ]
                 },
                 "dayPeriods": {
-                    "am": "AM",
-                    "pm": "PM"
+                    "am": "yb",
+                    "pm": "yh"
                 }
             },
             "gregory": {
@@ -256,8 +258,8 @@
                     ]
                 },
                 "dayPeriods": {
-                    "am": "AM",
-                    "pm": "PM"
+                    "am": "yb",
+                    "pm": "yh"
                 }
             }
         }

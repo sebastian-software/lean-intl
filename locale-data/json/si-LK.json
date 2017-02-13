@@ -41,6 +41,7 @@
                 "MMMd": "MMM d",
                 "MMMEd": "MMM d E",
                 "MMMMd": "MMMM d",
+                "MMMMW": "MMM සතිය W",
                 "ms": "mm.ss",
                 "y": "y",
                 "yM": "y-M",
@@ -51,7 +52,8 @@
                 "yMMMEd": "y MMM d, E",
                 "yMMMM": "y MMMM",
                 "yQQQ": "y QQQ",
-                "yQQQQ": "y QQQQ"
+                "yQQQQ": "y QQQQ",
+                "yw": "y සතිය w"
             },
             "dateFormats": {
                 "yMMMMEEEEd": "y MMMM d, EEEE",

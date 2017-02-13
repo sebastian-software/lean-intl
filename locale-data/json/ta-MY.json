@@ -36,12 +36,13 @@
                 "Hmv": "HH:mm v",
                 "M": "L",
                 "Md": "d/M",
-                "MEd": "MM-dd, E",
+                "MEd": "dd-MM, E",
                 "MMdd": "dd-MM",
                 "MMM": "LLL",
                 "MMMd": "MMM d",
                 "MMMEd": "MMM d, E",
                 "MMMMd": "d MMMM",
+                "MMMMW": "MMM W -ஆம் வாரம்",
                 "ms": "mm:ss",
                 "y": "y",
                 "yM": "M/y",
@@ -53,7 +54,8 @@
                 "yMMMEd": "E, d MMM, y",
                 "yMMMM": "MMMM y",
                 "yQQQ": "QQQ y",
-                "yQQQQ": "QQQQ y"
+                "yQQQQ": "QQQQ y",
+                "yw": "y ஆம் ஆண்டின் w -ஆம் வாரம்"
             },
             "dateFormats": {
                 "yMMMMEEEEd": "EEEE, d MMMM, y",

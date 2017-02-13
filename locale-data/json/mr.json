@@ -42,6 +42,7 @@
                 "MMMd": "d MMM",
                 "MMMEd": "E, d MMM",
                 "MMMMd": "d MMMM",
+                "MMMMW": "MMM चा W रा आठवडा",
                 "ms": "mm:ss",
                 "y": "y",
                 "yM": "M/y",
@@ -53,7 +54,8 @@
                 "yMMMEd": "E, d, MMM y",
                 "yMMMM": "MMMM y",
                 "yQQQ": "QQQ y",
-                "yQQQQ": "QQQQ y"
+                "yQQQQ": "QQQQ y",
+                "yw": "y चा w रा आठवडा"
             },
             "dateFormats": {
                 "yMMMMEEEEd": "EEEE, d MMMM, y",
@@ -240,13 +242,13 @@
                     "narrow": [
                         "इ. स. पू.",
                         "इ. स.",
-                        "ईसापूर्व युग",
+                        "इ. स. पू. युग",
                         "ख्रि. यु."
                     ],
                     "short": [
                         "इ. स. पू.",
                         "इ. स.",
-                        "ईसापूर्व युग",
+                        "इ. स. पू. युग",
                         "ख्रि. यु."
                     ],
                     "long": [

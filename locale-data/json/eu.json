@@ -41,6 +41,7 @@
                 "MMMd": "MMM d",
                 "MMMEd": "MMM d, E",
                 "MMMMd": "MMMM d",
+                "MMMMW": "MMM'ren' 'astea' W",
                 "ms": "mm:ss",
                 "y": "y",
                 "yM": "y/M",
@@ -53,13 +54,14 @@
                 "yMMMMd": "y('e')'ko' MMMM d",
                 "yMMMMEd": "y('e')'ko' MMMM d, E",
                 "yQQQ": "y('e')'ko' QQQ",
-                "yQQQQ": "y('e')'ko' QQQQ"
+                "yQQQQ": "y('e')'ko' QQQQ",
+                "yw": "w/y 'astea'"
             },
             "dateFormats": {
                 "yMMMMEEEEd": "y('e')'ko' MMMM d, EEEE",
                 "yMMMMd": "y('e')'ko' MMMM d",
                 "yMMMd": "y MMM d",
-                "yMd": "y/MM/dd"
+                "yMd": "yy/M/d"
             },
             "timeFormats": {
                 "hmmsszzzz": "HH:mm:ss (zzzz)",
@@ -193,18 +195,18 @@
                         "abe."
                     ],
                     "long": [
-                        "urtarrilak",
-                        "otsailak",
-                        "martxoak",
-                        "apirilak",
-                        "maiatzak",
-                        "ekainak",
-                        "uztailak",
-                        "abuztuak",
-                        "irailak",
-                        "urriak",
-                        "azaroak",
-                        "abenduak"
+                        "urtarrila",
+                        "otsaila",
+                        "martxoa",
+                        "apirila",
+                        "maiatza",
+                        "ekaina",
+                        "uztaila",
+                        "abuztua",
+                        "iraila",
+                        "urria",
+                        "azaroa",
+                        "abendua"
                     ]
                 },
                 "days": {
@@ -240,20 +242,20 @@
                     "narrow": [
                         "K.a.",
                         "K.o.",
-                        "BCE",
-                        "CE"
+                        "G.a.a",
+                        "G.a"
                     ],
                     "short": [
                         "K.a.",
                         "K.o.",
-                        "BCE",
-                        "CE"
+                        "G.a.a",
+                        "G.a"
                     ],
                     "long": [
                         "K.a.",
-                        "K.o.",
-                        "BCE",
-                        "CE"
+                        "Kristo ondoren",
+                        "Gure aro aurretik",
+                        "Gure aroa"
                     ]
                 },
                 "dayPeriods": {
