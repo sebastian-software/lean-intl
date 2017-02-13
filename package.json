@@ -50,11 +50,7 @@
   "scripts": {
     "clean": "rimraf dist/ lib/ locale-data/",
     "build:data": "babel-node scripts/build-data",
-    "build:lib": "babel-node scripts/build-lib",
-    "build:dist:dev": "NODE_ENV=development babel-node scripts/build-dist",
-    "build:dist:prod": "NODE_ENV=production babel-node scripts/build-dist",
-    "build:dist": "npm run build:dist:dev && npm run build:dist:prod",
-    "build": "npm run build:data && npm run build:lib && npm run build:dist",
+    "build": "npm run build:data",
     "lint": "eslint .",
     "test": "cd tests && node polyfilling.js && node sanity.js && node disableregexprestore.js && node noderunner.js",
     "pretest": "npm run lint",
