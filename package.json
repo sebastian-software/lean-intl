@@ -2,7 +2,11 @@
   "name": "lean-intl",
   "version": "1.0.0",
   "description": "Lean Polyfill the ECMA-402 Intl API (except collation and non gregorian calendars)",
-  "main": "index.js",
+  "main": "lib/index.classic.commonjs.js",
+  "module": "lib/index.classic.esmodule.js",
+  "jsnext:main": "lib/index.classic.esmodule.js",
+  "main:modern": "lib/index.modern.commonjs.js",
+  "module:modern": "lib/index.modern.esmodule.js",
   "directories": {
     "test": "tests"
   },
@@ -73,5 +77,8 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/sebastian-software/lean-intl/issues"
+  },
+  "dependencies": {
+    "prepublish": "^0.12.5"
   }
 }
