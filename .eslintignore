@@ -2,3 +2,4 @@ locale-data/
 tasks/
 tests/
 tmp/
+lib/
