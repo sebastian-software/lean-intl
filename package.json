@@ -72,8 +72,11 @@
     "ecma402",
     "polyfill"
   ],
-  "author": "Sebastian Werner",
-  "email": "s.werner@sebastian-software.de",
+  "author": {
+    "name": "Sebastian Software",
+    "email": "s.werner@sebastian-software.de",
+    "url": "sebastian-software.de"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/sebastian-software/lean-intl/issues"
