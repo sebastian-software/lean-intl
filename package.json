@@ -41,7 +41,7 @@
   "scripts": {
     "clean": "rimraf dist/ lib/ locale-data/",
     "build:data": "babel-node scripts/build-data",
-    "build": "npm run build:data",
+    "build": "npm run build:data && prepublish",
     "lint": "eslint .",
     "test": "cd tests && babel-node sanity.js && babel-node disableregexprestore.js && node noderunner.js",
     "pretest": "npm run lint",
