@@ -5,7 +5,7 @@ var LIBS = {
         path:   require('path'),
         vm:     require('vm'),
     },
-    POLYFILL_PATH = LIBS.path.resolve(__dirname + '/../lib/index.classic.umd.js'),
+    POLYFILL_PATH = LIBS.path.resolve(__dirname + '/../lib/index.classic.iife.js'),
     POLYFILL_CODE = LIBS.fs.readFileSync(POLYFILL_PATH).toString(),
     DATA_PATH = LIBS.path.resolve(__dirname + '/../locale-data/complete.js'),
     DATA_CODE = LIBS.fs.readFileSync(DATA_PATH).toString(),
