@@ -7,13 +7,14 @@
   "jsnext:main": "lib/index.classic.esmodule.js",
   "main:modern": "lib/index.modern.commonjs.js",
   "module:modern": "lib/index.modern.esmodule.js",
-  "main:umd": "lib/index.classic.umd.js",
+  "main:iife": "lib/index.classic.iife.js",
   "directories": {
     "test": "tests"
   },
   "devDependencies": {
     "async": "^2.1.4",
     "babel-cli": "^6.23.0",
+    "babel-eslint": "^7.1.1",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.23.0",
     "cldr-core": "30.0.3",
     "cldr-dates-full": "30.0.3",
