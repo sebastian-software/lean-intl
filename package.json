@@ -8,6 +8,7 @@
   "main:modern": "lib/index.modern.commonjs.js",
   "module:modern": "lib/index.modern.esmodule.js",
   "main:iife": "lib/index.classic.iife.js",
+  "moduleName": "IntlPolyfill",
   "directories": {
     "test": "tests"
   },
@@ -33,7 +34,7 @@
     "grunt-zip": "^0.17.1",
     "mkdirp": "^0.5.1",
     "object.assign": "^4.0.4",
-    "prepublish": "^0.13.0",
+    "prepublish": "^0.13.1",
     "rimraf": "^2.5.4",
     "serve-static": "^1.11.2",
     "wd": "^1.1.3"
