@@ -1,4 +1,4 @@
-import IntlPolyfill from "./core.js";
+import IntlPolyfill from "./index.js";
 
 // hack to export the polyfill as global Intl if needed
 if (typeof Intl === 'undefined') {
