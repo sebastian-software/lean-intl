@@ -41,7 +41,7 @@
     "build:data": "babel-node scripts/build-data",
     "build": "npm run build:data",
     "lint": "eslint .",
-    "test": "cd tests && babel-node sanity.js && node disableregexprestore.js && node noderunner.js",
+    "test": "cd tests && babel-node sanity.js && babel-node disableregexprestore.js && node noderunner.js",
     "pretest": "npm run lint",
     "preversion": "npm run clean && npm run build && npm run test",
     "prepublish": "npm run clean && npm run build"

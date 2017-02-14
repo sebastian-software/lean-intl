@@ -1,4 +1,5 @@
-var IntlPolyfill = require('../');
+import IntlPolyfill from "../"
+import "../locale-data/complete"
 
 function assertEqual(value, expected, message) {
     console.log(message);
