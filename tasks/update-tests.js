@@ -11,39 +11,6 @@ var SRC_DIR     = SRC_262 + '/test/intl402';
 var DEST_DIR    = SRC_262 + '/pages/intl402';
 var INCLUDE_DIR = SRC_262 + '/harness';
 
-var WRAPPER_START = [
-        '//<html><head><meta http-equiv="X-UA-Compatible" content="IE=EDGE"><meta charset=utf-8></head><body><button onclick="runner()">Run</button> results: <span id="results">not yet run</span><script src="{{libPath}}"></script><script>',
-        '"use strict";',
-        // stuff defined in harness/*.js yet not pulled in via $INCLUDE()
-        'var __globalObject = Function("return this;")();',
-        'function fnGlobalObject() {',
-        '    return __globalObject;',
-        '}',
-        'function Test262Error(message) {',
-        '  this.message = message || "";',
-        '}',
-
-        // Make sure polyfilled ECMA-262 functions are in place for the tests
-        'IntlPolyfill.__applyLocaleSensitivePrototypes();'
-    ].join('\n');
-
-var WRAPPER_END = [
-        // In the browser, a button will run the following function,
-        // and we can also call it with the webdriver's execute() function
-        'function runner() {',
-        '    var passed = false;',
-        '    if (typeof document !== "undefined") {',
-        '        setTimeout(function () {',
-        '            document.getElementById("results").innerHTML = (passed ? "passed" : "FAILED");',
-        '        });',
-        '    }',
-        '    runTheTest();',
-        '    passed = true;',
-        '    return passed;',
-        '}',
-        '//</script></body></html>'
-    ].join('\n');
-
 function processTest(content) {
     var includes = [LIBS.fs.readFileSync(LIBS.path.resolve(INCLUDE_DIR, 'assert.js')).toString()];
     content = content.replace(/includes\: \[(.*)]/g, function(all, path) {
@@ -91,18 +58,6 @@ function processTest(content) {
 
     return content;
 }
-
-
-// Turns test into an HTML page.
-function wrapTest(content, libPath) {
-    // The weird "//" makes these html files also valid node.js scripts :)
-    return [
-        WRAPPER_START.replace('{{libPath}}', libPath),
-        content,
-        WRAPPER_END
-    ].join('\n');
-}
-
 
 function listTests() {
     var tests = [],
@@ -179,12 +134,8 @@ module.exports = function(grunt) {
             var srcPath  = LIBS.path.resolve(SRC_DIR, testPath),
                 destPath = LIBS.path.resolve(DEST_DIR, testPath),
                 content;
-            var libPath = LIBS.path.relative(LIBS.path.dirname(srcPath), LIBS.path.resolve(__dirname,  '../dist/Intl.complete.js'));
-            console.log(libPath, srcPath, LIBS.path.resolve(__dirname,  '../dist/Intl.complete.js'));
             content = 'function runTheTest () {'+ grunt.file.read(srcPath) +' }';
             content = processTest(content);
-            content = wrapTest(content, libPath);
-            destPath = destPath.replace(/\.js$/, '.html');
             grunt.file.write(destPath, content);
         });
     });
