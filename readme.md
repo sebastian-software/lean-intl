@@ -1,4 +1,19 @@
-# Lean-Intl - A leaner fork of Lean Intl
+# *Lean-Intl* - A leaner fork of Intl.js <br/>[![Sponsored by][sponsor-img]][sponsor] [![Version][npm-version-img]][npm] [![Downloads][npm-downloads-img]][npm] [![Build Status Unix][travis-img]][travis] [![Build Status Windows][appveyor-img]][appveyor] [![Dependencies][deps-img]][deps]
+
+*Lean-Intl* is a lean polyfill for `Intl`-APIs for browsers which are not yet supporting this API.
+
+[sponsor-img]: https://img.shields.io/badge/Sponsored%20by-Sebastian%20Software-692446.svg
+[sponsor]: https://www.sebastian-software.de
+[deps]: https://david-dm.org/sebastian-software/lean-intl
+[deps-img]: https://david-dm.org/sebastian-software/lean-intl.svg
+[npm]: https://www.npmjs.com/package/lean-intl
+[npm-downloads-img]: https://img.shields.io/npm/dm/lean-intl.svg
+[npm-version-img]: https://img.shields.io/npm/v/lean-intl.svg
+[travis-img]: https://img.shields.io/travis/sebastian-software/lean-intl/master.svg?branch=master&label=unix%20build
+[appveyor-img]: https://img.shields.io/appveyor/ci/swernerx/lean-intl/master.svg?label=windows%20build
+[travis]: https://travis-ci.org/sebastian-software/lean-intl
+[appveyor]: https://ci.appveyor.com/project/swernerx/lean-intl/branch/master
+
 
 ## Introduction
 
