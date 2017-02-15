@@ -8,7 +8,6 @@ function Test262Error(message) {
   this.message = message || "";
 }
 IntlPolyfill.__applyLocaleSensitivePrototypes();
-Object.getPrototypeOf = Object.getPrototypeOf || function (obj) { return obj.constructor.prototype; };
 function assert(mustBeTrue, message) {
     if (mustBeTrue === true) {
         return;

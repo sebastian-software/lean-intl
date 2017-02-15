@@ -8,10 +8,6 @@ function Test262Error(message) {
   this.message = message || "";
 }
 IntlPolyfill.__applyLocaleSensitivePrototypes();
-try { Object.defineProperty({}, "a", {}) } catch (e) { Object.defineProperty = function (obj, name, desc) {
-             if (desc.hasOwnProperty('value'))
-                obj[name] = desc.value;
-        } }
 function assert(mustBeTrue, message) {
     if (mustBeTrue === true) {
         return;
