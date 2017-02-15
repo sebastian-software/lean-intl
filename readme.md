@@ -142,7 +142,7 @@ unlikely). To disable this functionality, invoke `Intl.__disableRegExpRestore()`
 
 ## License
 
-Copyright (c) 2013 Andy Earnshaw
+Copyright (c) 2013 Andy Earnshaw  
 Copyright (c) 2017 Sebastian Werner
 
 This software is licensed under the MIT license. See the `LICENSE.txt` file
