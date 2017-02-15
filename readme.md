@@ -37,11 +37,13 @@ in environments that support it, or `Lean-Intl` for legacy or unsupported enviro
  - Removed Bower support. That's the past. Either use Webpack or Fusebox, please.
  - Cleaned up Readme from old hints on using direct scripts and NodeJS support.
  - Prettified source code using [Prettier](https://github.com/jlongster/prettier) and ESLint.
+ - Cleaned up dependencies from all unused packages dramatically improving CI speed.
+ - Added Yarn lock file.
 
 TODO:
 
  - Cleanup custom Polyfills
- - Removed JSONP data which is only relevant for direct browser usage
+ - Remove JSONP data which is only relevant for direct browser usage
 
 
 ## Getting started
