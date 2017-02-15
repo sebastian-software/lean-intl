@@ -8,7 +8,7 @@ var LIBS = {
     };
 var SRC_262     = __dirname + '/../tests/test262';
 var SRC_DIR     = SRC_262 + '/test/intl402';
-var DEST_DIR    = SRC_262 + '/pages/intl402';
+var DEST_DIR    = SRC_262 + '/node/intl402';
 var INCLUDE_DIR = SRC_262 + '/harness';
 
 function processTest(content) {
