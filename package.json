@@ -43,9 +43,10 @@
     "clean": "rimraf dist/ lib/ locale-data/",
     "build:data": "babel-node scripts/build-data",
     "build": "npm run build:data && prepublish",
-    "lint": "eslint .",
+    "release": "release-it --github.release --npm.publish --non-interactive",
+    "release:minor": "release-it --github.release --npm.publish --non-interactive --increment minor",
+    "release:major": "release-it --github.release --npm.publish --non-interactive --increment major",
     "test": "cd tests && babel-node sanity.js && babel-node disableregexprestore.js && node noderunner.js",
-    "pretest": "npm run lint",
     "preversion": "npm run clean && npm run build && npm run test",
     "prepublish": "npm run clean && npm run build"
   },
