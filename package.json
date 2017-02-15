@@ -1,6 +1,6 @@
 {
   "name": "lean-intl",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "description": "Lean Polyfill the ECMA-402 Intl API (except collation and non gregorian calendars)",
   "main": "lib/index.classic.commonjs.js",
   "module": "lib/index.classic.esmodule.js",
