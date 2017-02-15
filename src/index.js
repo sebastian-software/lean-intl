@@ -9,23 +9,15 @@
  * CLDR format locale data should be provided using IntlPolyfill.__addLocaleData().
  */
 
-import {
-    defineProperty,
-    hop,
-    arrPush,
-    arrShift,
-    internals
-} from "./util.js"
+import { defineProperty, hop, arrPush, arrShift, internals } from "./util.js"
 
 import {
-    IsStructurallyValidLanguageTag,
-    defaultLocale,
-    setDefaultLocale
+  IsStructurallyValidLanguageTag,
+  defaultLocale,
+  setDefaultLocale
 } from "./6.locales-currencies-tz.js"
 
-import {
-    Intl
-} from "./8.intl.js"
+import { Intl } from "./8.intl.js"
 
 import "./11.numberformat.js"
 
@@ -37,14 +29,26 @@ defineProperty(Intl, "__applyLocaleSensitivePrototypes", {
   writable: true,
   configurable: true,
   value() {
-    defineProperty(Number.prototype, "toLocaleString", { writable: true, configurable: true, value: ls.Number.toLocaleString })
+    defineProperty(Number.prototype, "toLocaleString", {
+      writable: true,
+      configurable: true,
+      value: ls.Number.toLocaleString
+    })
 
-        // Need this here for IE 8, to avoid the _DontEnum_ bug
-    defineProperty(Date.prototype, "toLocaleString", { writable: true, configurable: true, value: ls.Date.toLocaleString })
+    // Need this here for IE 8, to avoid the _DontEnum_ bug
+    defineProperty(Date.prototype, "toLocaleString", {
+      writable: true,
+      configurable: true,
+      value: ls.Date.toLocaleString
+    })
 
     for (let k in ls.Date) {
       if (hop.call(ls.Date, k))
-        defineProperty(Date.prototype, k, { writable: true, configurable: true, value: ls.Date[k] })
+        defineProperty(Date.prototype, k, {
+          writable: true,
+          configurable: true,
+          value: ls.Date[k]
+        })
     }
   }
 })
@@ -57,31 +61,35 @@ defineProperty(Intl, "__applyLocaleSensitivePrototypes", {
 defineProperty(Intl, "__addLocaleData", {
   value(data) {
     if (!IsStructurallyValidLanguageTag(data.locale))
-      throw new Error(`Invalid language tag "${data.locale}" when calling __addLocaleData("${data.locale}", ...) to register new locale data.`)
+      throw new Error(
+        `Invalid language tag "${data.locale}" when calling __addLocaleData("${data.locale}", ...) to register new locale data.`
+      )
 
     addLocaleData(data, data.locale)
   }
 })
 
 function addLocaleData(data, tag) {
-    // Both NumberFormat and DateTimeFormat require number data, so throw if it isn't present
+  // Both NumberFormat and DateTimeFormat require number data, so throw if it isn't present
   if (!data.number)
-    throw new Error("Object passed doesn't contain locale data for Intl.NumberFormat")
+    throw new Error(
+      "Object passed doesn't contain locale data for Intl.NumberFormat"
+    )
 
   let locale,
     locales = [ tag ],
     parts = tag.split("-")
 
-    // Create fallbacks for locale data with scripts, e.g. Latn, Hans, Vaii, etc
+  // Create fallbacks for locale data with scripts, e.g. Latn, Hans, Vaii, etc
   if (parts.length > 2 && parts[1].length === 4)
-    arrPush.call(locales, `${parts[0] }-${ parts[2]}`)
+    arrPush.call(locales, `${parts[0]}-${parts[2]}`)
 
-  while ((locale = arrShift.call(locales))) {
-        // Add to NumberFormat internal properties as per 11.2.3
+  while (locale = arrShift.call(locales)) {
+    // Add to NumberFormat internal properties as per 11.2.3
     arrPush.call(internals.NumberFormat["[[availableLocales]]"], locale)
     internals.NumberFormat["[[localeData]]"][locale] = data.number
 
-        // ...and DateTimeFormat internal properties as per 12.2.3
+    // ...and DateTimeFormat internal properties as per 12.2.3
     if (data.date) {
       data.date.nu = data.number.nu
       arrPush.call(internals.DateTimeFormat["[[availableLocales]]"], locale)
@@ -89,9 +97,8 @@ function addLocaleData(data, tag) {
     }
   }
 
-    // If this is the first set of locale data added, make it the default
-  if (defaultLocale === undefined)
-    setDefaultLocale(tag)
+  // If this is the first set of locale data added, make it the default
+  if (defaultLocale === undefined) setDefaultLocale(tag)
 }
 
 defineProperty(Intl, "__disableRegExpRestore", {

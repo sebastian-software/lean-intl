@@ -1,6 +1,4 @@
-import {
-    CanonicalizeLocaleList
-} from "./9.negotiation.js"
+import { CanonicalizeLocaleList } from "./9.negotiation.js"
 
 // 8 The Intl Object
 export const Intl = {}
@@ -11,10 +9,10 @@ export const Intl = {}
 // @spec[tc39/ecma402/master/spec/intl.html]
 // @clause[sec-intl.getcanonicallocales]
 function getCanonicalLocales(locales) {
-    // 1. Let ll be ? CanonicalizeLocaleList(locales).
+  // 1. Let ll be ? CanonicalizeLocaleList(locales).
   let ll = CanonicalizeLocaleList(locales)
 
-    // 2. Return CreateArrayFromList(ll).
+  // 2. Return CreateArrayFromList(ll).
   {
     let result = []
 

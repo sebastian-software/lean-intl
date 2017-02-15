@@ -2,17 +2,13 @@
 // ======================
 
 import {
-    expBCP47Syntax,
-    expExtSequences,
-    expVariantDupes,
-    expSingletonDupes
+  expBCP47Syntax,
+  expExtSequences,
+  expVariantDupes,
+  expSingletonDupes
 } from "./exp"
 
-import {
-    hop,
-    arrJoin,
-    arrSlice
-} from "./util.js"
+import { hop, arrJoin, arrSlice } from "./util.js"
 
 // Default locale is the first-added locale data for us
 export let defaultLocale
@@ -367,18 +363,15 @@ export function toLatinUpperCase(str) {
  * subtag). It returns false otherwise. Terminal value characters in the grammar are
  * interpreted as the Unicode equivalents of the ASCII octet values given.
  */
-export function /* 6.2.2 */IsStructurallyValidLanguageTag(locale) {
-    // represents a well-formed BCP 47 language tag as specified in RFC 5646
-  if (!expBCP47Syntax.test(locale))
-    return false
+export function /* 6.2.2 */ IsStructurallyValidLanguageTag(locale) {
+  // represents a well-formed BCP 47 language tag as specified in RFC 5646
+  if (!expBCP47Syntax.test(locale)) return false
 
-    // does not include duplicate variant subtags, and
-  if (expVariantDupes.test(locale))
-    return false
+  // does not include duplicate variant subtags, and
+  if (expVariantDupes.test(locale)) return false
 
-    // does not include duplicate singleton subtags.
-  if (expSingletonDupes.test(locale))
-    return false
+  // does not include duplicate singleton subtags.
+  if (expSingletonDupes.test(locale)) return false
 
   return true
 }
@@ -398,71 +391,69 @@ export function /* 6.2.2 */IsStructurallyValidLanguageTag(locale) {
  * define that go beyond the canonicalization rules of RFC 5646 section 4.5.
  * Implementations are allowed, but not required, to apply these additional rules.
  */
-export function /* 6.2.3 */CanonicalizeLanguageTag(locale) {
+export function /* 6.2.3 */ CanonicalizeLanguageTag(locale) {
   let match, parts
 
-    // A language tag is in 'canonical form' when the tag is well-formed
-    // according to the rules in Sections 2.1 and 2.2
+  // A language tag is in 'canonical form' when the tag is well-formed
+  // according to the rules in Sections 2.1 and 2.2
 
-    // Section 2.1 says all subtags use lowercase...
+  // Section 2.1 says all subtags use lowercase...
   locale = locale.toLowerCase()
 
-    // ...with 2 exceptions: 'two-letter and four-letter subtags that neither
-    // appear at the start of the tag nor occur after singletons.  Such two-letter
-    // subtags are all uppercase (as in the tags "en-CA-x-ca" or "sgn-BE-FR") and
-    // four-letter subtags are titlecase (as in the tag "az-Latn-x-latn").
+  // ...with 2 exceptions: 'two-letter and four-letter subtags that neither
+  // appear at the start of the tag nor occur after singletons.  Such two-letter
+  // subtags are all uppercase (as in the tags "en-CA-x-ca" or "sgn-BE-FR") and
+  // four-letter subtags are titlecase (as in the tag "az-Latn-x-latn").
   parts = locale.split("-")
   for (let i = 1, max = parts.length; i < max; i++) {
-        // Two-letter subtags are all uppercase
+    // Two-letter subtags are all uppercase
     if (parts[i].length === 2)
       parts[i] = parts[i].toUpperCase()
-
-        // Four-letter subtags are titlecase
     else if (parts[i].length === 4)
-      parts[i] = parts[i].charAt(0).toUpperCase() + parts[i].slice(1)
 
-        // Is it a singleton?
+      // Four-letter subtags are titlecase
+      parts[i] = parts[i].charAt(0).toUpperCase() + parts[i].slice(1)
     else if (parts[i].length === 1 && parts[i] !== "x")
+
+      // Is it a singleton?
       break
   }
   locale = arrJoin.call(parts, "-")
 
-    // The steps laid out in RFC 5646 section 4.5 are as follows:
+  // The steps laid out in RFC 5646 section 4.5 are as follows:
 
-    // 1.  Extension sequences are ordered into case-insensitive ASCII order
-    //     by singleton subtag.
+  // 1.  Extension sequences are ordered into case-insensitive ASCII order
+  //     by singleton subtag.
   if ((match = locale.match(expExtSequences)) && match.length > 1) {
-        // The built-in sort() sorts by ASCII order, so use that
+    // The built-in sort() sorts by ASCII order, so use that
     match.sort()
 
-        // Replace all extensions with the joined, sorted array
+    // Replace all extensions with the joined, sorted array
     locale = locale.replace(
-      RegExp(`(?:${ expExtSequences.source })+`, "i"),
+      RegExp(`(?:${expExtSequences.source})+`, "i"),
       arrJoin.call(match, "")
-        )
+    )
   }
 
-    // 2.  Redundant or grandfathered tags are replaced by their 'Preferred-
-    //     Value', if there is one.
-  if (hop.call(redundantTags.tags, locale))
-    locale = redundantTags.tags[locale]
+  // 2.  Redundant or grandfathered tags are replaced by their 'Preferred-
+  //     Value', if there is one.
+  if (hop.call(redundantTags.tags, locale)) locale = redundantTags.tags[locale]
 
-    // 3.  Subtags are replaced by their 'Preferred-Value', if there is one.
-    //     For extlangs, the original primary language subtag is also
-    //     replaced if there is a primary language subtag in the 'Preferred-
-    //     Value'.
+  // 3.  Subtags are replaced by their 'Preferred-Value', if there is one.
+  //     For extlangs, the original primary language subtag is also
+  //     replaced if there is a primary language subtag in the 'Preferred-
+  //     Value'.
   parts = locale.split("-")
 
   for (let i = 1, max = parts.length; i < max; i++) {
     if (hop.call(redundantTags.subtags, parts[i]))
       parts[i] = redundantTags.subtags[parts[i]]
-
     else if (hop.call(redundantTags.extLang, parts[i])) {
       parts[i] = redundantTags.extLang[parts[i]][0]
 
-            // For extlang tags, the prefix needs to be removed if it is redundant
+      // For extlang tags, the prefix needs to be removed if it is redundant
       if (i === 1 && redundantTags.extLang[parts[1]][1] === parts[0]) {
-        parts = arrSlice.call(parts, i++)
+        parts = arrSlice.call(parts, (i++))
         max -= 1
       }
     }
@@ -476,7 +467,7 @@ export function /* 6.2.3 */CanonicalizeLanguageTag(locale) {
  * structurally valid (6.2.2) and canonicalized (6.2.3) BCP 47 language tag for the
  * host environment’s current locale.
  */
-export function /* 6.2.4 */DefaultLocale() {
+export function /* 6.2.4 */ DefaultLocale() {
   return defaultLocale
 }
 
@@ -490,20 +481,19 @@ const expCurrencyCode = /^[A-Z]{3}$/
  * (after conversion to a String value) represents a well-formed 3-letter ISO currency
  * code. The following steps are taken:
  */
-export function /* 6.3.1 */IsWellFormedCurrencyCode(currency) {
-    // 1. Let `c` be ToString(currency)
+export function /* 6.3.1 */ IsWellFormedCurrencyCode(currency) {
+  // 1. Let `c` be ToString(currency)
   let c = String(currency)
 
-    // 2. Let `normalized` be the result of mapping c to upper case as described
-    //    in 6.1.
+  // 2. Let `normalized` be the result of mapping c to upper case as described
+  //    in 6.1.
   let normalized = toLatinUpperCase(c)
 
-    // 3. If the string length of normalized is not 3, return false.
-    // 4. If normalized contains any character that is not in the range "A" to "Z"
-    //    (U+0041 to U+005A), return false.
-  if (expCurrencyCode.test(normalized) === false)
-    return false
+  // 3. If the string length of normalized is not 3, return false.
+  // 4. If normalized contains any character that is not in the range "A" to "Z"
+  //    (U+0041 to U+005A), return false.
+  if (expCurrencyCode.test(normalized) === false) return false
 
-    // 5. Return true
+  // 5. Return true
   return true
 }

@@ -6,7 +6,7 @@ if (typeof Intl === "undefined") {
     window.Intl = IntlPolyfill
     IntlPolyfill.__applyLocaleSensitivePrototypes()
   } catch (e) {
-        // can be read only property
+    // can be read only property
   }
 }
 
