@@ -96,6 +96,12 @@ function isValidTest(testPath) {
     })) {
         return false;
     }
+    // Edge cases not implemented
+    if (['weird-cases.js'].some(function (name) {
+        return testPath.indexOf(name) !== -1;
+    })) {
+        return false;
+    }
     // these are failing with: "Client code can adversely affect behavior: setter"
     // and they were in previous incarnations
     if (['12.2.2_b.js', '12.3.2_TLT_2.js', '12.1.1_22.js', '9.2.6_2.js'].some(function (name) {
