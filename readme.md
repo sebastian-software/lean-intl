@@ -31,11 +31,12 @@ in environments that support it, or `Lean-Intl` for legacy or unsupported enviro
 ## Changes compared to Intl.js
 
  - Removed previous manual library publishing with [prepublish](https://github.com/sebastian-software/prepublish)
- - Updated Test Suite 262 from 99 tests to 126 tests
+ - Updated ECMA Test Suite from 99 tests to 126 tests.
  - Removed special IE8 support in test suite. We are focusing on >= IE10 and other modern browsers.
  - Removed HTML output for test suite as we only test compatibility in NodeJS via CI.
- - Removed Bower support
- - Cleaned up Readme
+ - Removed Bower support. That's the past. Either use Webpack or Fusebox, please.
+ - Cleaned up Readme from old hints on using direct scripts and NodeJS support.
+ - Prettified source code using [Prettier](https://github.com/jlongster/prettier) and ESLint.
 
 TODO:
 
