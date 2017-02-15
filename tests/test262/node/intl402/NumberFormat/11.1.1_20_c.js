@@ -80,7 +80,7 @@ assert.throws = function (expectedErrorConstructor, func, message) {
     throw new Error(message);
 };
 
-function runTheTest () {// Copyright 2011-2012 Norbert Lindenberg. All rights reserved.
+function runner() {    var passed = false;    runTheTest();    passed = true;    return passed;}function runTheTest () {// Copyright 2011-2012 Norbert Lindenberg. All rights reserved.
 // Copyright 2012 Mozilla Corporation. All rights reserved.
 // This code is governed by the BSD license found in the LICENSE file.
 

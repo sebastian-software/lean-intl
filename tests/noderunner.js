@@ -9,7 +9,7 @@ var LIBS = {
     POLYFILL_CODE = LIBS.fs.readFileSync(POLYFILL_PATH).toString(),
     DATA_PATH = LIBS.path.resolve(__dirname + '/../locale-data/complete.js'),
     DATA_CODE = LIBS.fs.readFileSync(DATA_PATH).toString(),
-    TEST_DIR = LIBS.path.resolve(__dirname + '/test262/pages');
+    TEST_DIR = LIBS.path.resolve(__dirname + '/test262/node');
 
 
 // returns Error if test threw one
@@ -41,7 +41,7 @@ function listTests() {
         doing = todo.shift();
         path = LIBS.path.resolve(TEST_DIR, doing);
         stat = LIBS.fs.statSync(path);
-        if (stat.isFile() && LIBS.path.extname(path) === '.html') {
+        if (stat.isFile() && LIBS.path.extname(path) === '.js') {
             tests.push(doing);
             continue;
         }

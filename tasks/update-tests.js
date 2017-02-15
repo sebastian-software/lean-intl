@@ -134,7 +134,16 @@ module.exports = function(grunt) {
             var srcPath  = LIBS.path.resolve(SRC_DIR, testPath),
                 destPath = LIBS.path.resolve(DEST_DIR, testPath),
                 content;
-            content = 'function runTheTest () {'+ grunt.file.read(srcPath) +' }';
+
+            content =
+            'function runner() {' +
+            '    var passed = false;' +
+            '    runTheTest();' +
+            '    passed = true;' +
+            '    return passed;' +
+            '}' +
+            'function runTheTest () {'+ grunt.file.read(srcPath) +' }';
+
             content = processTest(content);
             grunt.file.write(destPath, content);
         });

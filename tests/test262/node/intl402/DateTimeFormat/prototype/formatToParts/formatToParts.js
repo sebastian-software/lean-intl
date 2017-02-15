@@ -193,7 +193,7 @@ function verifyNotConfigurable(obj, name) {
 }
 
 
-function runTheTest () {// Copyright 2016 Mozilla Corporation. All rights reserved.
+function runner() {    var passed = false;    runTheTest();    passed = true;    return passed;}function runTheTest () {// Copyright 2016 Mozilla Corporation. All rights reserved.
 // This code is governed by the license found in the LICENSE file.
 
 /*---
