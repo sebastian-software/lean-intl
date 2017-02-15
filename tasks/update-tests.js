@@ -44,75 +44,6 @@ var WRAPPER_END = [
         '//</script></body></html>'
     ].join('\n');
 
-// Shims for IE 8
-var shims = {
-        'Object.defineProperty': function (obj, name, desc) {
-             if (desc.hasOwnProperty('value'))
-                obj[name] = desc.value;
-        },
-
-        'Object.create': function (o) {
-            function F() {}
-            F.prototype = o;
-            return new F();
-        },
-        'Object.getPrototypeOf': function (obj) { return obj.constructor.prototype; },
-        'Object.isExtensible' : function () { return true; },
-        'Object.getOwnPropertyNames': function (obj) {
-            var ret = [];
-
-            for (var k in obj) {
-                if (obj.hasOwnProperty(k))
-                    ret.push(k);
-            }
-
-            return ret;
-        },
-
-        'Array.prototype.indexOf': function (search) {
-            var t = this;
-            if (!t.length)
-                return -1;
-
-            for (var i = arguments[1] || 0, max = t.length; i < max; i++) {
-                if (t[i] === search)
-                    return i;
-            }
-
-            return -1;
-        },
-
-        'Array.prototype.forEach': function (fn) {
-            for (var i=0; i < this.length; i++)
-                fn.call(arguments[1], this[i], i, this);
-        },
-
-        'Array.prototype.map': function (fn) {
-            var ret = [];
-            for (var i=0; i < this.length; i++)
-                ret[i] = fn.call(arguments[1], this[i], i, this);
-
-            return ret;
-        },
-
-        'Date.now': function () { return +new Date(); },
-
-        //- IE 8 is forced into quirks mode, so no JSON
-        '__globalObject.JSON': '{}',
-        'JSON.stringify': function (obj) {
-            var props = [];
-
-            for (var k in obj) {
-                if (obj.hasOwnProperty(k))
-                    props.push(k + ': ' + obj[k]);
-            }
-
-            return '{ ' + props.join(',') + ' }';
-        }
-    };
-
-shims['Array.prototype.every'] = shims['Array.prototype.forEach'];
-
 function processTest(content) {
     var includes = [LIBS.fs.readFileSync(LIBS.path.resolve(INCLUDE_DIR, 'assert.js')).toString()];
     content = content.replace(/includes\: \[(.*)]/g, function(all, path) {
@@ -129,26 +60,9 @@ function processTest(content) {
 
     content = content.replace(/\$ERROR\(/g, 'throw new Error(');
 
-    // The test suite tries to parse an ISO 8601 date, which fails in <=IE8
-    content = content.replace(/Date\.parse\("1989-11-09T17:57:00Z"\)/g, '$& || Date.parse("1989/11/09 17:57:00 UTC")');
-
     // Another IE 8 issue: [undefined].hasOwnProperty(0) is false, so we need
     // to work around this in at least one test
     content = content.replace(/^(\s*)(var.*)\[value\](.*)$/m, '$1var arr = [];\n$1arr[0] = value;\n$1$2arr$3');
-
-    // Look for functions that might require shims in ES3 browsers
-    var shimCode = [];
-    for (var k in shims) {
-        if (content.search(new RegExp('\\b' + k.split('.').pop() + '\\b')) > -1) {
-            if (k === 'Object.defineProperty') {
-                shimCode.push('try { Object.defineProperty({}, "a", {}) } catch (e) { Object.defineProperty = ' + shims[k] +' }');
-            }
-            else
-                shimCode.push(k + ' = ' + k + ' || ' + shims[k] + ';');
-        }
-    }
-
-    content = shimCode.join('\n') + '\n' + content;
 
     // Make sure to use our version (not one the browser might have).
     content = content.replace(/\bIntl\b/g, 'IntlPolyfill');
