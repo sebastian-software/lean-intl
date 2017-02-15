@@ -10,9 +10,14 @@ tools/
 tests/
 tasks/
 tmp/
+Gruntfile.js
 .travis.yml
 appveyor.yml
-Gruntfile.js
+.babelrc
+.eslintignore
+.eslintrc.yml
+.npmignore
+.gitattributes
 
 # source files
 src/
