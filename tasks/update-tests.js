@@ -90,6 +90,12 @@ function isValidTest(testPath) {
     })) {
         return false;
     }
+    // PluralRules tests are not supported
+    if (['PluralRules'].some(function (name) {
+        return testPath.indexOf(name) !== -1;
+    })) {
+        return false;
+    }
     // these are failing with: "Client code can adversely affect behavior: setter"
     // and they were in previous incarnations
     if (['12.2.2_b.js', '12.3.2_TLT_2.js', '12.1.1_22.js', '9.2.6_2.js'].some(function (name) {
@@ -136,13 +142,23 @@ module.exports = function(grunt) {
                 content;
 
             content =
-            'function runner() {' +
-            '    var passed = false;' +
-            '    runTheTest();' +
-            '    passed = true;' +
-            '    return passed;' +
-            '}' +
-            'function runTheTest () {'+ grunt.file.read(srcPath) +' }';
+                '"use strict";' +
+                // stuff defined in harness/*.js yet not pulled in via $INCLUDE()
+                'var __globalObject = Function("return this;")();' +
+                'function fnGlobalObject() {' +
+                '    return __globalObject;' +
+                '}' +
+                'function Test262Error(message) {' +
+                '  this.message = message || "";' +
+                '}' +
+                'IntlPolyfill.__applyLocaleSensitivePrototypes();' +
+                'function runner() {' +
+                '    var passed = false;' +
+                '    runTheTest();' +
+                '    passed = true;' +
+                '    return passed;' +
+                '}' +
+                'function runTheTest () {'+ grunt.file.read(srcPath) +' }';
 
             content = processTest(content);
             grunt.file.write(destPath, content);
