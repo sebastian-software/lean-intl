@@ -1,6 +1,7 @@
 # *Lean-Intl* - A leaner fork of Intl.js <br/>[![Sponsored by][sponsor-img]][sponsor] [![Version][npm-version-img]][npm] [![Downloads][npm-downloads-img]][npm] [![Build Status Unix][travis-img]][travis] [![Build Status Windows][appveyor-img]][appveyor] [![Dependencies][deps-img]][deps]
 
-*Lean-Intl* is a lean polyfill for `Intl`-APIs for browsers which are not yet supporting this API.
+*Lean-Intl* is a lean polyfill for `Intl`-APIs for browsers which are not yet supporting this API. It's a
+modern fork of [Intl.js](https://github.com/andyearnshaw/Intl.js) for modern development and tooling requirements.
 
 [sponsor-img]: https://img.shields.io/badge/Sponsored%20by-Sebastian%20Software-692446.svg
 [sponsor]: https://www.sebastian-software.de
@@ -140,10 +141,22 @@ required if the app depends on RegExp static properties not changing (which is h
 unlikely). To disable this functionality, invoke `Intl.__disableRegExpRestore()`.
 
 
-## License
+## Contributing
 
-Copyright (c) 2013 Andy Earnshaw  
-Copyright (c) 2017 Sebastian Werner
+* Pull requests and stars are always welcome.
+* For bugs and feature requests, please create an issue.
+* Pull requests must be accompanied by passing automated tests (`$ npm test`).
+
+
+## License
 
 This software is licensed under the MIT license. See the `LICENSE.txt` file
 accompanying this software for terms of use.
+
+
+## Copyright
+
+<img src="assets/sebastiansoftware.png" alt="Sebastian Software GmbH Logo" width="250" height="200"/>
+
+Copyright 2013 [Andy Earnshaw](https://github.com/andyearnshaw/Intl.js)<br/>
+Copyright 2016-2017 [Sebastian Software GmbH](http://www.sebastian-software.de)
