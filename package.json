@@ -13,7 +13,7 @@
     "test": "tests"
   },
   "devDependencies": {
-    "async": "^2.1.4",
+    "async": "^2.1.5",
     "babel-cli": "^6.23.0",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.23.0",
     "cldr-core": "30.0.3",
@@ -27,10 +27,10 @@
     "grunt-curl": "^2.2.0",
     "grunt-zip": "^0.17.1",
     "mkdirp": "^0.5.1",
-    "prepublish": "^0.13.2",
-    "prettier": "^0.17.1",
-    "readable-code": "^0.9.5",
-    "rimraf": "^2.5.4"
+    "prepublish": "^0.13.3",
+    "prettier": "^0.18.0",
+    "readable-code": "^0.9.6",
+    "rimraf": "^2.6.0"
   },
   "scripts": {
     "clean": "rimraf dist/ lib/ locale-data/",
