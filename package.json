@@ -27,7 +27,7 @@
     "grunt-curl": "^2.2.0",
     "grunt-zip": "^0.17.1",
     "mkdirp": "^0.5.1",
-    "prepublish": "^0.13.4",
+    "prepublish": "^0.13.5",
     "prettier": "^0.21.0",
     "readable-code": "^1.4.1",
     "rimraf": "^2.6.1"
