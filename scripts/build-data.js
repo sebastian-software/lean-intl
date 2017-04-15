@@ -101,8 +101,6 @@ let locData = mergeData(
   extractNumbersFields(locales)
 )
 
-let locStringData = {}
-
 Object.keys(locData).forEach((locale) => {
   // Ignore en-US-POSIX and root
   if (locale.toLowerCase() === "en-us-posix") {
@@ -110,74 +108,10 @@ Object.keys(locData).forEach((locale) => {
   }
 
   const obj = reduceLocaleData(locale, locData[locale])
-  locStringData[locale] = JSON.stringify(obj, null, 0)
-  const jsonpContent = `IntlPolyfill.__addLocaleData(${JSON.stringify(obj)
-    .replace(jsonpExp, "$1:")});`
-  writeFile(`locale-data/json/${locale}.json`, locStringData[locale])
-  writeFile(`locale-data/jsonp/${locale}.js`, jsonpContent)
+  writeFile(`locale-data/json/${locale}.json`, JSON.stringify(obj, null, 0))
 })
 
 console.log(`Total number of locales is ${Object.keys(locData).length}`)
-
-// compiling `locale-date/complete.js`
-
-function replacer($0, type, loc) {
-  return (type === "prims" ? "a" : "b") + loc
-}
-
-let objStrs = {},
-  objs = [],
-  prims = [],
-  valCount = 0,
-  objCount = 0,
-  fileData = "",
-  locReducedData = {},
-  locNames = Object.keys(locStringData)
-
-const defaultLocale = "en",
-  defaultLocaleIndex = locNames.indexOf(defaultLocale)
-
-if (defaultLocaleIndex !== -1) {
-  // Move the default locale to the beginning
-  locNames.splice(defaultLocaleIndex, 1)
-  locNames.unshift(defaultLocale)
-}
-
-locNames.forEach((k) => {
-  const c = locStringData[k]
-  locReducedData[k] = JSON.parse(c, reviver)
-})
-
-fileData += "(function(addLocaleData){\n"
-fileData += `var a=${JSON.stringify(prims)},b=[];`
-objs.forEach((val, idx) => {
-  const ref = JSON.stringify(val)
-    .replace(/"###(objs|prims)(\[[^#]+)###"/g, replacer)
-
-  fileData += `b[${idx}]=${ref};`
-})
-
-locNames.forEach((k) => {
-  fileData += `addLocaleData(${locReducedData[k].replace(
-    /###(objs|prims)(\[[^#]+)###/,
-    replacer
-  )});
-`
-})
-
-fileData += `})(IntlPolyfill.__addLocaleData);`
-
-// writting the complete optimized bundle
-writeFile("locale-data/complete.js", fileData)
-
-console.log(
-  `Total number of reused strings is ${prims.length} (reduced from ${valCount})`
-)
-console.log(
-  `Total number of reused objects is ${Object.keys(
-    objStrs
-  ).length} (reduced from ${objCount})`
-)
 
 process.on("unhandledRejection", (reason) => {
   throw reason
