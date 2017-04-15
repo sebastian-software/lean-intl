@@ -22,14 +22,13 @@
     "glob": "^7.1.1",
     "grunt": "^1.0.1",
     "grunt-cli": "~1.2.0",
-    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-clean": "^1.1.0",
     "grunt-contrib-copy": "^1.0.0",
     "grunt-curl": "^2.2.0",
     "grunt-zip": "^0.17.1",
     "mkdirp": "^0.5.1",
-    "prepublish": "^0.15.3",
-    "prettier": "^0.22.0",
-    "readable-code": "^1.7.0",
+    "prepublish": "^0.15.4",
+    "readable-code": "^1.7.2",
     "rimraf": "^2.6.1"
   },
   "scripts": {
