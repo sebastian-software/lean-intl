@@ -110,7 +110,7 @@ Object.keys(locData).forEach((locale) => {
   }
 
   const obj = reduceLocaleData(locale, locData[locale])
-  locStringData[locale] = JSON.stringify(obj, null, 4)
+  locStringData[locale] = JSON.stringify(obj, null, 0)
   const jsonpContent = `IntlPolyfill.__addLocaleData(${JSON.stringify(obj)
     .replace(jsonpExp, "$1:")});`
   writeFile(`locale-data/json/${locale}.json`, locStringData[locale])
