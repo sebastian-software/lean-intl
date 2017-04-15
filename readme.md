@@ -41,11 +41,7 @@ in environments that support it, or `Lean-Intl` for legacy or unsupported enviro
  - Added Yarn lock file.
  - Removed JSONP data.
  - Removed "complete" UMD package which contains everything.
-
-TODO:
-
- - Cleanup custom Polyfills
-
+ 
 
 ## Getting started
 
@@ -128,9 +124,10 @@ are skipped, but these tests are mostly about ensuring built-in function behavio
 ## Locale Data
 
 `Lean Intl` uses the Unicode CLDR locale data, as recommended by the specification. The main `Lean Intl`
-file contains no locale data itself. In browser environments, the
-data should be provided, passed into a JavaScript object using the
-`IntlPolyfill.__addLocaleData()` method.
+file contains no locale data itself. The
+data should be loaded as JSON and passed into a JavaScript object using the
+`IntlPolyfill.__addLocaleData()` method. Alternatively there is a JS data file available as well
+for each locale which directly executes that code.
 
 Contents of the `locale-data` directory are a modified form of the Unicode CLDR
 data found at http://www.unicode.org/cldr/.
