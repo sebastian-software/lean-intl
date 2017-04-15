@@ -2,6 +2,7 @@ import { writeFileSync } from "fs"
 import { resolve } from "path"
 import { sync as mkdirpSync } from "mkdirp"
 import { minify } from "uglify-js"
+import { sync as rimraf } from "rimraf"
 
 function mergeData(...sources) {
   return sources.reduce(
@@ -62,6 +63,7 @@ function reviver(k, v) {
 
 // -----------------------------------------------------------------------------
 
+rimraf("locale-data")
 mkdirpSync("locale-data/")
 
 // extracting data into CLDR
@@ -87,6 +89,7 @@ let locData = mergeData(
   extractNumbersFields(locales)
 )
 
+const allScriptified = []
 Object.keys(locData).forEach((locale) => {
   // Ignore en-US-POSIX and root
   if (locale.toLowerCase() === "en-us-posix") {
@@ -98,7 +101,10 @@ Object.keys(locData).forEach((locale) => {
   writeFileSync(`locale-data/${locale}.json`, stringified)
   const scriptified = minify(`IntlPolyfill.__addLocaleData(${stringified})`, { fromString: true })
   writeFileSync(`locale-data/${locale}.js`, scriptified.code)
+  allScriptified.push(scriptified.code)
 })
+
+writeFileSync(`locale-data/complete.js`, allScriptified.join("\n"))
 
 console.log(`Total number of locales is ${Object.keys(locData).length}`)
 
