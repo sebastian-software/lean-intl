@@ -1,19 +1,7 @@
-/* global Promise */
-import * as fs from "fs"
-import * as p from "path"
+import { writeFileSync } from "fs"
+import { resolve } from "path"
 import { sync as mkdirpSync } from "mkdirp"
-
-function writeFile(filename, contents) {
-  return new Promise((resolve, reject) => {
-    fs.writeFile(filename, contents, (err) => {
-      if (err) {
-        reject(err)
-      } else {
-        resolve(p.resolve(filename))
-      }
-    })
-  })
-}
+import { minify } from "uglify-js"
 
 function mergeData(...sources) {
   return sources.reduce(
@@ -106,7 +94,10 @@ Object.keys(locData).forEach((locale) => {
   }
 
   const obj = reduceLocaleData(locale, locData[locale])
-  writeFile(`locale-data/${locale}.json`, JSON.stringify(obj, null, 0))
+  const stringified = JSON.stringify(obj, null, 0)
+  writeFileSync(`locale-data/${locale}.json`, stringified)
+  const scriptified = minify(`IntlPolyfill.__addLocaleData(${stringified})`, { fromString: true })
+  writeFileSync(`locale-data/${locale}.js`, scriptified.code)
 })
 
 console.log(`Total number of locales is ${Object.keys(locData).length}`)

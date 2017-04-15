@@ -29,8 +29,12 @@
     "mkdirp": "^0.5.1",
     "prepublish": "^0.15.4",
     "readable-code": "^1.7.2",
-    "rimraf": "^2.6.1"
+    "rimraf": "^2.6.1",
+    "uglify-js": "^2.8.22"
   },
+  "dependencies": {
+    "make-plural": "^4.0.1"
+  },  
   "scripts": {
     "clean": "rimraf dist/ lib/ locale-data/",
     "build:data": "babel-node scripts/build-data",
@@ -61,8 +65,5 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/sebastian-software/lean-intl/issues"
-  },
-  "dependencies": {
-    "make-plural": "^4.0.1"
   }
 }
