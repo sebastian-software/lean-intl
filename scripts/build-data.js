@@ -75,8 +75,6 @@ function reviver(k, v) {
 // -----------------------------------------------------------------------------
 
 mkdirpSync("locale-data/")
-mkdirpSync("locale-data/json/")
-mkdirpSync("locale-data/jsonp/")
 
 // extracting data into CLDR
 
@@ -108,7 +106,7 @@ Object.keys(locData).forEach((locale) => {
   }
 
   const obj = reduceLocaleData(locale, locData[locale])
-  writeFile(`locale-data/json/${locale}.json`, JSON.stringify(obj, null, 0))
+  writeFile(`locale-data/${locale}.json`, JSON.stringify(obj, null, 0))
 })
 
 console.log(`Total number of locales is ${Object.keys(locData).length}`)
@@ -116,4 +114,3 @@ console.log(`Total number of locales is ${Object.keys(locData).length}`)
 process.on("unhandledRejection", (reason) => {
   throw reason
 })
-console.log("Writing locale data files...")
