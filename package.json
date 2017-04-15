@@ -61,5 +61,8 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/sebastian-software/lean-intl/issues"
+  },
+  "dependencies": {
+    "make-plural": "^4.0.1"
   }
 }

@@ -3557,6 +3557,12 @@ magic-string@^0.19.0:
   dependencies:
     vlq "^0.2.1"
 
+make-plural@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/make-plural/-/make-plural-4.0.1.tgz#be9cb73f54341a0289699b6abf643973d3bedd53"
+  optionalDependencies:
+    minimist "^1.2.0"
+
 map-cache@^0.2.0:
   version "0.2.2"
   resolved "https://registry.yarnpkg.com/map-cache/-/map-cache-0.2.2.tgz#c32abd0bd6525d9b051645bb4f26ac5dc98a0dbf"
