@@ -80,19 +80,25 @@ assert.throws = function (expectedErrorConstructor, func, message) {
   throw new Error(message);
 };
 
-"use strict";var __globalObject = Function("return this;")();function fnGlobalObject() {    return __globalObject;}function Test262Error(message) {  this.message = message || "";}IntlPolyfill.__applyLocaleSensitivePrototypes();function runner() {    var passed = false;    runTheTest();    passed = true;    return passed;}function runTheTest () {// Copyright 2012 Google Inc.  All rights reserved.
-// This code is governed by the BSD license found in the LICENSE file.
+"use strict";var __globalObject = Function("return this;")();function fnGlobalObject() {    return __globalObject;}function Test262Error(message) {  this.message = message || "";}IntlPolyfill.__applyLocaleSensitivePrototypes();function runner() {    var passed = false;    runTheTest();    passed = true;    return passed;}function runTheTest () {// Copyright 2017 the V8 project authors. All rights reserved.
+// This code is governed by the license found in the LICENSE file.
 
 /*---
-es5id: 12.3.1
+esid: sec-setnfdigitoptions
 description: >
-    Tests that IntlPolyfill.DateTimeFormat.prototype.constructor is the
-    IntlPolyfill.DateTimeFormat.
-author: Roozbeh Pournader
+    When a currency is used in IntlPolyfill.NumberFormat and minimumFractionDigits is
+    not provided, maximumFractionDigits should be range-checked against it.
 ---*/
 
-if (IntlPolyfill.DateTimeFormat.prototype.constructor !== IntlPolyfill.DateTimeFormat) {
-    throw new Error("IntlPolyfill.DateTimeFormat.prototype.constructor is not the same as " +
-          "IntlPolyfill.DateTimeFormat");
-}
+assert.throws(RangeError, () => new IntlPolyfill.NumberFormat('en', {
+    style: 'currency',
+    currency: 'USD',
+    maximumFractionDigits: 1
+}), 'CurrencyDigits(USD) == 1');
+
+assert.throws(RangeError, () => new IntlPolyfill.NumberFormat('en', {
+    style: 'currency',
+    currency: 'CLF',
+    maximumFractionDigits: 3
+}), 'CurrencyDigits(CLF) == 3');
  }

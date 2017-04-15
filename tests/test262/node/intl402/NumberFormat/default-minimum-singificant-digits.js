@@ -80,19 +80,25 @@ assert.throws = function (expectedErrorConstructor, func, message) {
   throw new Error(message);
 };
 
-"use strict";var __globalObject = Function("return this;")();function fnGlobalObject() {    return __globalObject;}function Test262Error(message) {  this.message = message || "";}IntlPolyfill.__applyLocaleSensitivePrototypes();function runner() {    var passed = false;    runTheTest();    passed = true;    return passed;}function runTheTest () {// Copyright 2012 Google Inc.  All rights reserved.
+"use strict";var __globalObject = Function("return this;")();function fnGlobalObject() {    return __globalObject;}function Test262Error(message) {  this.message = message || "";}IntlPolyfill.__applyLocaleSensitivePrototypes();function runner() {    var passed = false;    runTheTest();    passed = true;    return passed;}function runTheTest () {// Copyright (C) 2017 the V8 project authors. All rights reserved.
 // This code is governed by the BSD license found in the LICENSE file.
 
 /*---
-es5id: 12.3.1
-description: >
-    Tests that IntlPolyfill.DateTimeFormat.prototype.constructor is the
-    IntlPolyfill.DateTimeFormat.
-author: Roozbeh Pournader
+description: Tests that the default value of minimumSignificantDigits is 1.
+esid: sec-setnfdigitoptions
 ---*/
 
-if (IntlPolyfill.DateTimeFormat.prototype.constructor !== IntlPolyfill.DateTimeFormat) {
-    throw new Error("IntlPolyfill.DateTimeFormat.prototype.constructor is not the same as " +
-          "IntlPolyfill.DateTimeFormat");
-}
+// maximumSignificantDigits needs to be in range from minimumSignificantDigits
+// to 21 (both inclusive). Setting maximumSignificantDigits to 0 will throw a
+// RangeError if the (default) minimumSignificantDigits is at least 1.
+assert.throws(RangeError, function() {
+  IntlPolyfill.NumberFormat(undefined, {maximumSignificantDigits: 0});
+});
+
+// If nothing is thrown, check that the options are resolved appropriately.
+var res = IntlPolyfill.NumberFormat(undefined, {maximumSignificantDigits: 1})
+
+assert.sameValue(Object.getPrototypeOf(res), IntlPolyfill.NumberFormat.prototype, 'result is an instance of NumberFormat')
+assert.sameValue(res.resolvedOptions().minimumSignificantDigits, 1, 'default minimumSignificantDigits')
+assert.sameValue(res.resolvedOptions().maximumSignificantDigits, 1, 'sets maximumSignificantDigits')
  }
