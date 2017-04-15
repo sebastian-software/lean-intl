@@ -63,6 +63,8 @@ function reviver(k, v) {
 
 // -----------------------------------------------------------------------------
 
+console.log("Cleaning up...")
+
 rimraf("locale-data")
 mkdirpSync("locale-data/")
 
@@ -77,6 +79,8 @@ import reduceLocaleData from "./utils/reduce"
 import extractCalendars from "./utils/extract-calendars"
 import extractNumbersFields from "./utils/extract-numbers"
 import { getAllLocales } from "./utils/locales"
+
+console.log("Extracting data...")
 
 // Default to all CLDR locales.
 const locales = getAllLocales()
@@ -95,7 +99,8 @@ Object.keys(locData).forEach((locale) => {
   if (locale.toLowerCase() === "en-us-posix") {
     return
   }
-
+  
+  console.log("Writing data for:", locale)
   const obj = reduceLocaleData(locale, locData[locale])
   const stringified = JSON.stringify(obj, null, 0)
   writeFileSync(`locale-data/${locale}.json`, stringified)
@@ -104,7 +109,8 @@ Object.keys(locData).forEach((locale) => {
   allScriptified.push(scriptified.code)
 })
 
-writeFileSync(`locale-data/complete.js`, allScriptified.join("\n"))
+console.log("Writing complete data package (for tests)...")
+writeFileSync(`tests/nodedata.js`, allScriptified.join("\n"))
 
 console.log(`Total number of locales is ${Object.keys(locData).length}`)
 

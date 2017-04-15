@@ -7,7 +7,7 @@ var LIBS = {
     __dirname + "/../lib/index.classic.iife.js"
   ),
   POLYFILL_CODE = LIBS.fs.readFileSync(POLYFILL_PATH).toString(),
-  DATA_PATH = LIBS.path.resolve(__dirname + "/../locale-data/complete.js"),
+  DATA_PATH = LIBS.path.resolve(__dirname + "/nodedata.js"),
   DATA_CODE = LIBS.fs.readFileSync(DATA_PATH).toString(),
   TEST_DIR = LIBS.path.resolve(__dirname + "/test262/node");
 
