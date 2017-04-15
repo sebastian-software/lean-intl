@@ -43,7 +43,8 @@
                 "MMMEd": "E d LLL",
                 "MMMMd": "d LLLL",
                 "MMMMEd": "E d LLLL",
-                "MMMMW": "هفته W از MMM",
+                "MMMMW-count-one": "هفته W از MMM",
+                "MMMMW-count-other": "هفته W از MMM",
                 "mmss": "mm:ss",
                 "ms": "mm:ss",
                 "y": "y",
@@ -57,7 +58,8 @@
                 "yMMMMEEEEd": "EEEE d MMMM y",
                 "yQQQ": "QQQQ y",
                 "yQQQQ": "QQQQ y",
-                "yw": "هفته w از y"
+                "yw-count-one": "هفته w از y",
+                "yw-count-other": "هفته w از y"
             },
             "dateFormats": {
                 "yMMMMEEEEd": "EEEE d MMMM y",

@@ -41,7 +41,11 @@
                 "MMMd": "d MMM",
                 "MMMEd": "E d MMM",
                 "MMMMd": "d MMMM",
-                "MMMMW": "'seachtain' 'a' W 'i' MMM",
+                "MMMMW-count-one": "'seachtain' 'a' W 'i' MMM",
+                "MMMMW-count-two": "'seachtain' 'a' W 'i' MMM",
+                "MMMMW-count-few": "'seachtain' 'a' W 'i' MMM",
+                "MMMMW-count-many": "'seachtain' 'a' W 'i' MMM",
+                "MMMMW-count-other": "'seachtain' 'a' W 'i' MMM",
                 "ms": "mm:ss",
                 "y": "y",
                 "yM": "MM/y",
@@ -53,7 +57,11 @@
                 "yMMMM": "MMMM y",
                 "yQQQ": "QQQ y",
                 "yQQQQ": "QQQQ y",
-                "yw": "'seachtain' 'a' w 'i' y"
+                "yw-count-one": "'seachtain' 'a' w 'i' y",
+                "yw-count-two": "'seachtain' 'a' w 'i' y",
+                "yw-count-few": "'seachtain' 'a' w 'i' y",
+                "yw-count-many": "'seachtain' 'a' w 'i' y",
+                "yw-count-other": "'seachtain' 'a' w 'i' y"
             },
             "dateFormats": {
                 "yMMMMEEEEd": "EEEE d MMMM y",

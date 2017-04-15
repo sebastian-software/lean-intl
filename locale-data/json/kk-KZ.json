@@ -41,7 +41,8 @@
                 "MMMd": "d MMM",
                 "MMMEd": "d MMM, E",
                 "MMMMd": "d MMMM",
-                "MMMMW": "MMM 'айының' W-'аптасы'",
+                "MMMMW-count-one": "MMM 'айының' W-'аптасы'",
+                "MMMMW-count-other": "MMM 'айының' W-'аптасы'",
                 "ms": "mm:ss",
                 "y": "y",
                 "yM": "MM.y",
@@ -53,7 +54,8 @@
                 "yMMMM": "y 'ж'. MMMM",
                 "yQQQ": "y 'ж'. QQQ",
                 "yQQQQ": "y 'ж'. QQQQ",
-                "yw": "y 'жылдың' w-'аптасы'"
+                "yw-count-one": "y 'жылдың' w-'аптасы'",
+                "yw-count-other": "y 'жылдың' w-'аптасы'"
             },
             "dateFormats": {
                 "yMMMMEEEEd": "y 'ж'. d MMMM, EEEE",

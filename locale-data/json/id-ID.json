@@ -42,7 +42,7 @@
                 "MMMEd": "E, d MMM",
                 "MMMMd": "d MMMM",
                 "MMMMEd": "E, d MMMM",
-                "MMMMW": "'minggu' 'ke'-W MMM",
+                "MMMMW-count-other": "'minggu' 'ke'-W MMM",
                 "ms": "mm.ss",
                 "y": "y",
                 "yM": "M/y",
@@ -54,7 +54,7 @@
                 "yMMMM": "MMMM y",
                 "yQQQ": "QQQ y",
                 "yQQQQ": "QQQQ y",
-                "yw": "'minggu' 'ke'-w y"
+                "yw-count-other": "'minggu' 'ke'-w y"
             },
             "dateFormats": {
                 "yMMMMEEEEd": "EEEE, dd MMMM y",

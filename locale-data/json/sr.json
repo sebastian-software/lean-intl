@@ -44,7 +44,9 @@
                 "MMMEd": "E d. MMM",
                 "MMMMd": "d. MMMM",
                 "MMMMEd": "E, d. MMMM",
-                "MMMMW": "W. 'седмица' 'у' MMM.",
+                "MMMMW-count-one": "W. 'седмица' 'у' MMM.",
+                "MMMMW-count-few": "W. 'седмица' 'у' MMM.",
+                "MMMMW-count-other": "W. 'седмица' 'у' MMM.",
                 "ms": "mm:ss",
                 "y": "y.",
                 "yM": "M.y.",
@@ -58,7 +60,9 @@
                 "yMMMM": "MMMM y.",
                 "yQQQ": "QQQ y.",
                 "yQQQQ": "QQQQ y.",
-                "yw": "w. 'седмица' 'у' y."
+                "yw-count-one": "w. 'седмица' 'у' y.",
+                "yw-count-few": "w. 'седмица' 'у' y.",
+                "yw-count-other": "w. 'седмица' 'у' y."
             },
             "dateFormats": {
                 "yMMMMEEEEd": "EEEE, dd. MMMM y.",

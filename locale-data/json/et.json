@@ -42,7 +42,8 @@
                 "MMMEd": "E, d. MMM",
                 "MMMMd": "d. MMMM",
                 "MMMMEd": "E, d. MMMM",
-                "MMMMW": "MMM (W. 'nädal')",
+                "MMMMW-count-one": "MMM (W. 'nädal')",
+                "MMMMW-count-other": "MMM (W. 'nädal')",
                 "mmss": "mm:ss",
                 "ms": "mm:ss",
                 "y": "y",
@@ -55,7 +56,8 @@
                 "yMMMM": "MMMM y",
                 "yQQQ": "QQQ y",
                 "yQQQQ": "QQQQ y",
-                "yw": "y (w. 'nädal')"
+                "yw-count-one": "y (w. 'nädal')",
+                "yw-count-other": "y (w. 'nädal')"
             },
             "dateFormats": {
                 "yMMMMEEEEd": "EEEE, d. MMMM y",

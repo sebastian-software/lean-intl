@@ -47,7 +47,8 @@
                 "MMMMd": "d MMMM",
                 "MMMMdd": "d MMMM",
                 "MMMMEd": "E, d MMMM",
-                "MMMMW": "'седмица' W 'от' MMM",
+                "MMMMW-count-one": "'седмица' W 'от' MMM",
+                "MMMMW-count-other": "'седмица' W 'от' MMM",
                 "ms": "m:ss",
                 "y": "y 'г'.",
                 "yM": "MM.y 'г'.",
@@ -61,7 +62,8 @@
                 "yMMMMEd": "E, d MMMM y 'г'.",
                 "yQQQ": "QQQ y 'г'.",
                 "yQQQQ": "QQQQ y 'г'.",
-                "yw": "'седмица' w 'от' y 'г'."
+                "yw-count-one": "'седмица' w 'от' y 'г'.",
+                "yw-count-other": "'седмица' w 'от' y 'г'."
             },
             "dateFormats": {
                 "yMMMMEEEEd": "EEEE, d MMMM y 'г'.",
@@ -281,8 +283,8 @@
                 "negativePattern": "{minusSign}{number}"
             },
             "currency": {
-                "positivePattern": "{number} {currency}",
-                "negativePattern": "{minusSign}{number} {currency}"
+                "positivePattern": "0.00 {currency}",
+                "negativePattern": "{minusSign}0.00 {currency}"
             },
             "percent": {
                 "positivePattern": "{number}{percentSign}",

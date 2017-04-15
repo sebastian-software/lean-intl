@@ -42,7 +42,8 @@
                 "MMMEd": "E፣ MMM d",
                 "MMMMd": "MMMM d",
                 "MMMMEd": "E፣ MMMM d",
-                "MMMMW": "'week' W 'of' MMM",
+                "MMMMW-count-one": "'week' W 'of' MMM",
+                "MMMMW-count-other": "'week' W 'of' MMM",
                 "ms": "mm:ss",
                 "y": "y",
                 "yM": "M/y",
@@ -54,7 +55,8 @@
                 "yMMMM": "MMMM y",
                 "yQQQ": "QQQ y",
                 "yQQQQ": "QQQQ y",
-                "yw": "'week' w 'of' y"
+                "yw-count-one": "'week' w 'of' y",
+                "yw-count-other": "'week' w 'of' y"
             },
             "dateFormats": {
                 "yMMMMEEEEd": "EEEE ፣d MMMM y",

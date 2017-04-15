@@ -43,7 +43,8 @@
                 "MMMEd": "E d MMM",
                 "MMMMd": "d MMMM",
                 "MMMMEd": "E d MMMM",
-                "MMMMW": "MMM এর Wয় সপ্তাহ",
+                "MMMMW-count-one": "MMM এর Wয় সপ্তাহ",
+                "MMMMW-count-other": "MMM এর Wয় সপ্তাহ",
                 "ms": "mm:ss",
                 "y": "y",
                 "yM": "M/y",
@@ -56,7 +57,8 @@
                 "yMMMM": "MMMM y",
                 "yQQQ": "QQQ y",
                 "yQQQQ": "QQQQ y",
-                "yw": "y এর wতম সপ্তাহ"
+                "yw-count-one": "y এর wতম সপ্তাহ",
+                "yw-count-other": "y এর wতম সপ্তাহ"
             },
             "dateFormats": {
                 "yMMMMEEEEd": "EEEE, d MMMM, y",

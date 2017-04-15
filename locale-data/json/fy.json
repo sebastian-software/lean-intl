@@ -41,7 +41,8 @@
                 "MMMd": "d MMM",
                 "MMMEd": "E d MMM",
                 "MMMMd": "d MMMM",
-                "MMMMW": "'wike' W 'fan' MMM",
+                "MMMMW-count-one": "'wike' W 'fan' MMM",
+                "MMMMW-count-other": "'wike' W 'fan' MMM",
                 "ms": "mm:ss",
                 "y": "y",
                 "yM": "M-y",
@@ -53,7 +54,8 @@
                 "yMMMM": "MMMM y",
                 "yQQQ": "QQQ y",
                 "yQQQQ": "QQQQ y",
-                "yw": "'wike' w 'fan' y"
+                "yw-count-one": "'wike' w 'fan' y",
+                "yw-count-other": "'wike' w 'fan' y"
             },
             "dateFormats": {
                 "yMMMMEEEEd": "EEEE d MMMM y",

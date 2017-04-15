@@ -42,7 +42,10 @@
                 "MMMd": "d. MMM",
                 "MMMEd": "E, d. MMM",
                 "MMMMd": "d. MMMM",
-                "MMMMW": "W. 'teden' 'v' MMM",
+                "MMMMW-count-one": "W. 'teden' 'v' MMM",
+                "MMMMW-count-two": "W. 'teden' 'v' MMM",
+                "MMMMW-count-few": "W. 'teden' 'v' MMM",
+                "MMMMW-count-other": "W. 'teden' 'v' MMM",
                 "ms": "mm:ss",
                 "y": "y",
                 "yM": "M/y",
@@ -54,7 +57,10 @@
                 "yMMMM": "MMMM y",
                 "yQQQ": "QQQ y",
                 "yQQQQ": "QQQQ y",
-                "yw": "w. 'teden' 'v' y"
+                "yw-count-one": "w. 'teden' 'v' y",
+                "yw-count-two": "w. 'teden' 'v' y",
+                "yw-count-few": "w. 'teden' 'v' y",
+                "yw-count-other": "w. 'teden' 'v' y"
             },
             "dateFormats": {
                 "yMMMMEEEEd": "EEEE, dd. MMMM y",
@@ -288,7 +294,7 @@
                 "group": ".",
                 "nan": "NaN",
                 "plusSign": "+",
-                "minusSign": "–",
+                "minusSign": "−",
                 "percentSign": "%",
                 "infinity": "∞"
             }

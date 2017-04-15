@@ -43,7 +43,8 @@
                 "MMMEd": "E, d MMM",
                 "MMMMd": "d MMMM",
                 "MMMMEd": "E, d MMMM",
-                "MMMMW": "'java' W 'e' MMM",
+                "MMMMW-count-one": "'java' W 'e' MMM",
+                "MMMMW-count-other": "'java' W 'e' MMM",
                 "ms": "mm:ss",
                 "y": "y",
                 "yM": "M.y",
@@ -55,7 +56,8 @@
                 "yMMMM": "MMMM y",
                 "yQQQ": "QQQ, y",
                 "yQQQQ": "QQQQ, y",
-                "yw": "'java' w 'e' y"
+                "yw-count-one": "'java' w 'e' y",
+                "yw-count-other": "'java' w 'e' y"
             },
             "dateFormats": {
                 "yMMMMEEEEd": "EEEE, d MMMM y",

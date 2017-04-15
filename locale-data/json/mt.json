@@ -41,7 +41,7 @@
                 "MMMd": "MMM d",
                 "MMMEd": "E, d 'ta'’ MMM",
                 "MMMMd": "d 'ta'’ MMMM",
-                "MMMMW": "'week' W 'of' MMMM",
+                "MMMMW-count-other": "'week' W 'of' MMMM",
                 "ms": "mm:ss",
                 "y": "y",
                 "yM": "y-MM",
@@ -53,7 +53,7 @@
                 "yMMMM": "MMMM y",
                 "yQQQ": "QQQ - y",
                 "yQQQQ": "QQQQ - y",
-                "yw": "'week' w 'of' y"
+                "yw-count-other": "'week' w 'of' y"
             },
             "dateFormats": {
                 "yMMMMEEEEd": "EEEE, d 'ta'’ MMMM y",

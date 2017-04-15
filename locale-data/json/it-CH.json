@@ -41,7 +41,8 @@
                 "MMMd": "d MMM",
                 "MMMEd": "E d MMM",
                 "MMMMd": "d MMMM",
-                "MMMMW": "'settimana' W 'di' MMM",
+                "MMMMW-count-one": "'settimana' W 'di' MMM",
+                "MMMMW-count-other": "'settimana' W 'di' MMM",
                 "ms": "mm:ss",
                 "y": "y",
                 "yM": "M/y",
@@ -53,7 +54,8 @@
                 "yMMMM": "MMMM y",
                 "yQQQ": "QQQ y",
                 "yQQQQ": "QQQQ y",
-                "yw": "'settimana' w 'del' y"
+                "yw-count-one": "'settimana' w 'del' y",
+                "yw-count-other": "'settimana' w 'del' y"
             },
             "dateFormats": {
                 "yMMMMEEEEd": "EEEE, d MMMM y",
@@ -284,7 +286,7 @@
         "symbols": {
             "latn": {
                 "decimal": ".",
-                "group": "'",
+                "group": "’",
                 "nan": "NaN",
                 "plusSign": "+",
                 "minusSign": "-",

@@ -41,7 +41,8 @@
                 "MMMd": "d. MMM",
                 "MMMEd": "E d. MMM",
                 "MMMMd": "d. MMMM",
-                "MMMMW": "W. 'vika' 'í' MMM",
+                "MMMMW-count-one": "W. 'vika' 'í' MMM",
+                "MMMMW-count-other": "W. 'vika' 'í' MMM",
                 "ms": "mm:ss",
                 "y": "y",
                 "yM": "MM.y",
@@ -53,7 +54,8 @@
                 "yMMMM": "MMMM y",
                 "yQQQ": "QQQ 'í' y",
                 "yQQQQ": "QQQQ 'í' y",
-                "yw": "w. 'vika' 'í' y"
+                "yw-count-one": "w. 'vika' 'í' y",
+                "yw-count-other": "w. 'vika' 'í' y"
             },
             "dateFormats": {
                 "yMMMMEEEEd": "EEEE, d. MMMM y",

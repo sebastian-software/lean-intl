@@ -42,7 +42,9 @@
                 "MMMEd": "E, d. MMM",
                 "MMMMd": "d. MMMM",
                 "MMMMEd": "E, d. MMMM",
-                "MMMMW": "MMM W. 'nedēļa'",
+                "MMMMW-count-zero": "MMM W. 'nedēļa'",
+                "MMMMW-count-one": "MMM W. 'nedēļa'",
+                "MMMMW-count-other": "MMM W. 'nedēļa'",
                 "mmss": "mm:ss",
                 "ms": "mm:ss",
                 "y": "y. 'g'.",
@@ -55,7 +57,9 @@
                 "yMMMM": "y. 'g'. MMMM",
                 "yQQQ": "y. 'g'. QQQ",
                 "yQQQQ": "y. 'g'. QQQQ",
-                "yw": "y. 'g'. w. 'nedēļa'"
+                "yw-count-zero": "y. 'g'. w. 'nedēļa'",
+                "yw-count-one": "y. 'g'. w. 'nedēļa'",
+                "yw-count-other": "y. 'g'. w. 'nedēļa'"
             },
             "dateFormats": {
                 "yMMMMEEEEd": "EEEE, y. 'gada' d. MMMM",

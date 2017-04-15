@@ -41,7 +41,8 @@
                 "MMMd": "d MMM",
                 "MMMEd": "E, d MMM",
                 "MMMMd": "d MMMM",
-                "MMMMW": "'selmana' W 'de' MMM",
+                "MMMMW-count-one": "'selmana' W 'de' MMM",
+                "MMMMW-count-other": "'selmana' W 'de' MMM",
                 "ms": "mm:ss",
                 "y": "y",
                 "yM": "M/y",
@@ -53,7 +54,8 @@
                 "yMMMM": "LLLL 'de' y",
                 "yQQQ": "QQQ y",
                 "yQQQQ": "QQQQ 'de' y",
-                "yw": "'selmana' w 'de' y"
+                "yw-count-one": "'selmana' w 'de' y",
+                "yw-count-other": "'selmana' w 'de' y"
             },
             "dateFormats": {
                 "yMMMMEEEEd": "EEEE, d MMMM 'de' y",

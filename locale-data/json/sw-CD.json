@@ -42,7 +42,8 @@
                 "MMMEd": "E, d MMM",
                 "MMMMd": "d MMMM",
                 "MMMMEd": "E, d MMMM",
-                "MMMMW": "'wiki' W 'ya' MMM",
+                "MMMMW-count-one": "'wiki' W 'ya' MMM",
+                "MMMMW-count-other": "'wiki' W 'ya' MMM",
                 "ms": "mm:ss",
                 "y": "y",
                 "yM": "M/y",
@@ -54,7 +55,8 @@
                 "yMMMM": "MMMM y",
                 "yQQQ": "y QQQ",
                 "yQQQQ": "QQQQ y",
-                "yw": "'wiki' w 'ya' y"
+                "yw-count-one": "'wiki' w 'ya' y",
+                "yw-count-other": "'wiki' w 'ya' y"
             },
             "dateFormats": {
                 "yMMMMEEEEd": "EEEE, d MMMM y",

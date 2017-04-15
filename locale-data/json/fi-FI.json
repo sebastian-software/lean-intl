@@ -41,7 +41,8 @@
                 "MMMd": "d. MMM",
                 "MMMEd": "ccc d. MMM",
                 "MMMMd": "d. MMMM",
-                "MMMMW": "LLLL'n' W. 'viikko'",
+                "MMMMW-count-one": "LLLL'n' W. 'viikko'",
+                "MMMMW-count-other": "LLLL'n' W. 'viikko'",
                 "ms": "m.ss",
                 "y": "y",
                 "yM": "L.y",
@@ -55,7 +56,8 @@
                 "yMMMMccccd": "cccc d. MMMM y",
                 "yQQQ": "QQQ y",
                 "yQQQQ": "QQQQ y",
-                "yw": "'vuoden' y 'viikko' w"
+                "yw-count-one": "'vuoden' y 'viikko' w",
+                "yw-count-other": "'vuoden' y 'viikko' w"
             },
             "dateFormats": {
                 "yMMMMEEEEd": "cccc d. MMMM y",

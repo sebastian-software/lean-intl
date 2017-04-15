@@ -42,7 +42,8 @@
                 "MMMEd": "E, MMM d",
                 "MMMMd": "MMMM d",
                 "MMMMEd": "E, MMMM d",
-                "MMMMW": "'linggo' W 'ng' MMM",
+                "MMMMW-count-one": "'ika'-W 'linggo' 'ng' MMM",
+                "MMMMW-count-other": "'linggo' W 'ng' MMM",
                 "ms": "mm:ss",
                 "y": "y",
                 "yM": "M/y",
@@ -55,7 +56,8 @@
                 "yMMMM": "MMMM y",
                 "yQQQ": "QQQ y",
                 "yQQQQ": "QQQQ y",
-                "yw": "'linggo' w 'ng' y"
+                "yw-count-one": "'ika'-w 'linggo' 'ng' y",
+                "yw-count-other": "'linggo' w 'ng' y"
             },
             "dateFormats": {
                 "yMMMMEEEEd": "EEEE, MMMM d, y",

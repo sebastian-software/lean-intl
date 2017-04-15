@@ -41,7 +41,7 @@
                 "MMMd": "MMM d",
                 "MMMEd": "MMM d, E",
                 "MMMMd": "MMMM d",
-                "MMMMW": "MMM W 'нэдиэлэтэ'",
+                "MMMMW-count-other": "MMM W 'нэдиэлэтэ'",
                 "ms": "mm:ss",
                 "y": "y",
                 "yM": "y-MM",
@@ -53,7 +53,7 @@
                 "yMMMM": "y MMMM",
                 "yQQQ": "y QQQ",
                 "yQQQQ": "y QQQQ",
-                "yw": "y 'сыл' w 'нэдиэлэтэ'"
+                "yw-count-other": "y 'сыл' w 'нэдиэлэтэ'"
             },
             "dateFormats": {
                 "yMMMMEEEEd": "y 'сыл' MMMM d 'күнэ', EEEE",

@@ -46,7 +46,7 @@
                 "MMMEd": "MMM d일 (E)",
                 "MMMEEEEd": "MMM d일 EEEE",
                 "MMMMd": "MMMM d일",
-                "MMMMW": "MMM W번째 주",
+                "MMMMW-count-other": "MMM W번째 주",
                 "mmss": "mm:ss",
                 "ms": "mm:ss",
                 "y": "y년",
@@ -62,7 +62,7 @@
                 "yMMMM": "y년 MMMM",
                 "yQQQ": "y년 QQQ",
                 "yQQQQ": "y년 QQQQ",
-                "yw": "y년 w번째 주"
+                "yw-count-other": "y년 w번째 주"
             },
             "dateFormats": {
                 "yMMMMEEEEd": "y년 M월 d일 EEEE",

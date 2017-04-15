@@ -44,7 +44,9 @@
                 "MMMEd": "E d. MMM",
                 "MMMMd": "d. MMMM",
                 "MMMMEd": "E, d. MMMM",
-                "MMMMW": "W. 'сједмица' 'у' MMM",
+                "MMMMW-count-one": "W. 'сједмица' 'у' MMM",
+                "MMMMW-count-few": "W. 'сједмица' 'у' MMM",
+                "MMMMW-count-other": "W. 'сједмица' 'у' MMM",
                 "ms": "mm:ss",
                 "y": "y.",
                 "yM": "M.y.",
@@ -58,7 +60,9 @@
                 "yMMMM": "MMMM y.",
                 "yQQQ": "QQQ y.",
                 "yQQQQ": "QQQQ y.",
-                "yw": "w. 'сједмица' 'у' y."
+                "yw-count-one": "w. 'сједмица' 'у' y.",
+                "yw-count-few": "w. 'сједмица' 'у' y.",
+                "yw-count-other": "w. 'сједмица' 'у' y."
             },
             "dateFormats": {
                 "yMMMMEEEEd": "EEEE, dd. MMMM y.",

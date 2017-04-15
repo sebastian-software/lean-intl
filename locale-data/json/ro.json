@@ -43,7 +43,9 @@
                 "MMMEd": "E, d MMM",
                 "MMMMd": "d MMMM",
                 "MMMMEd": "E, d MMMM",
-                "MMMMW": "'săptămâna' W 'din' MMM",
+                "MMMMW-count-one": "'săptămâna' W 'din' MMM",
+                "MMMMW-count-few": "'săptămâna' W 'din' MMM",
+                "MMMMW-count-other": "'săptămâna' W 'din' MMM",
                 "ms": "mm:ss",
                 "y": "y",
                 "yM": "MM.y",
@@ -56,7 +58,9 @@
                 "yMMMM": "MMMM y",
                 "yQQQ": "QQQ y",
                 "yQQQQ": "QQQQ y",
-                "yw": "'săptămâna' w 'din' y"
+                "yw-count-one": "'săptămâna' w 'din' y",
+                "yw-count-few": "'săptămâna' w 'din' y",
+                "yw-count-other": "'săptămâna' w 'din' y"
             },
             "dateFormats": {
                 "yMMMMEEEEd": "EEEE, d MMMM y",

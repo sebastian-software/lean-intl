@@ -42,7 +42,7 @@
                 "MMMEd": "MMM d ရက် Eနေ့",
                 "MMMMd": "MMMM d",
                 "MMMMEd": "MMMM d ရက် Eနေ့",
-                "MMMMW": "MMM လ W ပတ်မြောက်",
+                "MMMMW-count-other": "MMM လ W ပတ်မြောက်",
                 "ms": "mm:ss",
                 "y": "y",
                 "yM": "M/y",
@@ -54,7 +54,7 @@
                 "yMMMM": "MMMM y",
                 "yQQQ": "y QQQ",
                 "yQQQQ": "y QQQQ",
-                "yw": "y ခု w ပတ်မြောက်"
+                "yw-count-other": "y ခု w ပတ်မြောက်"
             },
             "dateFormats": {
                 "yMMMMEEEEd": "EEEE d MMMM y",
