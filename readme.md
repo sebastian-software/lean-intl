@@ -39,11 +39,12 @@ in environments that support it, or `Lean-Intl` for legacy or unsupported enviro
  - Prettified source code using [Prettier](https://github.com/jlongster/prettier) and ESLint.
  - Cleaned up dependencies from all unused packages dramatically improving CI speed.
  - Added Yarn lock file.
+ - Removed JSONP data.
+ - Removed "complete" UMD package which contains everything.
 
 TODO:
 
  - Cleanup custom Polyfills
- - Remove JSONP data which is only relevant for direct browser usage
 
 
 ## Getting started
@@ -115,7 +116,7 @@ are several reasons, including:
 
 ## Compatibility
 
-Lean Intl is designed to be compatible with ECMAScript 3.1 environments in order to
+`Lean Intl` is designed to be compatible with ECMAScript 3.1 environments in order to
 follow the specification as closely as possible. However, some consideration is given
 to legacy (ES3) environments, and the goal of this project is to at least provide a
 working, albeit non-compliant implementation where ES5 methods are unavailable.
