@@ -99,12 +99,15 @@ Object.keys(locData).forEach((locale) => {
   if (locale.toLowerCase() === "en-us-posix") {
     return
   }
-  
+
   console.log("Writing data for:", locale)
   const obj = reduceLocaleData(locale, locData[locale])
   const stringified = JSON.stringify(obj, null, 0)
   writeFileSync(`locale-data/${locale}.json`, stringified)
-  const scriptified = minify(`IntlPolyfill.__addLocaleData(${stringified})`, { fromString: true })
+  const scriptified = minify(`IntlPolyfill.__addLocaleData(${stringified})`)
+  if (scriptified.error) {
+    throw new Error("Error during JS compression: " + scriptified.error)
+  }
   writeFileSync(`locale-data/${locale}.js`, scriptified.code)
   allScriptified.push(scriptified.code)
 })
