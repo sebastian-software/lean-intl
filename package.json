@@ -41,7 +41,7 @@
     "release": "release-it --github.release --npm.publish --non-interactive",
     "release:minor": "release-it --github.release --npm.publish --non-interactive --increment minor",
     "release:major": "release-it --github.release --npm.publish --non-interactive --increment major",
-    "test": "cd tests && babel-node sanity.js && babel-node disableregexprestore.js && node noderunner.js",
+    "test": "npm run prepublish && cd tests && babel-node sanity.js && babel-node disableregexprestore.js && node noderunner.js",
     "prepublish": "npm run clean && prepublish"
   },
   "repository": {
