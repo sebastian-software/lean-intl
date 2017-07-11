@@ -6,6 +6,8 @@ matrix:
   fast_finish: true
 cache:
   yarn: true
+  directories:
+  - $HOME/.npm
 notifications:
   email: false
   slack:
