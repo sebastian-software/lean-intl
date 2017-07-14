@@ -13,7 +13,7 @@
     "test": "tests"
   },
   "devDependencies": {
-    "async": "^2.4.1",
+    "async": "^2.5.0",
     "babel-cli": "^6.24.1",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1",
     "cldr-core": "31.0.1",
@@ -27,10 +27,10 @@
     "grunt-curl": "^2.2.1",
     "grunt-zip": "^0.17.1",
     "mkdirp": "^0.5.1",
-    "prepublish": "^0.16.1",
-    "readable-code": "^3.0.0",
+    "prepublish": "^1.0.6",
+    "readable-code": "^3.3.6",
     "rimraf": "^2.6.1",
-    "uglify-js": "^3.0.15"
+    "uglify-js": "^3.0.24"
   },
   "dependencies": {
     "make-plural": "^4.0.1"
