@@ -80,6 +80,13 @@ assert.throws = function (expectedErrorConstructor, func, message) {
   throw new Error(message);
 };
 
+assert.throws.early = function(err, code) {
+  let wrappedCode = `function wrapperFn() { ${code} }`;
+  let ieval = eval;
+
+  assert.throws(err, () => { Function(wrappedCode); }, `Function: ${code}`);
+};
+
 "use strict";var __globalObject = Function("return this;")();function fnGlobalObject() {    return __globalObject;}function Test262Error(message) {  this.message = message || "";}IntlPolyfill.__applyLocaleSensitivePrototypes();function runner() {    var passed = false;    runTheTest();    passed = true;    return passed;}function runTheTest () {// Copyright 2012 Mozilla Corporation. All rights reserved.
 // This code is governed by the BSD license found in the LICENSE file.
 
@@ -113,21 +120,11 @@ Object.getOwnPropertyNames(functions).forEach(function (p) {
         } catch (e) {
             referenceError = e;
         }
-        if (referenceError === undefined) {
-            throw new Error("Internal error: Expected exception was not thrown by IntlPolyfill.DateTimeFormat for locales " + locales + ".");
-        }
-        
-        try {
+        assert.notSameValue(referenceError, undefined, "Internal error: Expected exception was not thrown by IntlPolyfill.DateTimeFormat for locales " + locales + ".");
+
+        assert.throws(referenceError.constructor, function() {
             var result = f.call(new Date(), locales);
-        } catch (e) {
-            error = e;
-        }
-        if (error === undefined) {
-            throw new Error("Date.prototype." + p + " didn't throw exception for locales " + locales + ".");
-        } else if (error.name !== referenceError.name) {
-            throw new Error("Date.prototype." + p + " threw exception " + error.name +
-                " for locales " + locales + "; expected " + referenceError.name + ".");
-        }
+        }, "Date.prototype." + p + " didn't throw exception for locales " + locales + ".");
     });
     
     options.forEach(function (options) {
@@ -137,23 +134,11 @@ Object.getOwnPropertyNames(functions).forEach(function (p) {
         } catch (e) {
             referenceError = e;
         }
-        if (referenceError === undefined) {
-            throw new Error("Internal error: Expected exception was not thrown by IntlPolyfill.DateTimeFormat for options " +
-                JSON.stringify(options) + ".");
-        }
-        
-        try {
+        assert.notSameValue(referenceError, undefined, "Internal error: Expected exception was not thrown by IntlPolyfill.DateTimeFormat for options " + JSON.stringify(options) + ".");
+
+        assert.throws(referenceError.constructor, function() {
             var result = f.call(new Date(), [], options);
-        } catch (e) {
-            error = e;
-        }
-        if (error === undefined) {
-            throw new Error("Date.prototype." + p + " didn't throw exception for options " +
-                JSON.stringify(options) + ".");
-        } else if (error.name !== referenceError.name) {
-            throw new Error("Date.prototype." + p + " threw exception " + error.name +
-                " for options " + JSON.stringify(options) + "; expected " + referenceError.name + ".");
-        }
+        }, "Date.prototype." + p + " didn't throw exception for options " + JSON.stringify(options) + ".");
     });
 });
  }

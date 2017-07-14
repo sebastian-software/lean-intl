@@ -80,6 +80,13 @@ assert.throws = function (expectedErrorConstructor, func, message) {
   throw new Error(message);
 };
 
+assert.throws.early = function(err, code) {
+  let wrappedCode = `function wrapperFn() { ${code} }`;
+  let ieval = eval;
+
+  assert.throws(err, () => { Function(wrappedCode); }, `Function: ${code}`);
+};
+
 // Copyright 2011-2012 Norbert Lindenberg. All rights reserved.
 // Copyright 2012-2013 Mozilla Corporation. All rights reserved.
 // This code is governed by the BSD license found in the LICENSE file.
@@ -1315,11 +1322,10 @@ locales.forEach(function (locale) {
         var actual = format.resolvedOptions();
         getDateTimeComponents().forEach(function (component) {
             if (actual.hasOwnProperty(component)) {
-                if (!subset.hasOwnProperty(component)) {
-                    throw new Error("Unrequested component " + component +
+                assert(subset.hasOwnProperty(component),
+                        "Unrequested component " + component +
                         " added to requested subset " + JSON.stringify(subset) +
                         "; locale " + locale + ".");
-                }
                 try {
                     testValidDateTimeComponentValue(component, actual[component]);
                 } catch (e) {
@@ -1328,11 +1334,10 @@ locales.forEach(function (locale) {
                     throw e;
                 }
             } else {
-                if (subset.hasOwnProperty(component)) {
-                    throw new Error("Missing component " + component +
+                assert.sameValue(subset.hasOwnProperty(component), false,
+                        "Missing component " + component +
                         " from requested subset " + JSON.stringify(subset) +
                         "; locale " + locale + ".");
-                }
             }
         });
     });

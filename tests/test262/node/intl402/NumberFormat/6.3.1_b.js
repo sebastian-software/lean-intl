@@ -80,6 +80,13 @@ assert.throws = function (expectedErrorConstructor, func, message) {
   throw new Error(message);
 };
 
+assert.throws.early = function(err, code) {
+  let wrappedCode = `function wrapperFn() { ${code} }`;
+  let ieval = eval;
+
+  assert.throws(err, () => { Function(wrappedCode); }, `Function: ${code}`);
+};
+
 "use strict";var __globalObject = Function("return this;")();function fnGlobalObject() {    return __globalObject;}function Test262Error(message) {  this.message = message || "";}IntlPolyfill.__applyLocaleSensitivePrototypes();function runner() {    var passed = false;    runTheTest();    passed = true;    return passed;}function runTheTest () {// Copyright 2012 Mozilla Corporation. All rights reserved.
 // This code is governed by the BSD license found in the LICENSE file.
 
@@ -102,17 +109,9 @@ var invalidCurrencyCodes = [
 ];
 
 invalidCurrencyCodes.forEach(function (code) {
-    var error;
-    try {
-        // this must throw an exception for an invalid currency code
+    // this must throw an exception for an invalid currency code
+    assert.throws(RangeError, function() {
         var format = new IntlPolyfill.NumberFormat(["de-de"], {style: "currency", currency: code});
-    } catch (e) {
-        error = e;
-    }
-    if (error === undefined) {
-        throw new Error("Invalid currency code '" + code + "' was not rejected.");
-    } else if (error.name !== "RangeError") {
-        throw new Error("Invalid currency code '" + code + "' was rejected with wrong error " + error.name + ".");
-    }
+    }, "Invalid currency code '" + code + "' was not rejected.");
 });
  }

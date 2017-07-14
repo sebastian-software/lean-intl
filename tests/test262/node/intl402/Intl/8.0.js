@@ -80,6 +80,13 @@ assert.throws = function (expectedErrorConstructor, func, message) {
   throw new Error(message);
 };
 
+assert.throws.early = function(err, code) {
+  let wrappedCode = `function wrapperFn() { ${code} }`;
+  let ieval = eval;
+
+  assert.throws(err, () => { Function(wrappedCode); }, `Function: ${code}`);
+};
+
 "use strict";var __globalObject = Function("return this;")();function fnGlobalObject() {    return __globalObject;}function Test262Error(message) {  this.message = message || "";}IntlPolyfill.__applyLocaleSensitivePrototypes();function runner() {    var passed = false;    runTheTest();    passed = true;    return passed;}function runTheTest () {// Copyright 2013 Mozilla Corporation. All rights reserved.
 // This code is governed by the license found in the LICENSE file.
 
@@ -89,7 +96,5 @@ description: Tests that IntlPolyfill has Object.prototype as its prototype.
 author: Norbert Lindenberg
 ---*/
 
-if (Object.getPrototypeOf(IntlPolyfill) !== Object.prototype) {
-    throw new Error("IntlPolyfill doesn't have Object.prototype as its prototype.");
-}
+assert.sameValue(Object.getPrototypeOf(IntlPolyfill), Object.prototype, "IntlPolyfill doesn't have Object.prototype as its prototype.");
  }

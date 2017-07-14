@@ -80,6 +80,13 @@ assert.throws = function (expectedErrorConstructor, func, message) {
   throw new Error(message);
 };
 
+assert.throws.early = function(err, code) {
+  let wrappedCode = `function wrapperFn() { ${code} }`;
+  let ieval = eval;
+
+  assert.throws(err, () => { Function(wrappedCode); }, `Function: ${code}`);
+};
+
 "use strict";var __globalObject = Function("return this;")();function fnGlobalObject() {    return __globalObject;}function Test262Error(message) {  this.message = message || "";}IntlPolyfill.__applyLocaleSensitivePrototypes();function runner() {    var passed = false;    runTheTest();    passed = true;    return passed;}function runTheTest () {// Copyright 2012 Google Inc.  All rights reserved.
 // This code is governed by the BSD license found in the LICENSE file.
 
@@ -91,8 +98,5 @@ description: >
 author: Roozbeh Pournader
 ---*/
 
-if (IntlPolyfill.DateTimeFormat.prototype.constructor !== IntlPolyfill.DateTimeFormat) {
-    throw new Error("IntlPolyfill.DateTimeFormat.prototype.constructor is not the same as " +
-          "IntlPolyfill.DateTimeFormat");
-}
+assert.sameValue(IntlPolyfill.DateTimeFormat.prototype.constructor, IntlPolyfill.DateTimeFormat, "IntlPolyfill.DateTimeFormat.prototype.constructor is not the same as IntlPolyfill.DateTimeFormat");
  }

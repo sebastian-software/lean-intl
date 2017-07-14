@@ -80,6 +80,13 @@ assert.throws = function (expectedErrorConstructor, func, message) {
   throw new Error(message);
 };
 
+assert.throws.early = function(err, code) {
+  let wrappedCode = `function wrapperFn() { ${code} }`;
+  let ieval = eval;
+
+  assert.throws(err, () => { Function(wrappedCode); }, `Function: ${code}`);
+};
+
 // Copyright 2011-2012 Norbert Lindenberg. All rights reserved.
 // Copyright 2012-2013 Mozilla Corporation. All rights reserved.
 // This code is governed by the BSD license found in the LICENSE file.
@@ -1304,16 +1311,12 @@ testWithIntlConstructors(function (Constructor) {
         var pos = locale.lastIndexOf("-");
         if (pos !== -1) {
             fallback = locale.substring(0, pos);
-            if (info.supported.indexOf(fallback) === -1) {
-                throw new Error("Locale " + locale + " is supported, but fallback " + fallback + " isn't.");
-            }
+            assert.notSameValue(info.supported.indexOf(fallback), -1, "Locale " + locale + " is supported, but fallback " + fallback + " isn't.");
         }
         var match = /([a-z]{2,3})(-[A-Z][a-z]{3})(-[A-Z]{2})/.exec(locale);
         if (match !== null) {
             fallback = match[1] + match[3];
-            if (info.supported.indexOf(fallback) === -1) {
-                throw new Error("Locale " + locale + " is supported, but fallback " + fallback + " isn't.");
-            }
+            assert.notSameValue(info.supported.indexOf(fallback), -1, "Locale " + locale + " is supported, but fallback " + fallback + " isn't.");
         }
     });
 });

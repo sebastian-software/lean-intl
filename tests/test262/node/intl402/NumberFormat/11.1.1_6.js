@@ -80,6 +80,13 @@ assert.throws = function (expectedErrorConstructor, func, message) {
   throw new Error(message);
 };
 
+assert.throws.early = function(err, code) {
+  let wrappedCode = `function wrapperFn() { ${code} }`;
+  let ieval = eval;
+
+  assert.throws(err, () => { Function(wrappedCode); }, `Function: ${code}`);
+};
+
 // Copyright 2011-2012 Norbert Lindenberg. All rights reserved.
 // Copyright 2012-2013 Mozilla Corporation. All rights reserved.
 // This code is governed by the BSD license found in the LICENSE file.
@@ -1300,7 +1307,5 @@ testIntl.js
 taintProperties(["localeMatcher"]);
 
 var locale = new IntlPolyfill.NumberFormat(undefined, {localeMatcher: "lookup"}).resolvedOptions().locale;
-if (!isCanonicalizedStructurallyValidLanguageTag(locale)) {
-    throw new Error("NumberFormat returns invalid locale " + locale + ".");
-}
+assert(isCanonicalizedStructurallyValidLanguageTag(locale), "NumberFormat returns invalid locale " + locale + ".");
  }

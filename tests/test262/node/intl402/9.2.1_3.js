@@ -80,6 +80,13 @@ assert.throws = function (expectedErrorConstructor, func, message) {
   throw new Error(message);
 };
 
+assert.throws.early = function(err, code) {
+  let wrappedCode = `function wrapperFn() { ${code} }`;
+  let ieval = eval;
+
+  assert.throws(err, () => { Function(wrappedCode); }, `Function: ${code}`);
+};
+
 // Copyright 2011-2012 Norbert Lindenberg. All rights reserved.
 // Copyright 2012-2013 Mozilla Corporation. All rights reserved.
 // This code is governed by the BSD license found in the LICENSE file.
@@ -1348,24 +1355,11 @@ testWithIntlConstructors(function (Constructor) {
             error2 = e;
         }
 
-        if ((error1 === undefined) !== (error2 === undefined)) {
-            if (error1 === undefined) {
-                throw new Error("Single locale string " + locale +
-                    " was accepted, but locale list containing that string wasn't.");
-            } else {
-                throw new Error("Single locale string " + locale +
-                    " was rejected, but locale list containing that string wasn't.");
-            }
-        } else if (error1 === undefined) {
-             if (locale1 !== locale2) {
-                throw new Error("Single locale string " + locale + " results in " + locale1 +
-                    ", but locale list [" + locale + "] results in " + locale2 + ".");
-             }
+        assert.sameValue((error1 === undefined), (error2 === undefined), "Single locale string " + locale + " was " + (error1 === undefined ? "accepted" : "rejected") + ", but locale list containing that string wasn't.");
+        if (error1 === undefined) {
+            assert.sameValue(locale1, locale2, "Single locale string " + locale + " results in " + locale1 + ", but locale list [" + locale + "] results in " + locale2 + ".");
         } else {
-            if (error1.name !== error2.name) {
-                throw new Error("Single locale string " + locale + " results in error " + error1.name +
-                    ", but locale list [" + locale + "] results in error " + error2.name + ".");
-             }
+            assert.sameValue(error1.name, error2.name, "Single locale string " + locale + " results in error " + error1.name + ", but locale list [" + locale + "] results in error " + error2.name + ".");
         }
     });
     

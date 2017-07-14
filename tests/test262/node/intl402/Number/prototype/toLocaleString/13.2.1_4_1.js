@@ -80,6 +80,13 @@ assert.throws = function (expectedErrorConstructor, func, message) {
   throw new Error(message);
 };
 
+assert.throws.early = function(err, code) {
+  let wrappedCode = `function wrapperFn() { ${code} }`;
+  let ieval = eval;
+
+  assert.throws(err, () => { Function(wrappedCode); }, `Function: ${code}`);
+};
+
 "use strict";var __globalObject = Function("return this;")();function fnGlobalObject() {    return __globalObject;}function Test262Error(message) {  this.message = message || "";}IntlPolyfill.__applyLocaleSensitivePrototypes();function runner() {    var passed = false;    runTheTest();    passed = true;    return passed;}function runTheTest () {// Copyright 2012 Mozilla Corporation. All rights reserved.
 // This code is governed by the BSD license found in the LICENSE file.
 
@@ -107,21 +114,11 @@ locales.forEach(function (locales) {
     } catch (e) {
         referenceError = e;
     }
-    if (referenceError === undefined) {
-        throw new Error("Internal error: Expected exception was not thrown by IntlPolyfill.NumberFormat for locales " + locales + ".");
-    }
-    
-    try {
+    assert.notSameValue(referenceError, undefined, "Internal error: Expected exception was not thrown by IntlPolyfill.NumberFormat for locales " + locales + ".");
+
+    assert.throws(referenceError.constructor, function() {
         var result = (0).toLocaleString(locales);
-    } catch (e) {
-        error = e;
-    }
-    if (error === undefined) {
-        throw new Error("Number.prototype.toLocaleString didn't throw exception for locales " + locales + ".");
-    } else if (error.name !== referenceError.name) {
-        throw new Error("Number.prototype.toLocaleString threw exception " + error.name +
-            " for locales " + locales + "; expected " + referenceError.name + ".");
-    }
+    }, "Number.prototype.toLocaleString didn't throw exception for locales " + locales + ".");
 });
 
 options.forEach(function (options) {
@@ -131,22 +128,10 @@ options.forEach(function (options) {
     } catch (e) {
         referenceError = e;
     }
-    if (referenceError === undefined) {
-        throw new Error("Internal error: Expected exception was not thrown by IntlPolyfill.NumberFormat for options " +
-            JSON.stringify(options) + ".");
-    }
-    
-    try {
+    assert.notSameValue(referenceError, undefined, "Internal error: Expected exception was not thrown by IntlPolyfill.NumberFormat for options " + JSON.stringify(options) + ".");
+
+    assert.throws(referenceError.constructor, function() {
         var result = (0).toLocaleString([], options);
-    } catch (e) {
-        error = e;
-    }
-    if (error === undefined) {
-        throw new Error("Number.prototype.toLocaleString didn't throw exception for options " +
-            JSON.stringify(options) + ".");
-    } else if (error.name !== referenceError.name) {
-        throw new Error("Number.prototype.toLocaleString threw exception " + error.name +
-            " for options " + JSON.stringify(options) + "; expected " + referenceError.name + ".");
-    }
+    }, "Number.prototype.toLocaleString didn't throw exception for options " + JSON.stringify(options) + ".");
 });
  }

@@ -80,6 +80,13 @@ assert.throws = function (expectedErrorConstructor, func, message) {
   throw new Error(message);
 };
 
+assert.throws.early = function(err, code) {
+  let wrappedCode = `function wrapperFn() { ${code} }`;
+  let ieval = eval;
+
+  assert.throws(err, () => { Function(wrappedCode); }, `Function: ${code}`);
+};
+
 // Copyright 2011-2012 Norbert Lindenberg. All rights reserved.
 // Copyright 2012-2013 Mozilla Corporation. All rights reserved.
 // This code is governed by the BSD license found in the LICENSE file.
@@ -1299,19 +1306,11 @@ var notStringOrObject = [undefined, null, true, false, 0, 5, -5, NaN];
 
 testWithIntlConstructors(function (Constructor) {
     notStringOrObject.forEach(function (value) {
-        var error;
-        try {
+        assert.throws(TypeError, function() {
             var arr = [];
             arr[0] = value;
             var supported = Constructor.supportedLocalesOf(arr);
-        } catch (e) {
-            error = e;
-        }
-        if (error === undefined) {
-            throw new Error("" + value + " as locale was not rejected.");
-        } else if (error.name !== "TypeError") {
-            throw new Error("" + value + " as locale was rejected with wrong error " + error.name + ".");
-        }
+        }, "" + value + " as locale was not rejected.");
     });
     
     return true;

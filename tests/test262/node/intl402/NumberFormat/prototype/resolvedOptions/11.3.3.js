@@ -80,6 +80,13 @@ assert.throws = function (expectedErrorConstructor, func, message) {
   throw new Error(message);
 };
 
+assert.throws.early = function(err, code) {
+  let wrappedCode = `function wrapperFn() { ${code} }`;
+  let ieval = eval;
+
+  assert.throws(err, () => { Function(wrappedCode); }, `Function: ${code}`);
+};
+
 // Copyright 2011-2012 Norbert Lindenberg. All rights reserved.
 // Copyright 2012-2013 Mozilla Corporation. All rights reserved.
 // This code is governed by the BSD license found in the LICENSE file.
@@ -1301,9 +1308,7 @@ testIntl.js
 var actual = new IntlPolyfill.NumberFormat().resolvedOptions();
 
 var actual2 = new IntlPolyfill.NumberFormat().resolvedOptions();
-if (actual2 === actual) {
-    throw new Error("resolvedOptions returned the same object twice.");
-}
+assert.notSameValue(actual2, actual, "resolvedOptions returned the same object twice.");
 
 // this assumes the default values where the specification provides them
 mustHaveProperty(actual, "locale", isCanonicalizedStructurallyValidLanguageTag);

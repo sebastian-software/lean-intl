@@ -80,6 +80,13 @@ assert.throws = function (expectedErrorConstructor, func, message) {
   throw new Error(message);
 };
 
+assert.throws.early = function(err, code) {
+  let wrappedCode = `function wrapperFn() { ${code} }`;
+  let ieval = eval;
+
+  assert.throws(err, () => { Function(wrappedCode); }, `Function: ${code}`);
+};
+
 "use strict";var __globalObject = Function("return this;")();function fnGlobalObject() {    return __globalObject;}function Test262Error(message) {  this.message = message || "";}IntlPolyfill.__applyLocaleSensitivePrototypes();function runner() {    var passed = false;    runTheTest();    passed = true;    return passed;}function runTheTest () {// Copyright 2012 Mozilla Corporation. All rights reserved.
 // This code is governed by the BSD license found in the LICENSE file.
 
@@ -93,17 +100,9 @@ var invalidValues = [undefined, null, "5", false, {valueOf: function () { return
 var validValues = [5, NaN, -1234567.89, -Infinity];
 
 invalidValues.forEach(function (value) {
-    var error;
-    try {
+    assert.throws(TypeError, function() {
         var result = Number.prototype.toLocaleString.call(value);
-    } catch (e) {
-        error = e;
-    }
-    if (error === undefined) {
-        throw new Error("Number.prototype.toLocaleString did not reject this = " + value + ".");
-    } else if (error.name !== "TypeError") {
-        throw new Error("Number.prototype.toLocaleString rejected this = " + value + " with wrong error " + error.name + ".");
-    }
+    }, "Number.prototype.toLocaleString did not reject this = " + value + ".");
 });
 
 // for valid values, just check that a Number value and the corresponding
@@ -112,9 +111,6 @@ validValues.forEach(function (value) {
     var Constructor = Number; // to keep jshint happy
     var valueResult = Number.prototype.toLocaleString.call(value);
     var objectResult = Number.prototype.toLocaleString.call(new Constructor(value));
-    if (valueResult !== objectResult) {
-        throw new Error("Number.prototype.toLocaleString produces different results for Number value " +
-            value + " and corresponding Number object: " + valueResult + " vs. " + objectResult + ".");
-    }
+    assert.sameValue(valueResult, objectResult, "Number.prototype.toLocaleString produces different results for Number value " + value + " and corresponding Number object.");
 });
  }

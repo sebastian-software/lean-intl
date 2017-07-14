@@ -80,6 +80,13 @@ assert.throws = function (expectedErrorConstructor, func, message) {
   throw new Error(message);
 };
 
+assert.throws.early = function(err, code) {
+  let wrappedCode = `function wrapperFn() { ${code} }`;
+  let ieval = eval;
+
+  assert.throws(err, () => { Function(wrappedCode); }, `Function: ${code}`);
+};
+
 "use strict";var __globalObject = Function("return this;")();function fnGlobalObject() {    return __globalObject;}function Test262Error(message) {  this.message = message || "";}IntlPolyfill.__applyLocaleSensitivePrototypes();function runner() {    var passed = false;    runTheTest();    passed = true;    return passed;}function runTheTest () {// Copyright 2011-2012 Norbert Lindenberg. All rights reserved.
 // Copyright 2012 Mozilla Corporation. All rights reserved.
 // This code is governed by the BSD license found in the LICENSE file.
@@ -265,13 +272,7 @@ Object.getOwnPropertyNames(currencyDigits).forEach(function (currency) {
     var format = IntlPolyfill.NumberFormat([], {style: "currency", currency: currency});
     var min = format.resolvedOptions().minimumFractionDigits;
     var max = format.resolvedOptions().maximumFractionDigits;
-    if (min !== digits) {
-        throw new Error("Didn't get correct minimumFractionDigits for currency " +
-            currency + "; expected " + digits + ", got " + min + ".");
-    }
-    if (max !== digits) {
-        throw new Error("Didn't get correct maximumFractionDigits for currency " +
-            currency + "; expected " + digits + ", got " + max + ".");
-    }
+    assert.sameValue(min, digits, "Didn't get correct minimumFractionDigits for currency " + currency + ".");
+    assert.sameValue(max, digits, "Didn't get correct maximumFractionDigits for currency " + currency + ".");
 });
  }

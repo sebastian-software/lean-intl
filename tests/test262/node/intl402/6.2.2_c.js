@@ -80,6 +80,13 @@ assert.throws = function (expectedErrorConstructor, func, message) {
   throw new Error(message);
 };
 
+assert.throws.early = function(err, code) {
+  let wrappedCode = `function wrapperFn() { ${code} }`;
+  let ieval = eval;
+
+  assert.throws(err, () => { Function(wrappedCode); }, `Function: ${code}`);
+};
+
 // Copyright 2011-2012 Norbert Lindenberg. All rights reserved.
 // Copyright 2012-2013 Mozilla Corporation. All rights reserved.
 // This code is governed by the BSD license found in the LICENSE file.
@@ -1318,18 +1325,10 @@ var invalidLanguageTags = [
 
 testWithIntlConstructors(function (Constructor) {
     invalidLanguageTags.forEach(function (tag) {
-        var error;
-        try {
-            // this must throw an exception for an invalid language tag
+        // this must throw an exception for an invalid language tag
+        assert.throws(RangeError, function() {
             var obj = new Constructor([tag]);
-        } catch (e) {
-            error = e;
-        }
-        if (error === undefined) {
-            throw new Error("Invalid language tag " + tag + " was not rejected.");
-        } else if (error.name !== "RangeError") {
-            throw new Error("Invalid language tag " + tag + " was rejected with wrong error " + error.name + ".");
-        }
+        }, "Invalid language tag " + tag + " was not rejected.");
     });
     return true;
 });

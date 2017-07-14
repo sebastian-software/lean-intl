@@ -80,6 +80,13 @@ assert.throws = function (expectedErrorConstructor, func, message) {
   throw new Error(message);
 };
 
+assert.throws.early = function(err, code) {
+  let wrappedCode = `function wrapperFn() { ${code} }`;
+  let ieval = eval;
+
+  assert.throws(err, () => { Function(wrappedCode); }, `Function: ${code}`);
+};
+
 "use strict";var __globalObject = Function("return this;")();function fnGlobalObject() {    return __globalObject;}function Test262Error(message) {  this.message = message || "";}IntlPolyfill.__applyLocaleSensitivePrototypes();function runner() {    var passed = false;    runTheTest();    passed = true;    return passed;}function runTheTest () {// Copyright 2012 Mozilla Corporation. All rights reserved.
 // This code is governed by the BSD license found in the LICENSE file.
 
@@ -101,64 +108,38 @@ validValues.forEach(function (value) {
     format = new IntlPolyfill.NumberFormat([defaultLocale], {style: "currency", currency: value});
     actual = format.resolvedOptions().currency;
     expected = value.toString().toUpperCase();
-    if (actual !== expected) {
-        throw new Error("Incorrect resolved currency with currency style - expected " +
-            expected + "; got " + actual + ".");
-    }
+    assert.sameValue(actual, expected, "Incorrect resolved currency with currency style.");
     
     // without currency style, we shouldn't get any currency back
     format = new IntlPolyfill.NumberFormat([defaultLocale], {currency: value});
     actual = format.resolvedOptions().currency;
     expected = undefined;
-    if (actual !== expected) {
-        throw new Error("Incorrect resolved currency with non-currency style - expected " +
-            expected + "; got " + actual + ".");
-    }
+    assert.sameValue(actual, expected, "Incorrect resolved currency with non-currency style.");
     
     // currencies specified through the locale must be ignored
     format = new IntlPolyfill.NumberFormat([defaultLocale + "-u-cu-krw"], {style: "currency", currency: value});
     actual = format.resolvedOptions().currency;
     expected = value.toString().toUpperCase();
-    if (actual !== expected) {
-        throw new Error("Incorrect resolved currency with -u-cu- and currency style - expected " +
-            expected + "; got " + actual + ".");
-    }
+    assert.sameValue(actual, expected, "Incorrect resolved currency with -u-cu- and currency style.");
     
     format = new IntlPolyfill.NumberFormat([defaultLocale + "-u-cu-krw"], {currency: value});
     actual = format.resolvedOptions().currency;
     expected = undefined;
-    if (actual !== expected) {
-        throw new Error("Incorrect resolved currency with -u-cu- and non-currency style - expected " +
-            expected + "; got " + actual + ".");
-    }
+    assert.sameValue(actual, expected, "Incorrect resolved currency with -u-cu- and non-currency style.");
 });
 
 invalidValues.forEach(function (value) {
-    function expectError(f) {
-        var error;
-        try {
-            f();
-        } catch (e) {
-            error = e;
-        }
-        if (error === undefined) {
-            throw new Error("Invalid currency value " + value + " was not rejected.");
-        } else if (error.name !== "RangeError") {
-            throw new Error("Invalid currency value " + value + " was rejected with wrong error " + error.name + ".");
-        }
-    }
-
-    expectError(function () {
+    assert.throws(RangeError, function () {
             return new IntlPolyfill.NumberFormat([defaultLocale], {style: "currency", currency: value});
-    });
-    expectError(function () {
+    }, "Invalid currency value " + value + " was not rejected.");
+    assert.throws(RangeError, function () {
             return new IntlPolyfill.NumberFormat([defaultLocale], {currency: value});
-    });
-    expectError(function () {
+    }, "Invalid currency value " + value + " was not rejected.");
+    assert.throws(RangeError, function () {
             return new IntlPolyfill.NumberFormat([defaultLocale + "-u-cu-krw"], {style: "currency", currency: value});
-    });
-    expectError(function () {
+    }, "Invalid currency value " + value + " was not rejected.");
+    assert.throws(RangeError, function () {
             return new IntlPolyfill.NumberFormat([defaultLocale + "-u-cu-krw"], {currency: value});
-    });
+    }, "Invalid currency value " + value + " was not rejected.");
 });
  }

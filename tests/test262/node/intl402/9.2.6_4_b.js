@@ -80,6 +80,13 @@ assert.throws = function (expectedErrorConstructor, func, message) {
   throw new Error(message);
 };
 
+assert.throws.early = function(err, code) {
+  let wrappedCode = `function wrapperFn() { ${code} }`;
+  let ieval = eval;
+
+  assert.throws(err, () => { Function(wrappedCode); }, `Function: ${code}`);
+};
+
 // Copyright 2011-2012 Norbert Lindenberg. All rights reserved.
 // Copyright 2012-2013 Mozilla Corporation. All rights reserved.
 // This code is governed by the BSD license found in the LICENSE file.
@@ -1312,19 +1319,13 @@ testWithIntlConstructors(function (Constructor) {
             var supported3 = Constructor.supportedLocalesOf([locale + invalidExtension],
                 {localeMatcher: matcher});
             if (supported1.length === 1) {
-                if (supported2.length !== 1 || supported3.length !== 1) {
-                    throw new Error("Presence of Unicode locale extension sequence affects whether locale " +
-                        locale + " is considered supported with matcher " + matcher + ".");
-                }
-                if (supported2[0] !== locale + validExtension || supported3[0] !== locale + invalidExtension) {
-                    throw new Error("Unicode locale extension sequence is not correctly returned for locale " +
-                        locale + " with matcher " + matcher + ".");
-                }
+                assert.sameValue(supported2.length, 1, "#1.1: Presence of Unicode locale extension sequence affects whether locale " + locale + " is considered supported with matcher " + matcher + ".");
+                assert.sameValue(supported3.length, 1, "#1.2: Presence of Unicode locale extension sequence affects whether locale " + locale + " is considered supported with matcher " + matcher + ".");
+                assert.sameValue(supported2[0], locale + validExtension, "#2.1: Unicode locale extension sequence is not correctly returned for locale " + locale + " with matcher " + matcher + ".");
+                assert.sameValue(supported3[0], locale + invalidExtension, "#2.2: Unicode locale extension sequence is not correctly returned for locale " + locale + " with matcher " + matcher + ".");
             } else {
-                if (supported2.length !== 0 || supported3.length !== 0) {
-                    throw new Error("Presence of Unicode locale extension sequence affects whether locale " +
-                        locale + " is considered supported with matcher " + matcher + ".");
-                }
+                assert.sameValue(supported2.length, 0, "#3.1: Presence of Unicode locale extension sequence affects whether locale " + locale + " is considered supported with matcher " + matcher + ".");
+                assert.sameValue(supported3.length, 0, "#3.2: Presence of Unicode locale extension sequence affects whether locale " + locale + " is considered supported with matcher " + matcher + ".");
             }
         });
     });

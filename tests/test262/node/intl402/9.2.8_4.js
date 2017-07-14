@@ -80,6 +80,13 @@ assert.throws = function (expectedErrorConstructor, func, message) {
   throw new Error(message);
 };
 
+assert.throws.early = function(err, code) {
+  let wrappedCode = `function wrapperFn() { ${code} }`;
+  let ieval = eval;
+
+  assert.throws(err, () => { Function(wrappedCode); }, `Function: ${code}`);
+};
+
 // Copyright 2011-2012 Norbert Lindenberg. All rights reserved.
 // Copyright 2012-2013 Mozilla Corporation. All rights reserved.
 // This code is governed by the BSD license found in the LICENSE file.
@@ -1299,20 +1306,14 @@ testIntl.js
 
 function testFrozenProperty(obj, property) {
     var desc = Object.getOwnPropertyDescriptor(obj, property);
-    if (desc.writable) {
-        throw new Error("Property " + property + " of object returned by SupportedLocales is writable.");
-    }
-    if (desc.configurable) {
-        throw new Error("Property " + property + " of object returned by SupportedLocales is configurable.");
-    }
+    assert.sameValue(desc.writable, false, "Property " + property + " of object returned by SupportedLocales is writable.");
+    assert.sameValue(desc.configurable, false, "Property " + property + " of object returned by SupportedLocales is configurable.");
 }
 
 testWithIntlConstructors(function (Constructor) {
     var defaultLocale = new Constructor().resolvedOptions().locale;
     var supported = Constructor.supportedLocalesOf([defaultLocale]);
-    if (!Object.isExtensible(supported)) {
-        throw new Error("Object returned by SupportedLocales is not extensible.");
-    }
+    assert(Object.isExtensible(supported), "Object returned by SupportedLocales is not extensible.");
     for (var i = 0; i < supported.length; i++) {
         testFrozenProperty(supported, i);
     }

@@ -80,6 +80,13 @@ assert.throws = function (expectedErrorConstructor, func, message) {
   throw new Error(message);
 };
 
+assert.throws.early = function(err, code) {
+  let wrappedCode = `function wrapperFn() { ${code} }`;
+  let ieval = eval;
+
+  assert.throws(err, () => { Function(wrappedCode); }, `Function: ${code}`);
+};
+
 "use strict";var __globalObject = Function("return this;")();function fnGlobalObject() {    return __globalObject;}function Test262Error(message) {  this.message = message || "";}IntlPolyfill.__applyLocaleSensitivePrototypes();function runner() {    var passed = false;    runTheTest();    passed = true;    return passed;}function runTheTest () {// Copyright 2012 Mozilla Corporation. All rights reserved.
 // This code is governed by the license found in the LICENSE file.
 
@@ -90,16 +97,8 @@ author: Norbert Lindenberg
 ---*/
 
 var desc = Object.getOwnPropertyDescriptor(IntlPolyfill.NumberFormat, "prototype");
-if (desc === undefined) {
-    throw new Error("IntlPolyfill.NumberFormat.prototype is not defined.");
-}
-if (desc.writable) {
-    throw new Error("IntlPolyfill.NumberFormat.prototype must not be writable.");
-}
-if (desc.enumerable) {
-    throw new Error("IntlPolyfill.NumberFormat.prototype must not be enumerable.");
-}
-if (desc.configurable) {
-    throw new Error("IntlPolyfill.NumberFormat.prototype must not be configurable.");
-}
+assert.notSameValue(desc, undefined, "IntlPolyfill.NumberFormat.prototype is not defined.");
+assert.sameValue(desc.writable, false, "IntlPolyfill.NumberFormat.prototype must not be writable.");
+assert.sameValue(desc.enumerable, false, "IntlPolyfill.NumberFormat.prototype must not be enumerable.");
+assert.sameValue(desc.configurable, false, "IntlPolyfill.NumberFormat.prototype must not be configurable.");
  }

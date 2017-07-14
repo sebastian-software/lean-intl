@@ -80,6 +80,13 @@ assert.throws = function (expectedErrorConstructor, func, message) {
   throw new Error(message);
 };
 
+assert.throws.early = function(err, code) {
+  let wrappedCode = `function wrapperFn() { ${code} }`;
+  let ieval = eval;
+
+  assert.throws(err, () => { Function(wrappedCode); }, `Function: ${code}`);
+};
+
 "use strict";var __globalObject = Function("return this;")();function fnGlobalObject() {    return __globalObject;}function Test262Error(message) {  this.message = message || "";}IntlPolyfill.__applyLocaleSensitivePrototypes();function runner() {    var passed = false;    runTheTest();    passed = true;    return passed;}function runTheTest () {// Copyright 2012 Mozilla Corporation. All rights reserved.
 // This code is governed by the BSD license found in the LICENSE file.
 
@@ -94,16 +101,8 @@ var invalidValues = [NaN, Infinity, -Infinity];
 var format = new IntlPolyfill.DateTimeFormat();
 
 invalidValues.forEach(function (value) {
-    var error;
-    try {
+    assert.throws(RangeError, function() {
         var result = format.format(value);
-    } catch (e) {
-        error = e;
-    }
-    if (error === undefined) {
-        throw new Error("Invalid value " + value + " was not rejected.");
-    } else if (error.name !== "RangeError") {
-        throw new Error("Invalid value " + value + " was rejected with wrong error " + error.name + ".");
-    }
+    }, "Invalid value " + value + " was not rejected.");
 });
  }

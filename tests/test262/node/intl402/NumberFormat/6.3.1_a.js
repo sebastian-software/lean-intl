@@ -80,6 +80,13 @@ assert.throws = function (expectedErrorConstructor, func, message) {
   throw new Error(message);
 };
 
+assert.throws.early = function(err, code) {
+  let wrappedCode = `function wrapperFn() { ${code} }`;
+  let ieval = eval;
+
+  assert.throws(err, () => { Function(wrappedCode); }, `Function: ${code}`);
+};
+
 "use strict";var __globalObject = Function("return this;")();function fnGlobalObject() {    return __globalObject;}function Test262Error(message) {  this.message = message || "";}IntlPolyfill.__applyLocaleSensitivePrototypes();function runner() {    var passed = false;    runTheTest();    passed = true;    return passed;}function runTheTest () {// Copyright 2012 Mozilla Corporation. All rights reserved.
 // This code is governed by the BSD license found in the LICENSE file.
 
@@ -100,9 +107,6 @@ var wellFormedCurrencyCodes = [
 wellFormedCurrencyCodes.forEach(function (code) {
     // this must not throw an exception for a valid currency code
     var format = new IntlPolyfill.NumberFormat(["de-de"], {style: "currency", currency: code});
-    if (format.resolvedOptions().currency !== code.toUpperCase()) {
-        throw new Error("Currency " + code + " was not correctly accepted; turned into " +
-            format.resolvedOptions().currency + ".");
-    }
+    assert.sameValue(format.resolvedOptions().currency, code.toUpperCase(), "Currency " + code + " was not correctly accepted.");
 });
  }

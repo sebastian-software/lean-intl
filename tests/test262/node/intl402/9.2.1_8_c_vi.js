@@ -80,6 +80,13 @@ assert.throws = function (expectedErrorConstructor, func, message) {
   throw new Error(message);
 };
 
+assert.throws.early = function(err, code) {
+  let wrappedCode = `function wrapperFn() { ${code} }`;
+  let ieval = eval;
+
+  assert.throws(err, () => { Function(wrappedCode); }, `Function: ${code}`);
+};
+
 // Copyright 2011-2012 Norbert Lindenberg. All rights reserved.
 // Copyright 2012-2013 Mozilla Corporation. All rights reserved.
 // This code is governed by the BSD license found in the LICENSE file.
@@ -1300,8 +1307,6 @@ testIntl.js
 testWithIntlConstructors(function (Constructor) {
     var defaultLocale = new Constructor().resolvedOptions().locale;
     var canonicalized = Constructor.supportedLocalesOf([defaultLocale, defaultLocale]);
-    if (canonicalized.length > 1) {
-        throw new Error("Canonicalization didn't remove duplicate language tags from locale list.");
-    }
+    assert.sameValue(canonicalized.length > 1, false, "Canonicalization didn't remove duplicate language tags from locale list.");
 });
  }

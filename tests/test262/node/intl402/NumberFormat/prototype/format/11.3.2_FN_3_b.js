@@ -80,6 +80,13 @@ assert.throws = function (expectedErrorConstructor, func, message) {
   throw new Error(message);
 };
 
+assert.throws.early = function(err, code) {
+  let wrappedCode = `function wrapperFn() { ${code} }`;
+  let ieval = eval;
+
+  assert.throws(err, () => { Function(wrappedCode); }, `Function: ${code}`);
+};
+
 "use strict";var __globalObject = Function("return this;")();function fnGlobalObject() {    return __globalObject;}function Test262Error(message) {  this.message = message || "";}IntlPolyfill.__applyLocaleSensitivePrototypes();function runner() {    var passed = false;    runTheTest();    passed = true;    return passed;}function runTheTest () {// Copyright 2012 Google Inc.  All rights reserved.
 // This code is governed by the BSD license found in the LICENSE file.
 
@@ -99,13 +106,8 @@ var formattedTwentyPercent = percentFormatter.format(0.20);
 
 // FIXME: May not work for some theoretical locales where percents and
 // normal numbers are formatted using different numbering systems.
-if (formattedTwentyPercent.indexOf(formattedTwenty) === -1) {
-    throw new Error("IntlPolyfill.NumberFormat's formatting of 20% does not include a " +
-        "formatting of 20 as a substring.");
-}
+assert.notSameValue(formattedTwentyPercent.indexOf(formattedTwenty), -1, "IntlPolyfill.NumberFormat's formatting of 20% does not include a formatting of 20 as a substring.");
 
 // FIXME: Move this to somewhere appropriate
-if (percentFormatter.format(0.011) === percentFormatter.format(0.02)) {
-    throw new Error('IntlPolyfill.NumberFormat is formatting 1.1% and 2% the same way.');
-}
+assert.notSameValue(percentFormatter.format(0.011), percentFormatter.format(0.02), 'IntlPolyfill.NumberFormat is formatting 1.1% and 2% the same way.');
  }

@@ -80,6 +80,13 @@ assert.throws = function (expectedErrorConstructor, func, message) {
   throw new Error(message);
 };
 
+assert.throws.early = function(err, code) {
+  let wrappedCode = `function wrapperFn() { ${code} }`;
+  let ieval = eval;
+
+  assert.throws(err, () => { Function(wrappedCode); }, `Function: ${code}`);
+};
+
 "use strict";var __globalObject = Function("return this;")();function fnGlobalObject() {    return __globalObject;}function Test262Error(message) {  this.message = message || "";}IntlPolyfill.__applyLocaleSensitivePrototypes();function runner() {    var passed = false;    runTheTest();    passed = true;    return passed;}function runTheTest () {// Copyright 2012 Mozilla Corporation. All rights reserved.
 // This code is governed by the BSD license found in the LICENSE file.
 
@@ -102,10 +109,7 @@ Object.getOwnPropertyNames(functions).forEach(function (p) {
     var f = functions[p];
     invalidValues.forEach(function (value) {
         var result = f.call(new Date(value));
-        if (result !== "Invalid Date") {
-            throw new Error("Date.prototype." + p + " did not return \"Invalid Date\" for " +
-                value + " – got " + result + " instead.");
-        }
+        assert.sameValue(result, "Invalid Date", "Date.prototype." + p + " did not return \"Invalid Date\" for " + value);
     });
 });
  }

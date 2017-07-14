@@ -80,6 +80,13 @@ assert.throws = function (expectedErrorConstructor, func, message) {
   throw new Error(message);
 };
 
+assert.throws.early = function(err, code) {
+  let wrappedCode = `function wrapperFn() { ${code} }`;
+  let ieval = eval;
+
+  assert.throws(err, () => { Function(wrappedCode); }, `Function: ${code}`);
+};
+
 "use strict";var __globalObject = Function("return this;")();function fnGlobalObject() {    return __globalObject;}function Test262Error(message) {  this.message = message || "";}IntlPolyfill.__applyLocaleSensitivePrototypes();function runner() {    var passed = false;    runTheTest();    passed = true;    return passed;}function runTheTest () {// Copyright 2012 Google Inc.  All rights reserved.
 // This code is governed by the BSD license found in the LICENSE file.
 
@@ -97,16 +104,10 @@ var requestedLocales = [defaultLocale, notSupported];
     
 var supportedLocales;
 
-if (!IntlPolyfill.DateTimeFormat.hasOwnProperty('supportedLocalesOf')) {
-    throw new Error("IntlPolyfill.DateTimeFormat doesn't have a supportedLocalesOf property.");
-}
+assert(IntlPolyfill.DateTimeFormat.hasOwnProperty('supportedLocalesOf'), "IntlPolyfill.DateTimeFormat doesn't have a supportedLocalesOf property.");
     
 supportedLocales = IntlPolyfill.DateTimeFormat.supportedLocalesOf(requestedLocales);
-if (supportedLocales.length !== 1) {
-    throw new Error('The length of supported locales list is not 1.');
-}
+assert.sameValue(supportedLocales.length, 1, 'The length of supported locales list is not 1.');
     
-if (supportedLocales[0] !== defaultLocale) {
-    throw new Error('The default locale is not returned in the supported list.');
-}
+assert.sameValue(supportedLocales[0], defaultLocale, 'The default locale is not returned in the supported list.');
  }

@@ -80,6 +80,13 @@ assert.throws = function (expectedErrorConstructor, func, message) {
   throw new Error(message);
 };
 
+assert.throws.early = function(err, code) {
+  let wrappedCode = `function wrapperFn() { ${code} }`;
+  let ieval = eval;
+
+  assert.throws(err, () => { Function(wrappedCode); }, `Function: ${code}`);
+};
+
 "use strict";var __globalObject = Function("return this;")();function fnGlobalObject() {    return __globalObject;}function Test262Error(message) {  this.message = message || "";}IntlPolyfill.__applyLocaleSensitivePrototypes();function runner() {    var passed = false;    runTheTest();    passed = true;    return passed;}function runTheTest () {// Copyright 2012 Mozilla Corporation. All rights reserved.
 // This code is governed by the BSD license found in the LICENSE file.
 
@@ -101,17 +108,9 @@ var invalidTargets = [undefined, null, true, 0, "NumberFormat", [], {}];
 Object.getOwnPropertyNames(functions).forEach(function (functionName) {
     var f = functions[functionName];
     invalidTargets.forEach(function (target) {
-        var error;
-        try {
+        assert.throws(TypeError, function() {
             f.call(target);
-        } catch (e) {
-            error = e;
-        }
-        if (error === undefined) {
-            throw new Error("Calling " + functionName + " on " + target + " was not rejected.");
-        } else if (error.name !== "TypeError") {
-            throw new Error("Calling " + functionName + " on " + target + " was rejected with wrong error " + error.name + ".");
-        }
+        }, "Calling " + functionName + " on " + target + " was not rejected.");
     });
 });
  }

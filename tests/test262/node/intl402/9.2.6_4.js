@@ -80,6 +80,13 @@ assert.throws = function (expectedErrorConstructor, func, message) {
   throw new Error(message);
 };
 
+assert.throws.early = function(err, code) {
+  let wrappedCode = `function wrapperFn() { ${code} }`;
+  let ieval = eval;
+
+  assert.throws(err, () => { Function(wrappedCode); }, `Function: ${code}`);
+};
+
 // Copyright 2011-2012 Norbert Lindenberg. All rights reserved.
 // Copyright 2012-2013 Mozilla Corporation. All rights reserved.
 // This code is governed by the BSD license found in the LICENSE file.
@@ -1301,9 +1308,7 @@ testWithIntlConstructors(function (Constructor) {
     // this test should work equally for both matching algorithms
     ["lookup", "best fit"].forEach(function (matcher) {
         var supported = Constructor.supportedLocalesOf([], {localeMatcher: matcher});
-        if (supported.length !== 0) {
-            throw new Error("SupportedLocales with matcher " + matcher + " returned a non-empty list for an empty list.");
-        }
+        assert.sameValue(supported.length, 0, "SupportedLocales with matcher " + matcher + " returned a non-empty list for an empty list.");
     });
 
     return true;

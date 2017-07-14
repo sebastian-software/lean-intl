@@ -80,6 +80,13 @@ assert.throws = function (expectedErrorConstructor, func, message) {
   throw new Error(message);
 };
 
+assert.throws.early = function(err, code) {
+  let wrappedCode = `function wrapperFn() { ${code} }`;
+  let ieval = eval;
+
+  assert.throws(err, () => { Function(wrappedCode); }, `Function: ${code}`);
+};
+
 // Copyright 2011-2012 Norbert Lindenberg. All rights reserved.
 // Copyright 2012-2013 Mozilla Corporation. All rights reserved.
 // This code is governed by the BSD license found in the LICENSE file.
@@ -1317,18 +1324,9 @@ locales.forEach(function (locale) {
         keyValues[key].forEach(function (value) {
             var dateTimeFormat = new IntlPolyfill.DateTimeFormat([locale + "-u-" + key + "-" + value]);
             var options = dateTimeFormat.resolvedOptions();
-            if (options.locale !== defaultLocale) {
-                throw new Error("Locale " + options.locale + " is affected by key " +
-                key + "; value " + value + ".");
-            }
-            if (JSON.stringify(options) !== defaultOptionsJSON) {
-                throw new Error("Resolved options " + JSON.stringify(options) + " are affected by key " +
-                key + "; value " + value + ".");
-            }
-            if (defaultFormatted !== dateTimeFormat.format(input)) {
-                throw new Error("Formatted value " + dateTimeFormat.format(input) + " is affected by key " +
-                key + "; value " + value + ".");
-            }
+            assert.sameValue(options.locale, defaultLocale, "Locale " + options.locale + " is affected by key " + key + "; value " + value + ".");
+            assert.sameValue(JSON.stringify(options), defaultOptionsJSON, "Resolved options " + JSON.stringify(options) + " are affected by key " + key + "; value " + value + ".");
+            assert.sameValue(dateTimeFormat.format(input), defaultFormatted, "Formatted value " + dateTimeFormat.format(input) + " is affected by key " + key + "; value " + value + ".");
         });
     });
 });

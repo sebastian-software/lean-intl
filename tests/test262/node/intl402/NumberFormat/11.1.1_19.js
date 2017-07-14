@@ -80,6 +80,13 @@ assert.throws = function (expectedErrorConstructor, func, message) {
   throw new Error(message);
 };
 
+assert.throws.early = function(err, code) {
+  let wrappedCode = `function wrapperFn() { ${code} }`;
+  let ieval = eval;
+
+  assert.throws(err, () => { Function(wrappedCode); }, `Function: ${code}`);
+};
+
 "use strict";var __globalObject = Function("return this;")();function fnGlobalObject() {    return __globalObject;}function Test262Error(message) {  this.message = message || "";}IntlPolyfill.__applyLocaleSensitivePrototypes();function runner() {    var passed = false;    runTheTest();    passed = true;    return passed;}function runTheTest () {// Copyright 2012 Mozilla Corporation. All rights reserved.
 // This code is governed by the BSD license found in the LICENSE file.
 
@@ -93,24 +100,11 @@ author: Norbert Lindenberg
 
 var defaultLocale = new IntlPolyfill.NumberFormat().resolvedOptions().locale;
 
-function expectError(f) {
-    var error;
-    try {
-        f();
-    } catch (e) {
-        error = e;
-    }
-    if (error === undefined) {
-        throw new Error("Invalid currency value " + value + " was not rejected.");
-    } else if (error.name !== "TypeError") {
-        throw new Error("Invalid currency value " + value + " was rejected with wrong error " + error.name + ".");
-    }
-}
-
-expectError(function () {
+assert.throws(TypeError, function () {
         return new IntlPolyfill.NumberFormat([defaultLocale], {style: "currency"});
-});
-expectError(function () {
+}, "Throws TypeError when currency code is not specified.");
+
+assert.throws(TypeError, function () {
         return new IntlPolyfill.NumberFormat([defaultLocale + "-u-cu-krw"], {style: "currency"});
-});
+}, "Throws TypeError when currency code is not specified; Currenty code from Unicode locale extension sequence is ignored.");
  }

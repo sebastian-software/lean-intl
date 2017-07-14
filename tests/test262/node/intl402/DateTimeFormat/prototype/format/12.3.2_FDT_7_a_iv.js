@@ -80,6 +80,13 @@ assert.throws = function (expectedErrorConstructor, func, message) {
   throw new Error(message);
 };
 
+assert.throws.early = function(err, code) {
+  let wrappedCode = `function wrapperFn() { ${code} }`;
+  let ieval = eval;
+
+  assert.throws(err, () => { Function(wrappedCode); }, `Function: ${code}`);
+};
+
 "use strict";var __globalObject = Function("return this;")();function fnGlobalObject() {    return __globalObject;}function Test262Error(message) {  this.message = message || "";}IntlPolyfill.__applyLocaleSensitivePrototypes();function runner() {    var passed = false;    runTheTest();    passed = true;    return passed;}function runTheTest () {// Copyright 2012 Mozilla Corporation. All rights reserved.
 // This code is governed by the BSD license found in the LICENSE file.
 
@@ -100,18 +107,13 @@ var dates = [
 var format = new IntlPolyfill.DateTimeFormat(["en-US"], {year: "numeric", month: "long", timeZone: "UTC"});
 
 // this test requires a Gregorian calendar, which we usually find in the US
-if (format.resolvedOptions().calendar !== "gregory") {
-    throw new Error("Internal error: Didn't find Gregorian calendar");
-}
+assert.sameValue(format.resolvedOptions().calendar, "gregory", "Internal error: Didn't find Gregorian calendar");
 
 dates.forEach(function (date) {
     var year = new Date(date).getUTCFullYear();
     var expectedYear = year <= 0 ? 1 - year : year;
     var expectedYearString = expectedYear.toLocaleString(["en-US"], {useGrouping: false});
     var dateString = format.format(date);
-    if (dateString.indexOf(expectedYearString) === -1) {
-        throw new Error("Formatted year doesn't contain expected year – expected " +
-            expectedYearString + ", got " + dateString + ".");
-    }
+    assert.notSameValue(dateString.indexOf(expectedYearString), -1, "Formatted year doesn't contain expected year – expected " + expectedYearString + ", got " + dateString + ".");
 });
  }

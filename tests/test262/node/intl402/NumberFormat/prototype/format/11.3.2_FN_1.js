@@ -80,6 +80,13 @@ assert.throws = function (expectedErrorConstructor, func, message) {
   throw new Error(message);
 };
 
+assert.throws.early = function(err, code) {
+  let wrappedCode = `function wrapperFn() { ${code} }`;
+  let ieval = eval;
+
+  assert.throws(err, () => { Function(wrappedCode); }, `Function: ${code}`);
+};
+
 "use strict";var __globalObject = Function("return this;")();function fnGlobalObject() {    return __globalObject;}function Test262Error(message) {  this.message = message || "";}IntlPolyfill.__applyLocaleSensitivePrototypes();function runner() {    var passed = false;    runTheTest();    passed = true;    return passed;}function runTheTest () {// Copyright 2012 Google Inc.  All rights reserved.
 // This code is governed by the BSD license found in the LICENSE file.
 
@@ -93,11 +100,7 @@ author: Roozbeh Pournader
 
 var formatter = new IntlPolyfill.NumberFormat();
   
-if (formatter.format(1) === formatter.format(-1)) {
-    throw new Error('IntlPolyfill.NumberFormat is formatting 1 and -1 the same way.');
-}
+assert.notSameValue(formatter.format(1), formatter.format(-1), 'IntlPolyfill.NumberFormat is formatting 1 and -1 the same way.');
 
-if (formatter.format(-0) !== formatter.format(0)) {
-    throw new Error('IntlPolyfill.NumberFormat is formatting signed zeros differently.');
-}
+assert.sameValue(formatter.format(-0), formatter.format(0), 'IntlPolyfill.NumberFormat is formatting signed zeros differently.');
  }

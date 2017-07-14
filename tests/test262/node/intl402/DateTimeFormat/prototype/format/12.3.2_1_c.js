@@ -80,6 +80,13 @@ assert.throws = function (expectedErrorConstructor, func, message) {
   throw new Error(message);
 };
 
+assert.throws.early = function(err, code) {
+  let wrappedCode = `function wrapperFn() { ${code} }`;
+  let ieval = eval;
+
+  assert.throws(err, () => { Function(wrappedCode); }, `Function: ${code}`);
+};
+
 // Copyright 2011-2012 Norbert Lindenberg. All rights reserved.
 // Copyright 2012-2013 Mozilla Corporation. All rights reserved.
 // This code is governed by the BSD license found in the LICENSE file.
@@ -1310,11 +1317,7 @@ locales.forEach(function (locales) {
         dates.forEach(function (date) {
             var referenceFormatted = formatObj.format(date);
             var formatted = formatFunc(date);
-            if (referenceFormatted !== formatted) {
-                throw new Error("format function produces different result than format method for locales " +
-                    locales + "; options: " + (options ? JSON.stringify(options) : options) +
-                    " : " + formatted + " vs. " + referenceFormatted + ".");
-            }
+            assert.sameValue(referenceFormatted, formatted, "format function produces different result than format method for locales " + locales + "; options: " + (options ? JSON.stringify(options) : options) + ".");
         });
     });
 });

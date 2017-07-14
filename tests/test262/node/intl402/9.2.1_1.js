@@ -80,6 +80,13 @@ assert.throws = function (expectedErrorConstructor, func, message) {
   throw new Error(message);
 };
 
+assert.throws.early = function(err, code) {
+  let wrappedCode = `function wrapperFn() { ${code} }`;
+  let ieval = eval;
+
+  assert.throws(err, () => { Function(wrappedCode); }, `Function: ${code}`);
+};
+
 // Copyright 2011-2012 Norbert Lindenberg. All rights reserved.
 // Copyright 2012-2013 Mozilla Corporation. All rights reserved.
 // This code is governed by the BSD license found in the LICENSE file.
@@ -1300,13 +1307,9 @@ testIntl.js
 testWithIntlConstructors(function (Constructor) {
     var supportedForUndefined = Constructor.supportedLocalesOf(undefined);
     var supportedForEmptyList = Constructor.supportedLocalesOf([]);
-    if (supportedForUndefined.length !== supportedForEmptyList.length) {
-        throw new Error("Supported locales differ between undefined and empty list input.");
-    }
+    assert.sameValue(supportedForUndefined.length, supportedForEmptyList.length, "Supported locales differ between undefined and empty list input.");
     // we don't compare the elements because length should be 0 - let's just verify that
-    if (supportedForUndefined.length !== 0) {
-        throw new Error("Internal test error: Assumption about length being 0 is invalid.");
-    }
+    assert.sameValue(supportedForUndefined.length, 0, "Internal test error: Assumption about length being 0 is invalid.");
     return true;
 });
  }

@@ -80,6 +80,13 @@ assert.throws = function (expectedErrorConstructor, func, message) {
   throw new Error(message);
 };
 
+assert.throws.early = function(err, code) {
+  let wrappedCode = `function wrapperFn() { ${code} }`;
+  let ieval = eval;
+
+  assert.throws(err, () => { Function(wrappedCode); }, `Function: ${code}`);
+};
+
 "use strict";var __globalObject = Function("return this;")();function fnGlobalObject() {    return __globalObject;}function Test262Error(message) {  this.message = message || "";}IntlPolyfill.__applyLocaleSensitivePrototypes();function runner() {    var passed = false;    runTheTest();    passed = true;    return passed;}function runTheTest () {// Copyright 2012 Google Inc.  All rights reserved.
 // This code is governed by the BSD license found in the LICENSE file.
 
@@ -112,32 +119,15 @@ var formattedNaN = formatter.format(NaN);
 var formattedInfinity = formatter.format(Infinity);
 var formattedNegativeInfinity = formatter.format(-Infinity);
 
-if (formattedNaN === formattedInfinity) {
-    throw new Error('IntlPolyfill.NumberFormat formats NaN and Infinity the ' +
-        'same way.');
-}
+assert.notSameValue(formattedNaN, formattedInfinity, 'IntlPolyfill.NumberFormat formats NaN and Infinity the same way.');
 
-if (formattedNaN === formattedNegativeInfinity) {
-    throw new Error('IntlPolyfill.NumberFormat formats NaN and negative ' +
-        'Infinity the same way.');
-}
+assert.notSameValue(formattedNaN, formattedNegativeInfinity, 'IntlPolyfill.NumberFormat formats NaN and negative Infinity the same way.');
 
-if (formattedInfinity === formattedNegativeInfinity) {
-    throw new Error('IntlPolyfill.NumberFormat formats Infinity and ' +
-        'negative Infinity the same way.');
-}
+assert.notSameValue(formattedInfinity, formattedNegativeInfinity, 'IntlPolyfill.NumberFormat formats Infinity and negative Infinity the same way.');
 
-if (hasUnicodeDigits.test(formattedNaN)) {
-    throw new Error('IntlPolyfill.NumberFormat formats NaN using a digit.');
-}
+assert.sameValue(hasUnicodeDigits.test(formattedNaN), false, 'IntlPolyfill.NumberFormat formats NaN using a digit.');
 
-if (hasUnicodeDigits.test(formattedInfinity)) {
-    throw new Error('IntlPolyfill.NumberFormat formats Infinity using a ' +
-        'digit.');
-}
+assert.sameValue(hasUnicodeDigits.test(formattedInfinity), false, 'IntlPolyfill.NumberFormat formats Infinity using a digit.');
 
-if (hasUnicodeDigits.test(formattedNegativeInfinity)) {
-    throw new Error('IntlPolyfill.NumberFormat formats negative Infinity ' + 
-        'using a digit.');
-}
+assert.sameValue(hasUnicodeDigits.test(formattedNegativeInfinity), false, 'IntlPolyfill.NumberFormat formats negative Infinity using a digit.');
  }

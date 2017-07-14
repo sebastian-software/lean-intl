@@ -80,6 +80,13 @@ assert.throws = function (expectedErrorConstructor, func, message) {
   throw new Error(message);
 };
 
+assert.throws.early = function(err, code) {
+  let wrappedCode = `function wrapperFn() { ${code} }`;
+  let ieval = eval;
+
+  assert.throws(err, () => { Function(wrappedCode); }, `Function: ${code}`);
+};
+
 "use strict";var __globalObject = Function("return this;")();function fnGlobalObject() {    return __globalObject;}function Test262Error(message) {  this.message = message || "";}IntlPolyfill.__applyLocaleSensitivePrototypes();function runner() {    var passed = false;    runTheTest();    passed = true;    return passed;}function runTheTest () {// Copyright 2012 Mozilla Corporation. All rights reserved.
 // This code is governed by the BSD license found in the LICENSE file.
 
@@ -97,9 +104,6 @@ var validTimeZoneNames = [
 validTimeZoneNames.forEach(function (name) {
     // this must not throw an exception for a valid time zone name
     var format = new IntlPolyfill.DateTimeFormat(["de-de"], {timeZone: name});
-    if (format.resolvedOptions().timeZone !== name.toUpperCase()) {
-        throw new Error("Time zone name " + name + " was not correctly accepted; turned into " +
-            format.resolvedOptions().timeZone + ".");
-    }
+    assert.sameValue(format.resolvedOptions().timeZone, name.toUpperCase(), "Time zone name " + name + " was not correctly accepted.");
 });
  }

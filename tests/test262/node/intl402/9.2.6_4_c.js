@@ -80,6 +80,13 @@ assert.throws = function (expectedErrorConstructor, func, message) {
   throw new Error(message);
 };
 
+assert.throws.early = function(err, code) {
+  let wrappedCode = `function wrapperFn() { ${code} }`;
+  let ieval = eval;
+
+  assert.throws(err, () => { Function(wrappedCode); }, `Function: ${code}`);
+};
+
 // Copyright 2011-2012 Norbert Lindenberg. All rights reserved.
 // Copyright 2012-2013 Mozilla Corporation. All rights reserved.
 // This code is governed by the BSD license found in the LICENSE file.
@@ -1304,15 +1311,9 @@ testWithIntlConstructors(function (Constructor) {
         var noLinguisticContent = "zxx";
         var supported = Constructor.supportedLocalesOf([defaultLocale, noLinguisticContent],
             {localeMatcher: matcher});
-        if (supported.indexOf(defaultLocale) === -1) {
-            throw new Error("SupportedLocales didn't return default locale with matcher " + matcher + ".");
-        }
-        if (supported.indexOf(noLinguisticContent) !== -1) {
-            throw new Error("SupportedLocales returned the \"no linguistic content\" locale with matcher " + matcher + ".");
-        }
-        if (supported.length > 1) {
-            throw new Error("SupportedLocales returned stray locales: " + supported.join(", ") + " with matcher " + matcher + ".");
-        }
+        assert.notSameValue(supported.indexOf(defaultLocale), -1, "SupportedLocales didn't return default locale with matcher " + matcher + ".");
+        assert.sameValue(supported.indexOf(noLinguisticContent), -1, "SupportedLocales returned the \"no linguistic content\" locale with matcher " + matcher + ".");
+        assert.sameValue(supported.length > 1, false, "SupportedLocales returned stray locales: " + supported.join(", ") + " with matcher " + matcher + ".");
     });
 
     return true;
