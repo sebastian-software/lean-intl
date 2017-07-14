@@ -31,6 +31,7 @@
     "make-plural": "^4.0.1"
   },
   "scripts": {
+    "update": "grunt update-test262",
     "clean": "rimraf dist/ lib/",
     "data": "babel-node scripts/build-data",
     "release": "release-it --github.release --npm.publish --non-interactive",
