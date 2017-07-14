@@ -5,13 +5,8 @@
   "main": "lib/index.classic.commonjs.js",
   "module": "lib/index.classic.esmodule.js",
   "jsnext:main": "lib/index.classic.esmodule.js",
-  "main:modern": "lib/index.modern.commonjs.js",
-  "module:modern": "lib/index.modern.esmodule.js",
-  "main:iife": "lib/index.classic.iife.js",
-  "moduleName": "IntlPolyfill",
-  "directories": {
-    "test": "tests"
-  },
+  "main:es2015": "lib/index.es2015.commonjs.js",
+  "module:es2015": "lib/index.es2015.esmodule.js",
   "devDependencies": {
     "async": "^2.5.0",
     "babel-cli": "^6.24.1",
