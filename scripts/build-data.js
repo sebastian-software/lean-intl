@@ -104,7 +104,7 @@ Object.keys(locData).forEach((locale) => {
   const obj = reduceLocaleData(locale, locData[locale])
   const stringified = JSON.stringify(obj, null, 0)
   writeFileSync(`locale-data/${locale}.json`, stringified)
-  const scriptified = minify(`global.IntlPolyfill = require("lean-intl"); IntlPolyfill.__addLocaleData(${stringified})`)
+  const scriptified = minify(`import IntlPolyfill from "lean-intl"; global.IntlPolyfill = IntlPolyfill; IntlPolyfill.__addLocaleData(${stringified})`)
   if (scriptified.error) {
     throw new Error("Error during JS compression: " + scriptified.error)
   }
