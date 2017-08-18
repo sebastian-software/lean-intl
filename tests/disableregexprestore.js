@@ -3,8 +3,8 @@ import IntlPolyfill from "../";
 // The complete data package is exported for the browser, therfor we need
 // to "export" the IntlPolyfill to make it accessible.
 global.IntlPolyfill = IntlPolyfill;
-require("../locale-data/en");
-require("../locale-data/en-US");
+IntlPolyfill.__addLocaleData(require("../locale-data/en.json"));
+IntlPolyfill.__addLocaleData(require("../locale-data/en-US.json"));
 
 function assertEqual(value, expected, message) {
   console.log(message);

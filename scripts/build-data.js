@@ -1,7 +1,7 @@
 import { writeFileSync } from "fs"
 import { resolve } from "path"
 import { sync as mkdirpSync } from "mkdirp"
-import { minify } from "uglify-js"
+import { minify } from "uglify-es"
 import { sync as rimraf } from "rimraf"
 
 function mergeData(...sources) {
@@ -104,12 +104,12 @@ Object.keys(locData).forEach((locale) => {
   const obj = reduceLocaleData(locale, locData[locale])
   const stringified = JSON.stringify(obj, null, 0)
   writeFileSync(`locale-data/${locale}.json`, stringified)
-  const scriptified = minify(`IntlPolyfill.__addLocaleData(${stringified})`)
+  const scriptified = minify(`global.IntlPolyfill = require("lean-intl"); IntlPolyfill.__addLocaleData(${stringified})`)
   if (scriptified.error) {
     throw new Error("Error during JS compression: " + scriptified.error)
   }
   writeFileSync(`locale-data/${locale}.js`, scriptified.code)
-  allScriptified.push(scriptified.code)
+  allScriptified.push(`IntlPolyfill.__addLocaleData(${stringified})`)
 })
 
 console.log("Writing complete data package (for tests)...")
