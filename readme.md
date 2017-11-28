@@ -1,7 +1,5 @@
 # *Lean-Intl* - A leaner fork of Intl.js <br/>[![Sponsored by][sponsor-img]][sponsor] [![Version][npm-version-img]][npm] [![Downloads][npm-downloads-img]][npm] [![Build Status Unix][travis-img]][travis] [![Build Status Windows][appveyor-img]][appveyor] [![Dependencies][deps-img]][deps]
 
-<a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/Nehv39FW5U4NHEn7axuGx4CE/sebastian-software/lean-intl'>  <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/Nehv39FW5U4NHEn7axuGx4CE/sebastian-software/lean-intl.svg' /></a>
-
 *Lean-Intl* is a lean polyfill for `Intl`-APIs for browsers which are not yet supporting this API. It's a
 modern fork of [Intl.js](https://github.com/andyearnshaw/Intl.js) for modern development and tooling requirements.
 
