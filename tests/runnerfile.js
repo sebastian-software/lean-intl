@@ -1260,10 +1260,7 @@ function /* 9.2.5 */ResolveLocale (availableLocales, requestedLocales, options, 
                     // c. If valuePos ≠ -1, then
                     if (valuePos !== -1) {
                         // i. Let value be requestedValue.
-                        value = requestedValue,
-                        // ii. Let supportedExtensionAddition be the
-                        //     concatenation of "-", key, "-", and value.
-                        supportedExtensionAddition = '-' + key + '-' + value;
+                        value = requestedValue, supportedExtensionAddition = '-' + key + '-' + value;
                     }
                 }
                 // 2. Else
@@ -1523,7 +1520,7 @@ function /* 9.2.10 */GetNumberOption (options, property, minimum, maximum, fallb
 }
 
 // 8 The Intl Object
-const Intl$1 = {};
+const Intl = {};
 
 // 8.2 Function Properties of the Intl Object
 
@@ -1548,7 +1545,7 @@ function getCanonicalLocales (locales) {
     }
 }
 
-Object.defineProperty(Intl$1, 'getCanonicalLocales', {
+Object.defineProperty(Intl, 'getCanonicalLocales', {
   enumerable: false,
   configurable: true,
   writable: true,
@@ -1570,21 +1567,21 @@ function NumberFormatConstructor () {
     let locales = arguments[0];
     let options = arguments[1];
 
-    if (!this || this === Intl$1) {
-        return new Intl$1.NumberFormat(locales, options);
+    if (!this || this === Intl) {
+        return new Intl.NumberFormat(locales, options);
     }
 
     return InitializeNumberFormat(toObject(this), locales, options);
 }
 
-defineProperty(Intl$1, 'NumberFormat', {
+defineProperty(Intl, 'NumberFormat', {
     configurable: true,
     writable: true,
     value: NumberFormatConstructor
 });
 
 // Must explicitly set prototypes as unwritable
-defineProperty(Intl$1.NumberFormat, 'prototype', {
+defineProperty(Intl.NumberFormat, 'prototype', {
     writable: false
 });
 
@@ -1869,7 +1866,7 @@ function CurrencyDigits(currency) {
  * following steps are taken:
  */
 /* 11.2.2 */
-defineProperty(Intl$1.NumberFormat, 'supportedLocalesOf', {
+defineProperty(Intl.NumberFormat, 'supportedLocalesOf', {
     configurable: true,
     writable: true,
     value: fnBind.call(function (locales) {
@@ -1909,7 +1906,7 @@ defineProperty(Intl$1.NumberFormat, 'supportedLocalesOf', {
  * according to the effective locale and the formatting options of this
  * NumberFormat object.
  */
-/* 11.3.2 */defineProperty(Intl$1.NumberFormat.prototype, 'format', {
+/* 11.3.2 */defineProperty(Intl.NumberFormat.prototype, 'format', {
     configurable: true,
     get: GetFormatNumber
 });
@@ -1964,7 +1961,7 @@ function formatToParts(value = undefined) {
   return FormatNumberToParts(this, x);
 }
 
-Object.defineProperty(Intl$1.NumberFormat.prototype, 'formatToParts', {
+Object.defineProperty(Intl.NumberFormat.prototype, 'formatToParts', {
   configurable: true,
   enumerable: false,
   writable: true,
@@ -2476,7 +2473,7 @@ let numSys = {
  * useGrouping. Properties whose corresponding internal properties are not present
  * are not assigned.
  */
-/* 11.3.3 */defineProperty(Intl$1.NumberFormat.prototype, 'resolvedOptions', {
+/* 11.3.3 */defineProperty(Intl.NumberFormat.prototype, 'resolvedOptions', {
     configurable: true,
     writable: true,
     value: function () {
@@ -2902,13 +2899,13 @@ function DateTimeFormatConstructor () {
     let locales = arguments[0];
     let options = arguments[1];
 
-    if (!this || this === Intl$1) {
-        return new Intl$1.DateTimeFormat(locales, options);
+    if (!this || this === Intl) {
+        return new Intl.DateTimeFormat(locales, options);
     }
     return InitializeDateTimeFormat(toObject(this), locales, options);
 }
 
-defineProperty(Intl$1, 'DateTimeFormat', {
+defineProperty(Intl, 'DateTimeFormat', {
     configurable: true,
     writable: true,
     value: DateTimeFormatConstructor
@@ -3600,7 +3597,7 @@ function BestFitFormatMatcher (options, formats) {
  * following steps are taken:
  */
 /* 12.2.2 */
-defineProperty(Intl$1.DateTimeFormat, 'supportedLocalesOf', {
+defineProperty(Intl.DateTimeFormat, 'supportedLocalesOf', {
     configurable: true,
     writable: true,
     value: fnBind.call(function (locales) {
@@ -3640,7 +3637,7 @@ defineProperty(Intl$1.DateTimeFormat, 'supportedLocalesOf', {
  * according to the effective locale and the formatting options of this
  * DateTimeFormat object.
  */
-/* 12.3.2 */defineProperty(Intl$1.DateTimeFormat.prototype, 'format', {
+/* 12.3.2 */defineProperty(Intl.DateTimeFormat.prototype, 'format', {
     configurable: true,
     get: GetFormatDateTime
 });
@@ -3697,7 +3694,7 @@ function formatToParts$1(date = undefined) {
     return FormatToPartsDateTime(this, x);
 }
 
-Object.defineProperty(Intl$1.DateTimeFormat.prototype, 'formatToParts', {
+Object.defineProperty(Intl.DateTimeFormat.prototype, 'formatToParts', {
   enumerable: false,
   writable: true,
   configurable: true,
@@ -3720,13 +3717,13 @@ function CreateDateTimeParts(dateTimeFormat, x) {
     // 3. Let nf be the result of creating a new NumberFormat object as if by the
     // expression new Intl.NumberFormat([locale], {useGrouping: false}) where
     // Intl.NumberFormat is the standard built-in constructor defined in 11.1.3.
-    let nf = new Intl$1.NumberFormat([locale], {useGrouping: false});
+    let nf = new Intl.NumberFormat([locale], {useGrouping: false});
 
     // 4. Let nf2 be the result of creating a new NumberFormat object as if by the
     // expression new Intl.NumberFormat([locale], {minimumIntegerDigits: 2, useGrouping:
     // false}) where Intl.NumberFormat is the standard built-in constructor defined in
     // 11.1.3.
-    let nf2 = new Intl$1.NumberFormat([locale], {minimumIntegerDigits: 2, useGrouping: false});
+    let nf2 = new Intl.NumberFormat([locale], {minimumIntegerDigits: 2, useGrouping: false});
 
     // 5. Let tm be the result of calling the ToLocalTime abstract operation (defined
     // below) with x, the value of the [[calendar]] internal property of dateTimeFormat,
@@ -3966,7 +3963,7 @@ function ToLocalTime(date, calendar, timeZone) {
  * hour, minute, second, and timeZoneName. Properties whose corresponding internal
  * properties are not present are not assigned.
  */
-/* 12.3.3 */defineProperty(Intl$1.DateTimeFormat.prototype, 'resolvedOptions', {
+/* 12.3.3 */defineProperty(Intl.DateTimeFormat.prototype, 'resolvedOptions', {
     writable: true,
     configurable: true,
     value: function () {
@@ -3994,7 +3991,7 @@ function ToLocalTime(date, calendar, timeZone) {
 // Sect 13 Locale Sensitive Functions of the ECMAScript Language Specification
 // ===========================================================================
 
-let ls = Intl$1.__localeSensitiveProtos = {
+let ls = Intl.__localeSensitiveProtos = {
     Number: {},
     Date:   {}
 };
@@ -4538,6 +4535,8 @@ ii: _cp[0],
 
 "in": _cp[0],
 
+io: _cp[3],
+
 is: function(n, ord) {
   var s = String(n).split('.'), i = s[0], t0 = Number(s[0]) == n,
       i10 = i.slice(-1), i100 = i.slice(-2);
@@ -4794,7 +4793,17 @@ nyn: _cp[1],
 
 om: _cp[1],
 
-or: _cp[1],
+or: function(n, ord) {
+  var s = String(n).split('.'), t0 = Number(s[0]) == n;
+  if (ord) return ((n == 1 || n == 5
+          || (t0 && n >= 7 && n <= 9))) ? 'one'
+      : ((n == 2
+          || n == 3)) ? 'two'
+      : (n == 4) ? 'few'
+      : (n == 6) ? 'many'
+      : 'other';
+  return (n == 1) ? 'one' : 'other';
+},
 
 os: _cp[1],
 
@@ -4830,9 +4839,10 @@ prg: function(n, ord) {
 ps: _cp[1],
 
 pt: function(n, ord) {
-  var s = String(n).split('.'), t0 = Number(s[0]) == n;
+  var s = String(n).split('.'), i = s[0];
   if (ord) return 'other';
-  return ((t0 && n >= 0 && n <= 2) && n != 2) ? 'one' : 'other';
+  return ((i == 0
+          || i == 1)) ? 'one' : 'other';
 },
 
 "pt-PT": _cp[3],
@@ -4870,6 +4880,8 @@ rwk: _cp[1],
 sah: _cp[0],
 
 saq: _cp[1],
+
+sd: _cp[1],
 
 sdh: _cp[1],
 
@@ -5022,7 +5034,13 @@ ti: _cp[2],
 
 tig: _cp[1],
 
-tk: _cp[1],
+tk: function(n, ord) {
+  var s = String(n).split('.'), t0 = Number(s[0]) == n,
+      n10 = t0 && s[0].slice(-1);
+  if (ord) return ((n10 == 6 || n10 == 9)
+          || n == 10) ? 'few' : 'other';
+  return (n == 1) ? 'one' : 'other';
+},
 
 tl: function(n, ord) {
   var s = String(n).split('.'), i = s[0], f = s[1] || '', v0 = !s[1],
@@ -5107,13 +5125,13 @@ function PluralRules() {
     let locales = arguments[0];
     let options = arguments[1];
 
-    if (!this || this === Intl$1) {
-        return new Intl$1.PluralRules(locales, options);
+    if (!this || this === Intl) {
+        return new Intl.PluralRules(locales, options);
     }
     return InitializePluralRules(toObject(this), locales, options);
 }
 
-defineProperty(Intl$1, 'PluralRules', {
+defineProperty(Intl, 'PluralRules', {
     configurable: true,
     writable: true,
     value: PluralRules
@@ -5232,7 +5250,7 @@ internals.PluralRules = {
     '[[localeData]]': {}
 };
 
-defineProperty(Intl$1.PluralRules, 'supportedLocalesOf', {
+defineProperty(Intl.PluralRules, 'supportedLocalesOf', {
     configurable: true,
     writable: true,
     value: fnBind.call(function (locales) {
@@ -5269,7 +5287,7 @@ defineProperty(Intl$1.PluralRules, 'supportedLocalesOf', {
 
 
 
-defineProperty(Intl$1.PluralRules.prototype, 'select', {
+defineProperty(Intl.PluralRules.prototype, 'select', {
     configurable: true,
     value: function(value) {
         let pluralRules = this;
@@ -5278,7 +5296,7 @@ defineProperty(Intl$1.PluralRules.prototype, 'select', {
     }
 });
 
-defineProperty(Intl$1.PluralRules.prototype, 'resolvedOptions', {
+defineProperty(Intl.PluralRules.prototype, 'resolvedOptions', {
     configurable: true,
     writable: true,
     value: function() {
@@ -5314,7 +5332,7 @@ defineProperty(Intl$1.PluralRules.prototype, 'resolvedOptions', {
  * CLDR format locale data should be provided using IntlPolyfill.__addLocaleData().
  */
 
-defineProperty(Intl$1, "__applyLocaleSensitivePrototypes", {
+defineProperty(Intl, "__applyLocaleSensitivePrototypes", {
   writable: true,
   configurable: true,
   value() {
@@ -5347,7 +5365,7 @@ defineProperty(Intl$1, "__applyLocaleSensitivePrototypes", {
  * this __addLocaleData method as a means for the developer to add the data on an
  * as-needed basis
  */
-defineProperty(Intl$1, "__addLocaleData", {
+defineProperty(Intl, "__addLocaleData", {
   value(data) {
     if (!IsStructurallyValidLanguageTag(data.locale))
       throw new Error(
@@ -5390,12 +5408,12 @@ function addLocaleData(data, tag) {
   if (defaultLocale === undefined) setDefaultLocale(tag);
 }
 
-defineProperty(Intl$1, "__disableRegExpRestore", {
+defineProperty(Intl, "__disableRegExpRestore", {
   value() {
     internals.disableRegExpRestore = true;
   }
 });
 
-return Intl$1;
+return Intl;
 
 }());
