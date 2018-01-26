@@ -157,7 +157,7 @@ accompanying this software for terms of use.
 
 ## Copyright
 
-<img src="assets/sebastiansoftware.png" alt="Sebastian Software GmbH Logo" width="250" height="200"/>
+<img src="https://github.com/sebastian-software/sebastian-software-brand/blob/master/sebastiansoftware-en.svg" alt="Sebastian Software GmbH Logo" width="250" height="200"/>
 
 Copyright 2013 [Andy Earnshaw](https://github.com/andyearnshaw/Intl.js)<br/>
-Copyright 2016-2017 [Sebastian Software GmbH](http://www.sebastian-software.de)
+Copyright 2016-2018 [Sebastian Software GmbH](http://www.sebastian-software.de)
