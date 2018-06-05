@@ -1,10 +1,5 @@
 {
   "presets": [
     "edge"
-  ],
-  "ignore": [
-    "dist/*.js",
-    "lib/*.js",
-    "locale-data/*.js"
   ]
 }

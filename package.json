@@ -5,9 +5,7 @@
   "main": "lib/index.cjs.js",
   "module": "lib/index.esm.js",
   "devDependencies": {
-    "@babel/cli": "^7.0.0-beta.49",
     "@babel/core": "^7.0.0-beta.49",
-    "@babel/node": "^7.0.0-beta.49",
     "async": "^2.6.1",
     "babel-preset-edge": "^4.3.1",
     "cldr-core": "33.0.0",
@@ -42,7 +40,7 @@
     "release": "release-it --github.release --npm.publish --non-interactive",
     "release:minor": "release-it --github.release --npm.publish --non-interactive --increment minor",
     "release:major": "release-it --github.release --npm.publish --non-interactive --increment major",
-    "test": "npm run prepack && cd tests && babel-node sanity.js && babel-node disableregexprestore.js && rollup --config rollup.config.js && node noderunner.js",
+    "test": "npm run prepack && cd tests && node sanity.js && node disableregexprestore.js && rollup --config rollup.config.js && node noderunner.js",
     "prepack": "npm run clean && preppy"
   },
   "repository": {

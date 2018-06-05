@@ -1,4 +1,4 @@
-import IntlPolyfill from "../";
+const IntlPolyfill = require("../lib/index.cjs")
 
 // The complete data package is exported for the browser, therfor we need
 // to "export" the IntlPolyfill to make it accessible.
