@@ -30,7 +30,7 @@ in environments that support it, or `Lean-Intl` for legacy or unsupported enviro
 
 ## Changes compared to Intl.js
 
- - Removed previous manual library publishing with [prepublish](https://github.com/sebastian-software/prepublish)
+ - Removed previous manual library publishing with [preppy](https://github.com/sebastian-software/preppy)
  - Updated ECMA Test Suite from 99 tests to 126 tests.
  - Removed special IE8 support in test suite. We are focusing on >= IE10 and other modern browsers.
  - Removed HTML output for test suite as we only test compatibility in NodeJS via CI.
@@ -38,7 +38,6 @@ in environments that support it, or `Lean-Intl` for legacy or unsupported enviro
  - Cleaned up Readme from old hints on using direct scripts and NodeJS support.
  - Prettified source code using [Prettier](https://github.com/jlongster/prettier) and ESLint.
  - Cleaned up dependencies from all unused packages dramatically improving CI speed.
- - Added Yarn lock file.
  - Removed JSONP data.
  - Removed "complete" UMD package which contains everything.
 
@@ -50,7 +49,7 @@ scripts anymore. In todays landscape it's much better to rely on some kind of bu
 your frontend goods.
 
  - NodeJS is natively supporting Intl. Just make sure to install it with full ICU data for real i18n support. (On Mac this can be easily done via `brew install node --with-full-icu`)
- - For browsers install the package via NPM or Yarn. Then use tools like Webpack, Fusebox or Browserify for bundling.
+ - For browsers install the package via NPM or Yarn. Then use tools like Webpack, Rollup or Parcel for bundling.
 
 
 ## Status
