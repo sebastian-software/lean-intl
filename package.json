@@ -2,13 +2,14 @@
   "name": "lean-intl",
   "version": "3.1.1",
   "description": "Lean Polyfill for the ECMA-402 Intl API (except collation and non gregorian calendars)",
-  "main": "lib/index.classic.cjs.js",
-  "module": "lib/index.classic.esm.js",
+  "main": "lib/index.cjs.js",
+  "module": "lib/index.esm.js",
   "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.49",
     "@babel/core": "^7.0.0-beta.49",
+    "@babel/node": "^7.0.0-beta.49",
     "async": "^2.6.1",
-    "babel-cli": "^6.26.0",
-    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+    "babel-preset-edge": "^4.3.1",
     "cldr-core": "33.0.0",
     "cldr-dates-full": "33.0.0",
     "cldr-numbers-full": "33.0.0",
@@ -23,6 +24,7 @@
     "grunt-curl": "^2.4.1",
     "grunt-zip": "^0.17.1",
     "mkdirp": "^0.5.1",
+    "preppy": "^4.2.2",
     "prettier": "^1.13.4",
     "rimraf": "^2.6.2",
     "rollup": "^0.59.4",
@@ -40,8 +42,8 @@
     "release": "release-it --github.release --npm.publish --non-interactive",
     "release:minor": "release-it --github.release --npm.publish --non-interactive --increment minor",
     "release:major": "release-it --github.release --npm.publish --non-interactive --increment major",
-    "test": "npm run prepare && cd tests && babel-node sanity.js && babel-node disableregexprestore.js && rollup --config rollup.config.js && node noderunner.js",
-    "prepack": "npm run clean && prepublish"
+    "test": "npm run prepack && cd tests && babel-node sanity.js && babel-node disableregexprestore.js && rollup --config rollup.config.js && node noderunner.js",
+    "prepack": "npm run clean && preppy"
   },
   "repository": {
     "type": "git",
