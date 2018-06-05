@@ -67,6 +67,8 @@ console.log("Cleaning up...")
 
 rimraf("locale-data")
 mkdirpSync("locale-data/")
+mkdirpSync("locale-data/js")
+mkdirpSync("locale-data/json")
 
 // extracting data into CLDR
 
@@ -103,12 +105,12 @@ Object.keys(locData).forEach((locale) => {
   console.log("Writing data for:", locale)
   const obj = reduceLocaleData(locale, locData[locale])
   const stringified = JSON.stringify(obj, null, 0)
-  writeFileSync(`locale-data/${locale}.json`, stringified)
+  writeFileSync(`locale-data/json/${locale}.json`, stringified)
   const scriptified = minify(`import IntlPolyfill from "lean-intl"; global.IntlPolyfill = IntlPolyfill; IntlPolyfill.__addLocaleData(${stringified})`)
   if (scriptified.error) {
     throw new Error("Error during JS compression: " + scriptified.error)
   }
-  writeFileSync(`locale-data/${locale}.js`, scriptified.code)
+  writeFileSync(`locale-data/js/${locale}.js`, scriptified.code)
   allScriptified.push(`IntlPolyfill.__addLocaleData(${stringified})`)
 })
 

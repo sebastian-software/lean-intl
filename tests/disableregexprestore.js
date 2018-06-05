@@ -3,8 +3,8 @@ const IntlPolyfill = require("../lib/index.cjs")
 // The complete data package is exported for the browser, therfor we need
 // to "export" the IntlPolyfill to make it accessible.
 global.IntlPolyfill = IntlPolyfill;
-IntlPolyfill.__addLocaleData(require("../locale-data/en.json"));
-IntlPolyfill.__addLocaleData(require("../locale-data/en-US.json"));
+IntlPolyfill.__addLocaleData(require("../locale-data/json/en.json"));
+IntlPolyfill.__addLocaleData(require("../locale-data/json/en-US.json"));
 
 function assertEqual(value, expected, message) {
   console.log(message);

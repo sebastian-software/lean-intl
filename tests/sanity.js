@@ -3,10 +3,10 @@ const IntlPolyfill = require("../lib/index.cjs")
 // The complete data package is exported for the browser, therfor we need
 // to "export" the IntlPolyfill to make it accessible.
 global.IntlPolyfill = IntlPolyfill;
-IntlPolyfill.__addLocaleData(require("../locale-data/de-DE.json"));
-IntlPolyfill.__addLocaleData(require("../locale-data/en.json"));
-IntlPolyfill.__addLocaleData(require("../locale-data/en-US.json"));
-IntlPolyfill.__addLocaleData(require("../locale-data/en-GB.json"));
+IntlPolyfill.__addLocaleData(require("../locale-data/json/de-DE.json"));
+IntlPolyfill.__addLocaleData(require("../locale-data/json/en.json"));
+IntlPolyfill.__addLocaleData(require("../locale-data/json/en-US.json"));
+IntlPolyfill.__addLocaleData(require("../locale-data/json/en-GB.json"));
 
 function assert(value, expected, message) {
   console.log(message);
