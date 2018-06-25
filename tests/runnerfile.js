@@ -4151,9 +4151,7 @@ var IntlPolyfill = (function () {
   ];
 
   (function (root, plurals) {
-    if (typeof undefined === 'function' && undefined.amd) {
-      undefined(plurals);
-    } else {
+    {
       module.exports = plurals;
     }
   }(commonjsGlobal, {
