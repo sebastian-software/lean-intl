@@ -22,11 +22,12 @@ In December 2012, ECMA International published the first edition of Standard ECM
 better known as the _ECMAScript Internationalization API_. This specification provides
 the framework to bring long overdue localization methods to ECMAScript implementations.
 
-All modern browsers and NodeJS (except Safari <= 10) have implemented this API. `Lean-Intl` fills the void of
+All modern browsers and NodeJS (except Safari <= 10 and IE <= 10) have implemented this API. `Lean-Intl` fills the void of
 availability for this API. It will provide the framework as described by the specification,
 so that developers can take advantage of the native API
 in environments that support it, or `Lean-Intl` for legacy or unsupported environments.
 
+See browser support on the official [CanIUse Database for details](https://caniuse.com/#feat=internationalization)
 
 ## Changes compared to Intl.js
 
