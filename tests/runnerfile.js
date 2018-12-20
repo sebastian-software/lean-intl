@@ -4129,42 +4129,33 @@ var IntlPolyfill = (function () {
   }
 
   var plurals = createCommonjsModule(function (module, exports) {
-  var _cp = [
-  function(n, ord) {
-    if (ord) return 'other';
-    return 'other';
-  },
-  function(n, ord) {
-    if (ord) return 'other';
-    return (n == 1) ? 'one' : 'other';
-  },
-  function(n, ord) {
-    if (ord) return 'other';
-    return ((n == 0
-            || n == 1)) ? 'one' : 'other';
-  },
-  function(n, ord) {
-    var s = String(n).split('.'), v0 = !s[1];
-    if (ord) return 'other';
-    return (n == 1 && v0) ? 'one' : 'other';
-  }
-  ];
 
   (function (root, plurals) {
     {
       module.exports = plurals;
     }
   }(commonjsGlobal, {
-  af: _cp[1],
+  af: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  ak: _cp[2],
+  ak: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return ((n == 0
+            || n == 1)) ? 'one' : 'other';
+  },
 
-  am: function(n, ord) {
+  am: function(n, ord
+  ) {
     if (ord) return 'other';
     return (n >= 0 && n <= 1) ? 'one' : 'other';
   },
 
-  ar: function(n, ord) {
+  ar: function(n, ord
+  ) {
     var s = String(n).split('.'), t0 = Number(s[0]) == n,
         n100 = t0 && s[0].slice(-2);
     if (ord) return 'other';
@@ -4176,7 +4167,8 @@ var IntlPolyfill = (function () {
         : 'other';
   },
 
-  ars: function(n, ord) {
+  ars: function(n, ord
+  ) {
     var s = String(n).split('.'), t0 = Number(s[0]) == n,
         n100 = t0 && s[0].slice(-2);
     if (ord) return 'other';
@@ -4188,7 +4180,8 @@ var IntlPolyfill = (function () {
         : 'other';
   },
 
-  as: function(n, ord) {
+  as: function(n, ord
+  ) {
     if (ord) return ((n == 1 || n == 5 || n == 7 || n == 8 || n == 9
             || n == 10)) ? 'one'
         : ((n == 2
@@ -4199,11 +4192,21 @@ var IntlPolyfill = (function () {
     return (n >= 0 && n <= 1) ? 'one' : 'other';
   },
 
-  asa: _cp[1],
+  asa: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  ast: _cp[3],
+  ast: function(n, ord
+  ) {
+    var s = String(n).split('.'), v0 = !s[1];
+    if (ord) return 'other';
+    return (n == 1 && v0) ? 'one' : 'other';
+  },
 
-  az: function(n, ord) {
+  az: function(n, ord
+  ) {
     var s = String(n).split('.'), i = s[0], i10 = i.slice(-1),
         i100 = i.slice(-2), i1000 = i.slice(-3);
     if (ord) return ((i10 == 1 || i10 == 2 || i10 == 5 || i10 == 7 || i10 == 8)
@@ -4219,7 +4222,8 @@ var IntlPolyfill = (function () {
     return (n == 1) ? 'one' : 'other';
   },
 
-  be: function(n, ord) {
+  be: function(n, ord
+  ) {
     var s = String(n).split('.'), t0 = Number(s[0]) == n,
         n10 = t0 && s[0].slice(-1), n100 = t0 && s[0].slice(-2);
     if (ord) return ((n10 == 2
@@ -4232,17 +4236,39 @@ var IntlPolyfill = (function () {
         : 'other';
   },
 
-  bem: _cp[1],
+  bem: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  bez: _cp[1],
+  bez: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  bg: _cp[1],
+  bg: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  bh: _cp[2],
+  bh: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return ((n == 0
+            || n == 1)) ? 'one' : 'other';
+  },
 
-  bm: _cp[0],
+  bm: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return 'other';
+  },
 
-  bn: function(n, ord) {
+  bn: function(n, ord
+  ) {
     if (ord) return ((n == 1 || n == 5 || n == 7 || n == 8 || n == 9
             || n == 10)) ? 'one'
         : ((n == 2
@@ -4253,9 +4279,14 @@ var IntlPolyfill = (function () {
     return (n >= 0 && n <= 1) ? 'one' : 'other';
   },
 
-  bo: _cp[0],
+  bo: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return 'other';
+  },
 
-  br: function(n, ord) {
+  br: function(n, ord
+  ) {
     var s = String(n).split('.'), t0 = Number(s[0]) == n,
         n10 = t0 && s[0].slice(-1), n100 = t0 && s[0].slice(-2),
         n1000000 = t0 && s[0].slice(-6);
@@ -4269,9 +4300,14 @@ var IntlPolyfill = (function () {
         : 'other';
   },
 
-  brx: _cp[1],
+  brx: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  bs: function(n, ord) {
+  bs: function(n, ord
+  ) {
     var s = String(n).split('.'), i = s[0], f = s[1] || '', v0 = !s[1],
         i10 = i.slice(-1), i100 = i.slice(-2), f10 = f.slice(-1), f100 = f.slice(-2);
     if (ord) return 'other';
@@ -4283,7 +4319,8 @@ var IntlPolyfill = (function () {
         : 'other';
   },
 
-  ca: function(n, ord) {
+  ca: function(n, ord
+  ) {
     var s = String(n).split('.'), v0 = !s[1];
     if (ord) return ((n == 1
             || n == 3)) ? 'one'
@@ -4293,15 +4330,32 @@ var IntlPolyfill = (function () {
     return (n == 1 && v0) ? 'one' : 'other';
   },
 
-  ce: _cp[1],
+  ce: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  cgg: _cp[1],
+  cgg: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  chr: _cp[1],
+  chr: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  ckb: _cp[1],
+  ckb: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  cs: function(n, ord) {
+  cs: function(n, ord
+  ) {
     var s = String(n).split('.'), i = s[0], v0 = !s[1];
     if (ord) return 'other';
     return (n == 1 && v0) ? 'one'
@@ -4310,7 +4364,8 @@ var IntlPolyfill = (function () {
         : 'other';
   },
 
-  cy: function(n, ord) {
+  cy: function(n, ord
+  ) {
     if (ord) return ((n == 0 || n == 7 || n == 8
             || n == 9)) ? 'zero'
         : (n == 1) ? 'one'
@@ -4328,16 +4383,23 @@ var IntlPolyfill = (function () {
         : 'other';
   },
 
-  da: function(n, ord) {
+  da: function(n, ord
+  ) {
     var s = String(n).split('.'), i = s[0], t0 = Number(s[0]) == n;
     if (ord) return 'other';
     return (n == 1 || !t0 && (i == 0
             || i == 1)) ? 'one' : 'other';
   },
 
-  de: _cp[3],
+  de: function(n, ord
+  ) {
+    var s = String(n).split('.'), v0 = !s[1];
+    if (ord) return 'other';
+    return (n == 1 && v0) ? 'one' : 'other';
+  },
 
-  dsb: function(n, ord) {
+  dsb: function(n, ord
+  ) {
     var s = String(n).split('.'), i = s[0], f = s[1] || '', v0 = !s[1],
         i100 = i.slice(-2), f100 = f.slice(-2);
     if (ord) return 'other';
@@ -4350,15 +4412,32 @@ var IntlPolyfill = (function () {
         : 'other';
   },
 
-  dv: _cp[1],
+  dv: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  dz: _cp[0],
+  dz: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return 'other';
+  },
 
-  ee: _cp[1],
+  ee: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  el: _cp[1],
+  el: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  en: function(n, ord) {
+  en: function(n, ord
+  ) {
     var s = String(n).split('.'), v0 = !s[1], t0 = Number(s[0]) == n,
         n10 = t0 && s[0].slice(-1), n100 = t0 && s[0].slice(-2);
     if (ord) return (n10 == 1 && n100 != 11) ? 'one'
@@ -4368,27 +4447,52 @@ var IntlPolyfill = (function () {
     return (n == 1 && v0) ? 'one' : 'other';
   },
 
-  eo: _cp[1],
+  eo: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  es: _cp[1],
+  es: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  et: _cp[3],
+  et: function(n, ord
+  ) {
+    var s = String(n).split('.'), v0 = !s[1];
+    if (ord) return 'other';
+    return (n == 1 && v0) ? 'one' : 'other';
+  },
 
-  eu: _cp[1],
+  eu: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  fa: function(n, ord) {
+  fa: function(n, ord
+  ) {
     if (ord) return 'other';
     return (n >= 0 && n <= 1) ? 'one' : 'other';
   },
 
-  ff: function(n, ord) {
+  ff: function(n, ord
+  ) {
     if (ord) return 'other';
     return (n >= 0 && n < 2) ? 'one' : 'other';
   },
 
-  fi: _cp[3],
+  fi: function(n, ord
+  ) {
+    var s = String(n).split('.'), v0 = !s[1];
+    if (ord) return 'other';
+    return (n == 1 && v0) ? 'one' : 'other';
+  },
 
-  fil: function(n, ord) {
+  fil: function(n, ord
+  ) {
     var s = String(n).split('.'), i = s[0], f = s[1] || '', v0 = !s[1],
         i10 = i.slice(-1), f10 = f.slice(-1);
     if (ord) return (n == 1) ? 'one' : 'other';
@@ -4397,18 +4501,33 @@ var IntlPolyfill = (function () {
             || !v0 && f10 != 4 && f10 != 6 && f10 != 9) ? 'one' : 'other';
   },
 
-  fo: _cp[1],
+  fo: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  fr: function(n, ord) {
+  fr: function(n, ord
+  ) {
     if (ord) return (n == 1) ? 'one' : 'other';
     return (n >= 0 && n < 2) ? 'one' : 'other';
   },
 
-  fur: _cp[1],
+  fur: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  fy: _cp[3],
+  fy: function(n, ord
+  ) {
+    var s = String(n).split('.'), v0 = !s[1];
+    if (ord) return 'other';
+    return (n == 1 && v0) ? 'one' : 'other';
+  },
 
-  ga: function(n, ord) {
+  ga: function(n, ord
+  ) {
     var s = String(n).split('.'), t0 = Number(s[0]) == n;
     if (ord) return (n == 1) ? 'one' : 'other';
     return (n == 1) ? 'one'
@@ -4418,9 +4537,16 @@ var IntlPolyfill = (function () {
         : 'other';
   },
 
-  gd: function(n, ord) {
+  gd: function(n, ord
+  ) {
     var s = String(n).split('.'), t0 = Number(s[0]) == n;
-    if (ord) return 'other';
+    if (ord) return ((n == 1
+            || n == 11)) ? 'one'
+        : ((n == 2
+            || n == 12)) ? 'two'
+        : ((n == 3
+            || n == 13)) ? 'few'
+        : 'other';
     return ((n == 1
             || n == 11)) ? 'one'
         : ((n == 2
@@ -4430,11 +4556,21 @@ var IntlPolyfill = (function () {
         : 'other';
   },
 
-  gl: _cp[3],
+  gl: function(n, ord
+  ) {
+    var s = String(n).split('.'), v0 = !s[1];
+    if (ord) return 'other';
+    return (n == 1 && v0) ? 'one' : 'other';
+  },
 
-  gsw: _cp[1],
+  gsw: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  gu: function(n, ord) {
+  gu: function(n, ord
+  ) {
     if (ord) return (n == 1) ? 'one'
         : ((n == 2
             || n == 3)) ? 'two'
@@ -4444,9 +4580,15 @@ var IntlPolyfill = (function () {
     return (n >= 0 && n <= 1) ? 'one' : 'other';
   },
 
-  guw: _cp[2],
+  guw: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return ((n == 0
+            || n == 1)) ? 'one' : 'other';
+  },
 
-  gv: function(n, ord) {
+  gv: function(n, ord
+  ) {
     var s = String(n).split('.'), i = s[0], v0 = !s[1], i10 = i.slice(-1),
         i100 = i.slice(-2);
     if (ord) return 'other';
@@ -4458,11 +4600,20 @@ var IntlPolyfill = (function () {
         : 'other';
   },
 
-  ha: _cp[1],
+  ha: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  haw: _cp[1],
+  haw: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  he: function(n, ord) {
+  he: function(n, ord
+  ) {
     var s = String(n).split('.'), i = s[0], v0 = !s[1], t0 = Number(s[0]) == n,
         n10 = t0 && s[0].slice(-1);
     if (ord) return 'other';
@@ -4473,7 +4624,8 @@ var IntlPolyfill = (function () {
         : 'other';
   },
 
-  hi: function(n, ord) {
+  hi: function(n, ord
+  ) {
     if (ord) return (n == 1) ? 'one'
         : ((n == 2
             || n == 3)) ? 'two'
@@ -4483,7 +4635,8 @@ var IntlPolyfill = (function () {
     return (n >= 0 && n <= 1) ? 'one' : 'other';
   },
 
-  hr: function(n, ord) {
+  hr: function(n, ord
+  ) {
     var s = String(n).split('.'), i = s[0], f = s[1] || '', v0 = !s[1],
         i10 = i.slice(-1), i100 = i.slice(-2), f10 = f.slice(-1), f100 = f.slice(-2);
     if (ord) return 'other';
@@ -4495,7 +4648,8 @@ var IntlPolyfill = (function () {
         : 'other';
   },
 
-  hsb: function(n, ord) {
+  hsb: function(n, ord
+  ) {
     var s = String(n).split('.'), i = s[0], f = s[1] || '', v0 = !s[1],
         i100 = i.slice(-2), f100 = f.slice(-2);
     if (ord) return 'other';
@@ -4508,28 +4662,59 @@ var IntlPolyfill = (function () {
         : 'other';
   },
 
-  hu: function(n, ord) {
+  hu: function(n, ord
+  ) {
     if (ord) return ((n == 1
             || n == 5)) ? 'one' : 'other';
     return (n == 1) ? 'one' : 'other';
   },
 
-  hy: function(n, ord) {
+  hy: function(n, ord
+  ) {
     if (ord) return (n == 1) ? 'one' : 'other';
     return (n >= 0 && n < 2) ? 'one' : 'other';
   },
 
-  id: _cp[0],
+  ia: function(n, ord
+  ) {
+    var s = String(n).split('.'), v0 = !s[1];
+    if (ord) return 'other';
+    return (n == 1 && v0) ? 'one' : 'other';
+  },
 
-  ig: _cp[0],
+  id: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return 'other';
+  },
 
-  ii: _cp[0],
+  ig: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return 'other';
+  },
 
-  "in": _cp[0],
+  ii: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return 'other';
+  },
 
-  io: _cp[3],
+  "in": function(n, ord
+  ) {
+    if (ord) return 'other';
+    return 'other';
+  },
 
-  is: function(n, ord) {
+  io: function(n, ord
+  ) {
+    var s = String(n).split('.'), v0 = !s[1];
+    if (ord) return 'other';
+    return (n == 1 && v0) ? 'one' : 'other';
+  },
+
+  is: function(n, ord
+  ) {
     var s = String(n).split('.'), i = s[0], t0 = Number(s[0]) == n,
         i10 = i.slice(-1), i100 = i.slice(-2);
     if (ord) return 'other';
@@ -4537,21 +4722,24 @@ var IntlPolyfill = (function () {
             || !t0) ? 'one' : 'other';
   },
 
-  it: function(n, ord) {
+  it: function(n, ord
+  ) {
     var s = String(n).split('.'), v0 = !s[1];
     if (ord) return ((n == 11 || n == 8 || n == 80
             || n == 800)) ? 'many' : 'other';
     return (n == 1 && v0) ? 'one' : 'other';
   },
 
-  iu: function(n, ord) {
+  iu: function(n, ord
+  ) {
     if (ord) return 'other';
     return (n == 1) ? 'one'
         : (n == 2) ? 'two'
         : 'other';
   },
 
-  iw: function(n, ord) {
+  iw: function(n, ord
+  ) {
     var s = String(n).split('.'), i = s[0], v0 = !s[1], t0 = Number(s[0]) == n,
         n10 = t0 && s[0].slice(-1);
     if (ord) return 'other';
@@ -4562,21 +4750,51 @@ var IntlPolyfill = (function () {
         : 'other';
   },
 
-  ja: _cp[0],
+  ja: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return 'other';
+  },
 
-  jbo: _cp[0],
+  jbo: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return 'other';
+  },
 
-  jgo: _cp[1],
+  jgo: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  ji: _cp[3],
+  ji: function(n, ord
+  ) {
+    var s = String(n).split('.'), v0 = !s[1];
+    if (ord) return 'other';
+    return (n == 1 && v0) ? 'one' : 'other';
+  },
 
-  jmc: _cp[1],
+  jmc: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  jv: _cp[0],
+  jv: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return 'other';
+  },
 
-  jw: _cp[0],
+  jw: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return 'other';
+  },
 
-  ka: function(n, ord) {
+  ka: function(n, ord
+  ) {
     var s = String(n).split('.'), i = s[0], i100 = i.slice(-2);
     if (ord) return (i == 1) ? 'one'
         : (i == 0 || ((i100 >= 2 && i100 <= 20) || i100 == 40 || i100 == 60
@@ -4585,20 +4803,38 @@ var IntlPolyfill = (function () {
     return (n == 1) ? 'one' : 'other';
   },
 
-  kab: function(n, ord) {
+  kab: function(n, ord
+  ) {
     if (ord) return 'other';
     return (n >= 0 && n < 2) ? 'one' : 'other';
   },
 
-  kaj: _cp[1],
+  kaj: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  kcg: _cp[1],
+  kcg: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  kde: _cp[0],
+  kde: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return 'other';
+  },
 
-  kea: _cp[0],
+  kea: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return 'other';
+  },
 
-  kk: function(n, ord) {
+  kk: function(n, ord
+  ) {
     var s = String(n).split('.'), t0 = Number(s[0]) == n,
         n10 = t0 && s[0].slice(-1);
     if (ord) return (n10 == 6 || n10 == 9
@@ -4606,42 +4842,78 @@ var IntlPolyfill = (function () {
     return (n == 1) ? 'one' : 'other';
   },
 
-  kkj: _cp[1],
+  kkj: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  kl: _cp[1],
+  kl: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  km: _cp[0],
+  km: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return 'other';
+  },
 
-  kn: function(n, ord) {
+  kn: function(n, ord
+  ) {
     if (ord) return 'other';
     return (n >= 0 && n <= 1) ? 'one' : 'other';
   },
 
-  ko: _cp[0],
+  ko: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return 'other';
+  },
 
-  ks: _cp[1],
+  ks: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  ksb: _cp[1],
+  ksb: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  ksh: function(n, ord) {
+  ksh: function(n, ord
+  ) {
     if (ord) return 'other';
     return (n == 0) ? 'zero'
         : (n == 1) ? 'one'
         : 'other';
   },
 
-  ku: _cp[1],
+  ku: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  kw: function(n, ord) {
+  kw: function(n, ord
+  ) {
     if (ord) return 'other';
     return (n == 1) ? 'one'
         : (n == 2) ? 'two'
         : 'other';
   },
 
-  ky: _cp[1],
+  ky: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  lag: function(n, ord) {
+  lag: function(n, ord
+  ) {
     var s = String(n).split('.'), i = s[0];
     if (ord) return 'other';
     return (n == 0) ? 'zero'
@@ -4650,20 +4922,39 @@ var IntlPolyfill = (function () {
         : 'other';
   },
 
-  lb: _cp[1],
+  lb: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  lg: _cp[1],
+  lg: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  lkt: _cp[0],
+  lkt: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return 'other';
+  },
 
-  ln: _cp[2],
+  ln: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return ((n == 0
+            || n == 1)) ? 'one' : 'other';
+  },
 
-  lo: function(n, ord) {
+  lo: function(n, ord
+  ) {
     if (ord) return (n == 1) ? 'one' : 'other';
     return 'other';
   },
 
-  lt: function(n, ord) {
+  lt: function(n, ord
+  ) {
     var s = String(n).split('.'), f = s[1] || '', t0 = Number(s[0]) == n,
         n10 = t0 && s[0].slice(-1), n100 = t0 && s[0].slice(-2);
     if (ord) return 'other';
@@ -4675,7 +4966,8 @@ var IntlPolyfill = (function () {
         : 'other';
   },
 
-  lv: function(n, ord) {
+  lv: function(n, ord
+  ) {
     var s = String(n).split('.'), f = s[1] || '', v = f.length,
         t0 = Number(s[0]) == n, n10 = t0 && s[0].slice(-1),
         n100 = t0 && s[0].slice(-2), f100 = f.slice(-2), f10 = f.slice(-1);
@@ -4687,13 +4979,27 @@ var IntlPolyfill = (function () {
         : 'other';
   },
 
-  mas: _cp[1],
+  mas: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  mg: _cp[2],
+  mg: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return ((n == 0
+            || n == 1)) ? 'one' : 'other';
+  },
 
-  mgo: _cp[1],
+  mgo: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  mk: function(n, ord) {
+  mk: function(n, ord
+  ) {
     var s = String(n).split('.'), i = s[0], f = s[1] || '', v0 = !s[1],
         i10 = i.slice(-1), i100 = i.slice(-2), f10 = f.slice(-1), f100 = f.slice(-2);
     if (ord) return (i10 == 1 && i100 != 11) ? 'one'
@@ -4705,11 +5011,20 @@ var IntlPolyfill = (function () {
             || f10 == 1 && f100 != 11) ? 'one' : 'other';
   },
 
-  ml: _cp[1],
+  ml: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  mn: _cp[1],
+  mn: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  mo: function(n, ord) {
+  mo: function(n, ord
+  ) {
     var s = String(n).split('.'), v0 = !s[1], t0 = Number(s[0]) == n,
         n100 = t0 && s[0].slice(-2);
     if (ord) return (n == 1) ? 'one' : 'other';
@@ -4719,7 +5034,8 @@ var IntlPolyfill = (function () {
         : 'other';
   },
 
-  mr: function(n, ord) {
+  mr: function(n, ord
+  ) {
     if (ord) return (n == 1) ? 'one'
         : ((n == 2
             || n == 3)) ? 'two'
@@ -4728,12 +5044,14 @@ var IntlPolyfill = (function () {
     return (n >= 0 && n <= 1) ? 'one' : 'other';
   },
 
-  ms: function(n, ord) {
+  ms: function(n, ord
+  ) {
     if (ord) return (n == 1) ? 'one' : 'other';
     return 'other';
   },
 
-  mt: function(n, ord) {
+  mt: function(n, ord
+  ) {
     var s = String(n).split('.'), t0 = Number(s[0]) == n,
         n100 = t0 && s[0].slice(-2);
     if (ord) return 'other';
@@ -4744,48 +5062,109 @@ var IntlPolyfill = (function () {
         : 'other';
   },
 
-  my: _cp[0],
+  my: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return 'other';
+  },
 
-  nah: _cp[1],
+  nah: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  naq: function(n, ord) {
+  naq: function(n, ord
+  ) {
     if (ord) return 'other';
     return (n == 1) ? 'one'
         : (n == 2) ? 'two'
         : 'other';
   },
 
-  nb: _cp[1],
+  nb: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  nd: _cp[1],
+  nd: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  ne: function(n, ord) {
+  ne: function(n, ord
+  ) {
     var s = String(n).split('.'), t0 = Number(s[0]) == n;
     if (ord) return ((t0 && n >= 1 && n <= 4)) ? 'one' : 'other';
     return (n == 1) ? 'one' : 'other';
   },
 
-  nl: _cp[3],
+  nl: function(n, ord
+  ) {
+    var s = String(n).split('.'), v0 = !s[1];
+    if (ord) return 'other';
+    return (n == 1 && v0) ? 'one' : 'other';
+  },
 
-  nn: _cp[1],
+  nn: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  nnh: _cp[1],
+  nnh: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  no: _cp[1],
+  no: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  nqo: _cp[0],
+  nqo: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return 'other';
+  },
 
-  nr: _cp[1],
+  nr: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  nso: _cp[2],
+  nso: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return ((n == 0
+            || n == 1)) ? 'one' : 'other';
+  },
 
-  ny: _cp[1],
+  ny: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  nyn: _cp[1],
+  nyn: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  om: _cp[1],
+  om: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  or: function(n, ord) {
+  or: function(n, ord
+  ) {
     var s = String(n).split('.'), t0 = Number(s[0]) == n;
     if (ord) return ((n == 1 || n == 5
             || (t0 && n >= 7 && n <= 9))) ? 'one'
@@ -4797,13 +5176,27 @@ var IntlPolyfill = (function () {
     return (n == 1) ? 'one' : 'other';
   },
 
-  os: _cp[1],
+  os: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  pa: _cp[2],
+  pa: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return ((n == 0
+            || n == 1)) ? 'one' : 'other';
+  },
 
-  pap: _cp[1],
+  pap: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  pl: function(n, ord) {
+  pl: function(n, ord
+  ) {
     var s = String(n).split('.'), i = s[0], v0 = !s[1], i10 = i.slice(-1),
         i100 = i.slice(-2);
     if (ord) return 'other';
@@ -4816,7 +5209,8 @@ var IntlPolyfill = (function () {
         : 'other';
   },
 
-  prg: function(n, ord) {
+  prg: function(n, ord
+  ) {
     var s = String(n).split('.'), f = s[1] || '', v = f.length,
         t0 = Number(s[0]) == n, n10 = t0 && s[0].slice(-1),
         n100 = t0 && s[0].slice(-2), f100 = f.slice(-2), f10 = f.slice(-1);
@@ -4828,20 +5222,35 @@ var IntlPolyfill = (function () {
         : 'other';
   },
 
-  ps: _cp[1],
+  ps: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  pt: function(n, ord) {
+  pt: function(n, ord
+  ) {
     var s = String(n).split('.'), i = s[0];
     if (ord) return 'other';
     return ((i == 0
             || i == 1)) ? 'one' : 'other';
   },
 
-  "pt-PT": _cp[3],
+  "pt-PT": function(n, ord
+  ) {
+    var s = String(n).split('.'), v0 = !s[1];
+    if (ord) return 'other';
+    return (n == 1 && v0) ? 'one' : 'other';
+  },
 
-  rm: _cp[1],
+  rm: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  ro: function(n, ord) {
+  ro: function(n, ord
+  ) {
     var s = String(n).split('.'), v0 = !s[1], t0 = Number(s[0]) == n,
         n100 = t0 && s[0].slice(-2);
     if (ord) return (n == 1) ? 'one' : 'other';
@@ -4851,11 +5260,20 @@ var IntlPolyfill = (function () {
         : 'other';
   },
 
-  rof: _cp[1],
+  rof: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  root: _cp[0],
+  root: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return 'other';
+  },
 
-  ru: function(n, ord) {
+  ru: function(n, ord
+  ) {
     var s = String(n).split('.'), i = s[0], v0 = !s[1], i10 = i.slice(-1),
         i100 = i.slice(-2);
     if (ord) return 'other';
@@ -4867,37 +5285,80 @@ var IntlPolyfill = (function () {
         : 'other';
   },
 
-  rwk: _cp[1],
+  rwk: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  sah: _cp[0],
+  sah: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return 'other';
+  },
 
-  saq: _cp[1],
+  saq: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  scn: function(n, ord) {
+  sc: function(n, ord
+  ) {
     var s = String(n).split('.'), v0 = !s[1];
     if (ord) return ((n == 11 || n == 8 || n == 80
             || n == 800)) ? 'many' : 'other';
     return (n == 1 && v0) ? 'one' : 'other';
   },
 
-  sd: _cp[1],
+  scn: function(n, ord
+  ) {
+    var s = String(n).split('.'), v0 = !s[1];
+    if (ord) return ((n == 11 || n == 8 || n == 80
+            || n == 800)) ? 'many' : 'other';
+    return (n == 1 && v0) ? 'one' : 'other';
+  },
 
-  sdh: _cp[1],
+  sd: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  se: function(n, ord) {
+  sdh: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
+
+  se: function(n, ord
+  ) {
     if (ord) return 'other';
     return (n == 1) ? 'one'
         : (n == 2) ? 'two'
         : 'other';
   },
 
-  seh: _cp[1],
+  seh: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  ses: _cp[0],
+  ses: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return 'other';
+  },
 
-  sg: _cp[0],
+  sg: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return 'other';
+  },
 
-  sh: function(n, ord) {
+  sh: function(n, ord
+  ) {
     var s = String(n).split('.'), i = s[0], f = s[1] || '', v0 = !s[1],
         i10 = i.slice(-1), i100 = i.slice(-2), f10 = f.slice(-1), f100 = f.slice(-2);
     if (ord) return 'other';
@@ -4909,7 +5370,8 @@ var IntlPolyfill = (function () {
         : 'other';
   },
 
-  shi: function(n, ord) {
+  shi: function(n, ord
+  ) {
     var s = String(n).split('.'), t0 = Number(s[0]) == n;
     if (ord) return 'other';
     return (n >= 0 && n <= 1) ? 'one'
@@ -4917,14 +5379,16 @@ var IntlPolyfill = (function () {
         : 'other';
   },
 
-  si: function(n, ord) {
+  si: function(n, ord
+  ) {
     var s = String(n).split('.'), i = s[0], f = s[1] || '';
     if (ord) return 'other';
     return ((n == 0 || n == 1)
             || i == 0 && f == 1) ? 'one' : 'other';
   },
 
-  sk: function(n, ord) {
+  sk: function(n, ord
+  ) {
     var s = String(n).split('.'), i = s[0], v0 = !s[1];
     if (ord) return 'other';
     return (n == 1 && v0) ? 'one'
@@ -4933,7 +5397,8 @@ var IntlPolyfill = (function () {
         : 'other';
   },
 
-  sl: function(n, ord) {
+  sl: function(n, ord
+  ) {
     var s = String(n).split('.'), i = s[0], v0 = !s[1], i100 = i.slice(-2);
     if (ord) return 'other';
     return (v0 && i100 == 1) ? 'one'
@@ -4943,46 +5408,60 @@ var IntlPolyfill = (function () {
         : 'other';
   },
 
-  sma: function(n, ord) {
+  sma: function(n, ord
+  ) {
     if (ord) return 'other';
     return (n == 1) ? 'one'
         : (n == 2) ? 'two'
         : 'other';
   },
 
-  smi: function(n, ord) {
+  smi: function(n, ord
+  ) {
     if (ord) return 'other';
     return (n == 1) ? 'one'
         : (n == 2) ? 'two'
         : 'other';
   },
 
-  smj: function(n, ord) {
+  smj: function(n, ord
+  ) {
     if (ord) return 'other';
     return (n == 1) ? 'one'
         : (n == 2) ? 'two'
         : 'other';
   },
 
-  smn: function(n, ord) {
+  smn: function(n, ord
+  ) {
     if (ord) return 'other';
     return (n == 1) ? 'one'
         : (n == 2) ? 'two'
         : 'other';
   },
 
-  sms: function(n, ord) {
+  sms: function(n, ord
+  ) {
     if (ord) return 'other';
     return (n == 1) ? 'one'
         : (n == 2) ? 'two'
         : 'other';
   },
 
-  sn: _cp[1],
+  sn: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  so: _cp[1],
+  so: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  sq: function(n, ord) {
+  sq: function(n, ord
+  ) {
     var s = String(n).split('.'), t0 = Number(s[0]) == n,
         n10 = t0 && s[0].slice(-1), n100 = t0 && s[0].slice(-2);
     if (ord) return (n == 1) ? 'one'
@@ -4991,7 +5470,8 @@ var IntlPolyfill = (function () {
     return (n == 1) ? 'one' : 'other';
   },
 
-  sr: function(n, ord) {
+  sr: function(n, ord
+  ) {
     var s = String(n).split('.'), i = s[0], f = s[1] || '', v0 = !s[1],
         i10 = i.slice(-1), i100 = i.slice(-2), f10 = f.slice(-1), f100 = f.slice(-2);
     if (ord) return 'other';
@@ -5003,13 +5483,26 @@ var IntlPolyfill = (function () {
         : 'other';
   },
 
-  ss: _cp[1],
+  ss: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  ssy: _cp[1],
+  ssy: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  st: _cp[1],
+  st: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  sv: function(n, ord) {
+  sv: function(n, ord
+  ) {
     var s = String(n).split('.'), v0 = !s[1], t0 = Number(s[0]) == n,
         n10 = t0 && s[0].slice(-1), n100 = t0 && s[0].slice(-2);
     if (ord) return ((n10 == 1
@@ -5017,23 +5510,58 @@ var IntlPolyfill = (function () {
     return (n == 1 && v0) ? 'one' : 'other';
   },
 
-  sw: _cp[3],
+  sw: function(n, ord
+  ) {
+    var s = String(n).split('.'), v0 = !s[1];
+    if (ord) return 'other';
+    return (n == 1 && v0) ? 'one' : 'other';
+  },
 
-  syr: _cp[1],
+  syr: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  ta: _cp[1],
+  ta: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  te: _cp[1],
+  te: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  teo: _cp[1],
+  teo: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  th: _cp[0],
+  th: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return 'other';
+  },
 
-  ti: _cp[2],
+  ti: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return ((n == 0
+            || n == 1)) ? 'one' : 'other';
+  },
 
-  tig: _cp[1],
+  tig: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  tk: function(n, ord) {
+  tk: function(n, ord
+  ) {
     var s = String(n).split('.'), t0 = Number(s[0]) == n,
         n10 = t0 && s[0].slice(-1);
     if (ord) return ((n10 == 6 || n10 == 9)
@@ -5041,7 +5569,8 @@ var IntlPolyfill = (function () {
     return (n == 1) ? 'one' : 'other';
   },
 
-  tl: function(n, ord) {
+  tl: function(n, ord
+  ) {
     var s = String(n).split('.'), i = s[0], f = s[1] || '', v0 = !s[1],
         i10 = i.slice(-1), f10 = f.slice(-1);
     if (ord) return (n == 1) ? 'one' : 'other';
@@ -5050,24 +5579,46 @@ var IntlPolyfill = (function () {
             || !v0 && f10 != 4 && f10 != 6 && f10 != 9) ? 'one' : 'other';
   },
 
-  tn: _cp[1],
+  tn: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  to: _cp[0],
+  to: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return 'other';
+  },
 
-  tr: _cp[1],
+  tr: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  ts: _cp[1],
+  ts: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  tzm: function(n, ord) {
+  tzm: function(n, ord
+  ) {
     var s = String(n).split('.'), t0 = Number(s[0]) == n;
     if (ord) return 'other';
     return ((n == 0 || n == 1)
             || (t0 && n >= 11 && n <= 99)) ? 'one' : 'other';
   },
 
-  ug: _cp[1],
+  ug: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  uk: function(n, ord) {
+  uk: function(n, ord
+  ) {
     var s = String(n).split('.'), i = s[0], v0 = !s[1], t0 = Number(s[0]) == n,
         n10 = t0 && s[0].slice(-1), n100 = t0 && s[0].slice(-2), i10 = i.slice(-1),
         i100 = i.slice(-2);
@@ -5080,40 +5631,101 @@ var IntlPolyfill = (function () {
         : 'other';
   },
 
-  ur: _cp[3],
+  ur: function(n, ord
+  ) {
+    var s = String(n).split('.'), v0 = !s[1];
+    if (ord) return 'other';
+    return (n == 1 && v0) ? 'one' : 'other';
+  },
 
-  uz: _cp[1],
+  uz: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  ve: _cp[1],
+  ve: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  vi: function(n, ord) {
+  vi: function(n, ord
+  ) {
     if (ord) return (n == 1) ? 'one' : 'other';
     return 'other';
   },
 
-  vo: _cp[1],
+  vo: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  vun: _cp[1],
+  vun: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  wa: _cp[2],
+  wa: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return ((n == 0
+            || n == 1)) ? 'one' : 'other';
+  },
 
-  wae: _cp[1],
+  wae: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  wo: _cp[0],
+  wo: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return 'other';
+  },
 
-  xh: _cp[1],
+  xh: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  xog: _cp[1],
+  xog: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return (n == 1) ? 'one' : 'other';
+  },
 
-  yi: _cp[3],
+  yi: function(n, ord
+  ) {
+    var s = String(n).split('.'), v0 = !s[1];
+    if (ord) return 'other';
+    return (n == 1 && v0) ? 'one' : 'other';
+  },
 
-  yo: _cp[0],
+  yo: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return 'other';
+  },
 
-  yue: _cp[0],
+  yue: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return 'other';
+  },
 
-  zh: _cp[0],
+  zh: function(n, ord
+  ) {
+    if (ord) return 'other';
+    return 'other';
+  },
 
-  zu: function(n, ord) {
+  zu: function(n, ord
+  ) {
     if (ord) return 'other';
     return (n >= 0 && n <= 1) ? 'one' : 'other';
   }
