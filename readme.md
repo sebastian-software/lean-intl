@@ -160,4 +160,4 @@ accompanying this software for terms of use.
 <img src="https://cdn.rawgit.com/sebastian-software/sebastian-software-brand/0d4ec9d6/sebastiansoftware-en.svg" alt="Logo of Sebastian Software GmbH, Mainz, Germany" width="460" height="160"/>
 
 Copyright 2013 [Andy Earnshaw](https://github.com/andyearnshaw/Intl.js)<br/>
-Copyright 2016-2018 [Sebastian Software GmbH](http://www.sebastian-software.de)
+Copyright 2016-2019 [Sebastian Software GmbH](http://www.sebastian-software.de)
