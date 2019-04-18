@@ -174,8 +174,7 @@ for each locale which directly executes that code.
 Contents of the `locale-data` directory are a modified form of the Unicode CLDR
 data found at http://www.unicode.org/cldr/.
 
-
-## RegExp cache / restore
+## RegExp cache / restore
 
 `Lean Intl` attempts to cache and restore static RegExp properties before executing any
 regular expressions in order to comply with ECMA-402. This process is imperfect,
