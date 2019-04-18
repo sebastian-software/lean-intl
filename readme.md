@@ -1,4 +1,4 @@
-# *Lean-Intl* - A leaner fork of Intl.js <br/>[![Sponsored by][sponsor-img]][sponsor] [![Version][npm-version-img]][npm] [![Downloads][npm-downloads-img]][npm] [![Build Status Unix][travis-img]][travis] [![Build Status Windows][appveyor-img]][appveyor] [![Dependencies][deps-img]][deps]
+# *Lean-Intl* - A leaner and more modern fork of Intl.js <br/>[![Sponsored by][sponsor-img]][sponsor] [![Version][npm-version-img]][npm] [![Downloads][npm-downloads-img]][npm] [![Build Status Unix][travis-img]][travis] [![Build Status Windows][appveyor-img]][appveyor] [![Dependencies][deps-img]][deps]
 
 *Lean-Intl* is a lean polyfill for `Intl`-APIs for browsers which are not yet supporting this API. It's a
 modern fork of [Intl.js](https://github.com/andyearnshaw/Intl.js) for modern development and tooling requirements.
